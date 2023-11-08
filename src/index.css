@@ -1,0 +1,135 @@
+*{
+  font-size: 14px;
+}
+.get-img {
+  height: 60px;
+}
+
+.home-img {
+  border-radius: 50px;
+  height: 100vh;
+  position: relative;
+}
+
+.move-img {
+  position: absolute;
+  bottom: 370px;
+  font-size: 50px;
+
+}
+
+.p-position {
+  position: absolute;
+  bottom: 310px;
+
+}
+
+div.at-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.nav-item {
+  animation-name: bounce-top;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+
+}
+.location{
+  font-size: 12px;
+  color: rgb(194, 191, 191);
+}
+.star{
+  font-size: 12px;
+}
+.day{
+  font-size: 12px;
+}
+.get-h{
+  height: 70vh;
+}
+.p-color{
+  color: rgba(122, 122, 122, 0.719);
+}
+
+@keyframes bounce-top {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-24px);
+  }
+
+  55% {
+    transform: translateY(0);
+  }
+
+  65% {
+    transform: translateY(-12px);
+  }
+
+  75% {
+    transform: translateY(0);
+  }
+
+  82% {
+    transform: translateY(-6px);
+  }
+
+  87% {
+    transform: translateY(0);
+  }
+
+  93% {
+    transform: translateY(-4px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width:688px) {
+  *{
+    font-size: 15px;
+  }
+  .home-img {
+    margin-top: 20px;
+    height: 50vh;
+
+  }
+
+  .move-img {
+    position: absolute;
+    bottom: 250px;
+    text-align: center;
+    font-size: 23px;
+
+  }
+
+  .p-position {
+    position: absolute;
+    bottom: 170px;
+    text-align: center;
+
+  }
+  .get-overflow{
+    overflow-y: scroll;
+  }
+  .get-h{
+    height: 40vh;
+  }
+}
