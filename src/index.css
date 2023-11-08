@@ -75,20 +75,28 @@ div.at-container {
   border-top: none;
 
 }
-.accordion-item{
-  box-shadow: 0 0  10px rgb(197, 197, 18)  !important;
+
+.accordion-item {
+  box-shadow: 0 0 10px rgb(197, 197, 18) !important;
   border: none;
   border-radius: 20px !important;
 }
-.accordion-button{
+
+.accordion-button {
   font-weight: 600;
 }
-.get-position{
+
+.get-position {
   position: relative;
-  bottom: 490px;
+  bottom: 290px;
   border-radius: 30px !important;
   height: 40vh;
   left: 300px;
+}
+.get-image{
+  height: 80vh;
+  width: 40%;
+  border-radius: 20px !important;
 }
 
 
@@ -169,11 +177,15 @@ div.at-container {
   .get-h {
     height: 40vh;
   }
-  .get-position{
+
+  .get-position {
     position: relative;
-    bottom: 170px;
+    bottom: 260px;
     left: 0px;
-    height: 40%;
-    /* padding: 50px  0 0px 30px !important; */
+    height: 40%; 
   }
+  .get-image{
+    /* width: 100%; */
+  }
+  
 }

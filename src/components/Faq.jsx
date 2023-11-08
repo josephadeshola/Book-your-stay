@@ -146,16 +146,17 @@ const Faq = () => {
             </div>
 
             <div>
-              <div className="">
+              <div className="mt-4">
                 <img
-                  className="col-md-5 col-12 rounded"
-                  src="https://img.freepik.com/free-photo/male-receptionist-elegant-suit-during-work-hours_23-2149714398.jpg?w=360&t=st=1699440268~exp=1699440868~hmac=62fa1b717423361824f06af0aa75c8a94e1ba6102cd848df9312b9b409d570f7"
+                  className=" get-image  col-md-4 col-12 rounded"
+                  src="https://img.freepik.com/free-photo/people-working-reception-side-view_23-2149963918.jpg?w=740&t=st=1699454363~exp=1699454963~hmac=9d8f67b3c122e3a92d8cdfbdc47336cdafaf9484e93967502fe46b06661b8e0c"
                   alt=""
                 />
-                <div className="py-5  get-position bg-light  shadow col-md-6 px-5 rounded">
+
+                <div data-aos="zoom-out-down" className="py-5 pb-4  get-position bg-light  shadow col-md-6 px-5 rounded">
                   <h1>"</h1>
-                  <p >
-                    <h5 style={{color:'rgb(197, 197, 18)'}}>Review</h5>
+                  <p>
+                    <h5 style={{ color: "rgb(197, 197, 18)" }}>Review</h5>
                     i really enjoyed the booking hotels from Named. With easy
                     booking step, i can think about my other holiday preparation
                   </p>

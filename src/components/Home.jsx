@@ -4,6 +4,7 @@ import Carousel from "./Carousel";
 import Service from "./Service";
 import Info from "./Info";
 import Faq from "./Faq";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Service/>
       <Info/>
       <Faq/>
+      <Footer/>
     </div>
   );
 };
