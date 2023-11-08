@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Carousel from "./Carousel";
 import Service from "./Service";
 import Info from "./Info";
+import Faq from "./Faq";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Carousel/>
       <Service/>
       <Info/>
+      <Faq/>
     </div>
   );
 };

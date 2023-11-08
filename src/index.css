@@ -1,6 +1,7 @@
-*{
+* {
   font-size: 14px;
 }
+
 .get-img {
   height: 60px;
 }
@@ -41,32 +42,56 @@ div.at-container {
   animation-fill-mode: none;
 
 }
-.location{
+
+.location {
   font-size: 12px;
   color: rgb(194, 191, 191);
 }
-.star{
+
+.star {
   font-size: 12px;
 }
-.day{
+
+.day {
   font-size: 12px;
 }
-.get-h{
+
+.get-h {
   height: 70vh;
 }
-.p-color{
+
+.p-color {
   color: rgba(122, 122, 122, 0.719);
 }
-.nav-link{
+
+.nav-link {
   font-weight: bold;
 }
-.nav-link:hover{
+
+.nav-link:hover {
   border: 3px solid rgb(197, 197, 18);
   border-left: none;
   border-right: none;
   border-top: none;
-  
+
 }
+.accordion-item{
+  box-shadow: 0 0  10px rgb(197, 197, 18)  !important;
+  border: none;
+  border-radius: 20px !important;
+}
+.accordion-button{
+  font-weight: 600;
+}
+.get-position{
+  position: relative;
+  bottom: 490px;
+  border-radius: 30px !important;
+  height: 40vh;
+  left: 300px;
+}
+
+
 @keyframes bounce-top {
 
   0% {
@@ -112,9 +137,10 @@ div.at-container {
 
 
 @media (max-width:688px) {
-  *{
+  * {
     font-size: 15px;
   }
+
   .home-img {
     margin-top: 20px;
     height: 50vh;
@@ -135,10 +161,19 @@ div.at-container {
     text-align: center;
 
   }
-  .get-overflow{
+
+  .get-overflow {
     overflow-y: scroll;
   }
-  .get-h{
+
+  .get-h {
     height: 40vh;
+  }
+  .get-position{
+    position: relative;
+    bottom: 170px;
+    left: 0px;
+    height: 40%;
+    /* padding: 50px  0 0px 30px !important; */
   }
 }
