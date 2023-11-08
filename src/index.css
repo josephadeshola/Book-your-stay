@@ -95,7 +95,6 @@ div.at-container {
 }
 .get-image{
   height: 80vh;
-  width: 40%;
   border-radius: 20px !important;
 }
 
@@ -174,18 +173,18 @@ div.at-container {
     overflow-y: scroll;
   }
 
-  .get-h {
-    height: 40vh;
+  .get-image{
+    height: 50vh;
+    border-radius: 20px !important;
   }
 
   .get-position {
     position: relative;
-    bottom: 260px;
+    bottom: 60px;
     left: 0px;
-    height: 40%; 
+  
+  
   }
-  .get-image{
-    /* width: 100%; */
-  }
+
   
 }
