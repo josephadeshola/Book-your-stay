@@ -102,22 +102,22 @@ const Navbar = () => {
                 <li class="nav-item">
                   <div className="d-flex gap-3">
                     <i class="bi bi-house mt-2 fs-1 text-light "></i>
-                    <a
+                    <Link
                       class="nav-link fw-bold text-light active fs-1"
                       aria-current="page"
-                      href="#"
+                     to={"/home"}
                     >
                       Home
-                    </a>
+                    </Link>
                   </div>
                   <hr className="border border-primary" />
                 </li>
                 <li class="nav-item">
                   <div className="d-flex gap-3">
                     <i class="bi bi-file-person mt-2 text-light fs-1"></i>
-                    <a class="nav-link fw-bold text-light fs-1" href="#">
+                    <Link class="nav-link fw-bold text-light fs-1" to={'/about'}>
                       About
-                    </a>
+                    </Link>
                   </div>
                   <hr className="border border-primary " />
                 </li>
