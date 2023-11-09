@@ -6,9 +6,9 @@ import Home from "./components/Home";
 function App() {
   return (
     <div>  
-     
       <Routes>
-        <Route path="/home" element={ <Home/>}></Route>
+        <Route path="/" element={ <Home/>}></Route>
+        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </div>

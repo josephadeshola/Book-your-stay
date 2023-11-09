@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Carousel from "./Carousel";
-import image from "../assets/image/logo.png"
-import Service from "./Service";
-import Info from "./Info";
+import image from "../assets/image/logo.png";
 const Navbar = () => {
   return (
     <div>
@@ -13,11 +10,7 @@ const Navbar = () => {
       >
         <div class="container-fluid">
           <a class="navbar-brand get-font" href="#">
-            <img
-              className="get-img"
-              src={image}
-              alt=""
-            />
+            <img className="get-img" src={image} alt="" />
             <b>
               <span style={{ color: "#dcaa14c2" }}>D</span>O{" "}
               <span style={{ color: "#dcaa14c2" }}>R</span>C
@@ -87,11 +80,7 @@ const Navbar = () => {
             <div class="offcanvas-header">
               <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
                 <a class="navbar-brand get-font" href="#">
-                  <img
-                    className="get-img"
-                    src={image}
-                    alt=""
-                  />
+                  <img className="get-img" src={image} alt="" />
                   <b>
                     <span style={{ color: "#dcaa14c2" }}>D</span>O{" "}
                     <span style={{ color: "#dcaa14c2" }}>R</span>C
@@ -165,7 +154,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-     
     </div>
   );
 };

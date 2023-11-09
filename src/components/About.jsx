@@ -6,7 +6,6 @@ const About = () => {
   return (
     <div>
       <Navbar/>
-
           <div className='container'>
             <div className="row">
               
