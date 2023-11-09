@@ -148,7 +148,7 @@ const Faq = () => {
             <div>
               <div className="mt-4">
                 <img
-                  className=" get-image  col-md-4 col-12 rounded"
+                  className=" get-image  col-md-5 col-12 rounded"
                   src="https://img.freepik.com/free-photo/people-working-reception-side-view_23-2149963918.jpg?w=740&t=st=1699454363~exp=1699454963~hmac=9d8f67b3c122e3a92d8cdfbdc47336cdafaf9484e93967502fe46b06661b8e0c"
                   alt=""
                 />
