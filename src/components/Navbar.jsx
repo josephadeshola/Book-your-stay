@@ -89,7 +89,7 @@ const Navbar = () => {
                 <a class="navbar-brand get-font" href="#">
                   <img
                     className="get-img"
-                    src="https://o.remove.bg/downloads/6205bbe1-90f5-42af-9cba-842b0fd0a753/initial-letter-d-sign-symbol-with-olive-branch-wreath-round-floral-frame-made-by-olive-branch_565585-767-removebg-preview.png"
+                    src={image}
                     alt=""
                   />
                   <b>
