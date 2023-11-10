@@ -108,7 +108,7 @@ const Navbar = () => {
                       class="nav-link  fw-bold text-light fs-1"
                       to={"/home"}
                     >
-                      About
+                    Home
                     </Link>
                   </div>
                   <hr className="border border-primary" />
