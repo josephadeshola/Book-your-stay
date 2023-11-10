@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import image from "../assets/image/logo.png";
-import Carousel from "./Carousel";
 const Navbar = () => {
   return (
     <div>
