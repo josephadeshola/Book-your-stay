@@ -5,7 +5,7 @@ const Info = () => {
   let allServices = [
     {
       image:
-        "https://img.freepik.com/free-photo/dining-terrace-open-restaurant-with-sofas-chairs-tables_114579-2728.jpg?w=740&t=st=1698871489~exp=1698872089~hmac=1945f04efb7990150257482e024a4c4616c9a2094b41cfbf605bcde21331d375",
+        "https://img.freepik.com/free-photo/some-delicious-meal-bed-bedroom-side-view_176474-3911.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       name: "Venice Hotel",
       price: "$750.35",
       star: "4.8 (45)",
@@ -15,7 +15,7 @@ const Info = () => {
     },
     {
       image:
-        "https://img.freepik.com/free-photo/beautiful-sky-orchid-water-outdoor_1203-5205.jpg?w=740&t=st=1698871624~exp=1698872224~hmac=eda0fd8a95a80cd1a1094e23fc8042d4a77d8c245af0035186d679b08ca617de",
+        "https://img.freepik.com/premium-photo/tag-reservation-placed-table_159341-1242.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       name: "Cedar Point",
       price: "$830.75",
       star: "4.8 (45)",
@@ -25,7 +25,7 @@ const Info = () => {
     },
     {
       image:
-        "https://img.freepik.com/free-photo/white-sky-umbrella-nobody-party_1203-4522.jpg?2&w=740&t=st=1698872266~exp=1698872866~hmac=43f0185d30af577e0d597a22b3061382644b0f25e3baf765e8b0b1020591cbb9",
+        "https://img.freepik.com/free-photo/romantic-bedroom_74190-3738.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       name: "Hazelwood Hotel",
       price: "$930.85",
       star: "4.8 (45)",
@@ -147,6 +147,7 @@ const Info = () => {
         ))}
       </div>
     </div>
+    
   );
 };
 

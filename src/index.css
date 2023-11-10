@@ -97,6 +97,10 @@ div.at-container {
   height: 80vh;
   border-radius: 20px !important;
 }
+.get-overflow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 
 
 @keyframes bounce-top {
@@ -171,6 +175,9 @@ div.at-container {
 
   .get-overflow {
     overflow-y: scroll;
+    display: flex;
+    gap: 20px;
+  
   }
 
   .get-image{

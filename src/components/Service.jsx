@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Service = () => {
   let allServices = [
@@ -33,6 +33,154 @@ const Service = () => {
       day: "6Day/5Night",
     },
   ];
+  const [showAllProduct, setShowAllProduct] = useState(false);
+  const handleviewAll = () => {
+    setShowAllProduct(true);
+  };
+
+  let viewAll = [
+    {
+      image:
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60", 
+      name: "Hazelwood Hotel",
+      price: "$930.85",
+      star: "4.8 (45)",
+      effect: "zoom-out-right",
+      location: "preston Rd. inglewood",
+      day: "6Day/5Night",
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
+      name: "Hazelwood Hotel",
+      price: "$930.85",
+      star: "4.8 (45)",
+      effect: "zoom-out-down",
+      location: "preston Rd. inglewood",
+      day: "6Day/5Night",
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
+      name: "Hazelwood Hotel",
+      price: "$930.85",
+      star: "4.8 (45)",
+      effect: "zoom-out-left",
+      location: "preston Rd. inglewood",
+      day: "6Day/5Night",
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
+      name: "Hazelwood Hotel",
+      price: "$930.85",
+      star: "4.8 (45)",
+      effect: "zoom-out-right",
+      location: "preston Rd. inglewood",
+      day: "6Day/5Night",
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
+      name: "Hazelwood Hotel",
+      price: "$930.85",
+      star: "4.8 (45)",
+      effect: "zoom-out-top",
+      location: "preston Rd. inglewood",
+      day: "6Day/5Night",
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
+      name: "Hazelwood Hotel",
+      price: "$930.85",
+      star: "4.8 (45)",
+      effect: "zoom-out-right",
+      location: "preston Rd. inglewood",
+      day: "6Day/5Night",
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsJTIwcm9vbXxlbnwwfDB8MHx8fDI%3D&auto=format&fit=crop&w=400&q=60",
+      name: "Hazelwood Hotel",
+      price: "$930.85",
+      star: "4.8 (45)",
+      effect: "zoom-out-right",
+      location: "preston Rd. inglewood",
+      day: "6Day/5Night",
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1630660664869-c9d3cc676880?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdGVsJTIwcm9vbXxlbnwwfDB8MHx8fDI%3D%3D&auto=format&fit=crop&w=400&q=60",
+      name: "Hazelwood Hotel",
+      price: "$930.85",
+      star: "4.8 (45)",
+      effect: "zoom-out-right",
+      location: "preston Rd. inglewood",
+      day: "6Day/5Night",
+    },
+
+    {
+      image:
+        "https://img.freepik.com/free-photo/one-king-size-bed-hotel-room_114579-12159.jpg?w=740&t=st=1699614493~exp=1699615093~hmac=c9869c3ad1ccd0443f14be2ad1610d0679c66661149a7ca09d090d69d61e2c48",
+      name: "Hazelwood Hotel",
+      price: "$930.85",
+      star: "4.8 (45)",
+      effect: "zoom-out-right",
+      location: "preston Rd. inglewood",
+      day: "6Day/5Night",
+    },
+    {
+      image:
+        "https://img.freepik.com/free-photo/tidy-hotel-room-with-brown-curtains_1203-1493.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
+      name: "Hazelwood Hotel",
+      price: "$930.85",
+      star: "4.8 (45)",
+      effect: "zoom-out-right",
+      location: "preston Rd. inglewood",
+      day: "6Day/5Night",
+    },
+    {
+      image:
+        "https://img.freepik.com/free-photo/elegant-hotel-room-with-big-bed_1203-1494.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
+      name: "Hazelwood Hotel",
+      price: "$930.85",
+      star: "4.8 (45)",
+      effect: "zoom-out-right",
+      location: "preston Rd. inglewood",
+      day: "6Day/5Night",
+    },
+    {
+      image:
+        "https://img.freepik.com/free-photo/pillow-bed_74190-6244.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais  ",
+      name: "Hazelwood Hotel",
+      price: "$930.85",
+      star: "4.8 (45)",
+      effect: "zoom-out-right",
+      location: "preston Rd. inglewood",
+      day: "6Day/5Night",
+    },
+    {
+      image:
+        "https://img.freepik.com/premium-photo/interior-hotel-bedroom-with-double-bed-generative-ai_629315-11308.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
+      name: "Hazelwood Hotel",
+      price: "$930.85",
+      star: "4.8 (45)",
+      effect: "zoom-out-right",
+      location: "preston Rd. inglewood",
+      day: "6Day/5Night",
+    },
+    {
+      image:
+        "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1822.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
+      name: "Hazelwood Hotel",
+      price: "$930.85",
+      star: "4.8 (45)",
+      effect: "zoom-out-right",
+      location: "preston Rd. inglewood",
+      day: "6Day/5Night",
+    },
+  ];
 
   return (
     <div>
@@ -45,10 +193,11 @@ const Service = () => {
           Explore our best offer for your stay while your're on vacation with
           family of business trip
         </p>
+
         <a
-          style={{ color: "#dcaa14c2" }}
-          className="float-end text-decoration-none"
-          href=""
+          style={{ color: "#dcaa14c2", cursor: "pointer" }}
+          className="float-end text-decoration-none "
+          onClick={handleviewAll}
         >
           View all
         </a>
@@ -59,6 +208,50 @@ const Service = () => {
           <div
             data-aos={eachItem.effect}
             className="mx-auto px-md-3 px-2 shadow  rounded py-md-4 py-2 col-md-3 col-12"
+          >
+            <img
+              style={{ height: "35vh" }}
+              className="col-md-12 col-12 rounded mx-auto"
+              src={eachItem.image}
+              alt=""
+            />
+            <div className="mt-4 px-md-0 px-3 pb-3">
+              <name className="mt-3">{eachItem.name}</name>
+              <star className="float-end star mt-2">
+                <i
+                  style={{ color: "#dcaa14c2" }}
+                  class="bi fs-6 bi-star-fill"
+                ></i>
+                {eachItem.star}
+              </star>
+              <br />
+              <location className="location">
+                <i
+                  style={{ color: "#dcaa14c2" }}
+                  class="bi fs-6 bi-geo-alt-fill"
+                ></i>
+                {eachItem.location}
+              </location>
+              <br />
+              <price className="fs-4 fw-bold ">{eachItem.price}</price>
+              <day className="float-end mt-2 day">
+                <i class="bi bi-calendar2-day-fill fs-6"></i>
+                {eachItem.day}
+              </day>
+              {/* <button className="btn ">Book Now</button> */}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className=" get-overflow  col-12 col-md-12 mt-5 pb-3 justify-content-between">
+        {viewAll.map((eachItem, index) => (
+          <div
+            key={index}
+            // data-aos={eachItem.effect}
+            className={`mx-auto px-md-3 px-2 shadow  rounded py-md-4 py-2 col-md-9 col-12 ${
+              showAllProduct ? "" : "d-none"
+            }`}
           >
             <img
               style={{ height: "35vh" }}

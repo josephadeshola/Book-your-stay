@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import image from "../assets/image/logo.png";
+import Carousel from "./Carousel";
 const Navbar = () => {
   return (
     <div>
@@ -36,7 +37,7 @@ const Navbar = () => {
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
                 <a class="nav-link " href="#">
-                  Services
+                 Book
                 </a>
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
@@ -105,7 +106,7 @@ const Navbar = () => {
                     <Link
                       class="nav-link fw-bold text-light active fs-1"
                       aria-current="page"
-                     to={"/home"}
+                      to={"/home"}
                     >
                       Home
                     </Link>
@@ -134,7 +135,7 @@ const Navbar = () => {
                   <div className="d-flex gap-3">
                     <i class="bi bi-pc-display-horizontal text-light mt-2 fs-1"></i>
                     <a class="nav-link fw-bold text-light fs-1" href="#">
-                      Services
+                     Book
                     </a>
                   </div>
                   <hr className="border border-primary " />
