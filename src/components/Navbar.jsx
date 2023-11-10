@@ -37,7 +37,7 @@ const Navbar = () => {
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
                 <a class="nav-link " href="#">
-                 Book
+                  Book
                 </a>
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
@@ -103,12 +103,12 @@ const Navbar = () => {
                 <li class="nav-item">
                   <div className="d-flex gap-3">
                     <i class="bi bi-house mt-2 fs-1 text-light "></i>
+
                     <Link
-                      class="nav-link fw-bold text-light active fs-1"
-                      aria-current="page"
+                      class="nav-link  fw-bold text-light fs-1"
                       to={"/home"}
                     >
-                      Home
+                      About
                     </Link>
                   </div>
                   <hr className="border border-primary" />
@@ -116,7 +116,10 @@ const Navbar = () => {
                 <li class="nav-item">
                   <div className="d-flex gap-3">
                     <i class="bi bi-file-person mt-2 text-light fs-1"></i>
-                    <Link class="nav-link fw-bold text-light fs-1" to={'/about'}>
+                    <Link
+                      class="nav-link fw-bold text-light fs-1"
+                      to={"/about"}
+                    >
                       About
                     </Link>
                   </div>
@@ -135,7 +138,7 @@ const Navbar = () => {
                   <div className="d-flex gap-3">
                     <i class="bi bi-pc-display-horizontal text-light mt-2 fs-1"></i>
                     <a class="nav-link fw-bold text-light fs-1" href="#">
-                     Book
+                      Book
                     </a>
                   </div>
                   <hr className="border border-primary " />

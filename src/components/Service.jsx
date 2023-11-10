@@ -47,7 +47,7 @@ const Service = () => {
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
-      day: "6Day/5Night",
+      day: "$196 per night",
     },
     {
       image:
@@ -57,7 +57,7 @@ const Service = () => {
       star: "4.8 (45)",
       effect: "zoom-out-down",
       location: "preston Rd. inglewood",
-      day: "6Day/5Night",
+      day: "$257 per night",
     },
     {
       image:
@@ -67,7 +67,7 @@ const Service = () => {
       star: "4.8 (45)",
       effect: "zoom-out-left",
       location: "preston Rd. inglewood",
-      day: "6Day/5Night",
+      day: "$181 per night",
     },
     {
       image:
@@ -77,7 +77,7 @@ const Service = () => {
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
-      day: "6Day/5Night",
+      day: "$116 per night",
     },
     {
       image:
@@ -87,7 +87,7 @@ const Service = () => {
       star: "4.8 (45)",
       effect: "zoom-out-top",
       location: "preston Rd. inglewood",
-      day: "6Day/5Night",
+      day: "$657 per night",
     },
     {
       image:
@@ -97,7 +97,7 @@ const Service = () => {
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
-      day: "6Day/5Night",
+      day: "$157 per night",
     },
     {
       image:
@@ -107,7 +107,7 @@ const Service = () => {
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
-      day: "6Day/5Night",
+      day: "$746 per night",
     },
     {
       image:
@@ -117,12 +117,12 @@ const Service = () => {
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
-      day: "6Day/5Night",
+      day: "$65 per night",
     },
 
     {
       image:
-        "https://img.freepik.com/free-photo/one-king-size-bed-hotel-room_114579-12159.jpg?w=740&t=st=1699614493~exp=1699615093~hmac=c9869c3ad1ccd0443f14be2ad1610d0679c66661149a7ca09d090d69d61e2c48",
+        "https://img.freepik.com/premium-photo/classic-minimalist-bedroom-hotel_377429-342.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       name: "Hazelwood Hotel",
       price: "$930.85",
       star: "4.8 (45)",
