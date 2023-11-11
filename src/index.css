@@ -178,10 +178,8 @@ div.at-container {
   }
 
   .get-overflow {
-    /* overflow-y: scroll; */
-    /* display: flex; */
-    display: grid !important;
-    grid-template-columns: repeat(1,1fr) !important;
+    overflow-y: scroll;
+    display: flex;
     gap: 20px;
   
   }
