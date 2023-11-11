@@ -150,8 +150,48 @@ div.at-container {
   }
 }
 
+@media (max-width: 688px) {
+  * {
+    font-size: 15px;
+  }
 
-@media (max-width:688px) {
+  .home-img {
+    margin-top: 20px;
+    height: 50vh;
+  }
+
+  .move-img {
+    position: absolute;
+    bottom: 250px;
+    text-align: center;
+    font-size: 23px;
+  }
+
+  .p-position {
+    position: absolute;
+    bottom: 170px;
+    text-align: center;
+  }
+
+  .get-overflow {
+    overflow-y: scroll;
+    display: flex;
+    gap: 20px;
+  }
+
+  .get-image {
+    height: 50vh;
+    border-radius: 20px !important;
+  }
+
+  .get-position {
+    position: relative;
+    bottom: 60px;
+    left: 0;
+  }
+}
+
+/* @media (max-width:688px) {
   * {
     font-size: 15px;
   }
@@ -198,4 +238,4 @@ div.at-container {
   }
 
   
-}
+} */
