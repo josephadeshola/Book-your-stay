@@ -107,7 +107,7 @@ const Info = () => {
         </a>
       </div>
 
-      <div className="d-md-flex d-flex get-overflow overflow-y-scroll  col-12 mt-5 pb-3 justify-content-between">
+      <div className="d-md-flex d-flex get-overflow  col-12 mt-5 pb-3 justify-content-between">
         {allServices.map((eachItem) => (
           <div
             data-aos={eachItem.effect}
