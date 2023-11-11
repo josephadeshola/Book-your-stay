@@ -151,7 +151,51 @@ div.at-container {
 }
 
 
-@media (max-width:688px) {
+@media (max-width: 688px) {
+  * {
+    font-size: 15px;
+  }
+
+  .home-img {
+    margin-top: 20px;
+    height: auto; /* Adjust as needed */
+  }
+
+  .move-img,
+  .p-position,
+  .get-position {
+    position: relative;
+    text-align: center;
+  }
+
+  .move-img {
+    bottom: 10%; /* Adjust as needed */
+    font-size: 23px;
+  }
+
+  .p-position {
+    bottom: 7%; /* Adjust as needed */
+  }
+
+  .get-overflow {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+  }
+
+  .get-image {
+    height: auto; /* Adjust as needed */
+    border-radius: 20px !important;
+  }
+
+  .get-position {
+    bottom: 10%; /* Adjust as needed */
+    left: 0;
+  }
+}
+
+/* @media (max-width:688px) {
   * {
     font-size: 15px;
   }
@@ -178,7 +222,7 @@ div.at-container {
   }
 
   .get-overflow {
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
     display: flex;
     gap: 20px;
   
@@ -198,4 +242,4 @@ div.at-container {
   }
 
   
-}
+} */
