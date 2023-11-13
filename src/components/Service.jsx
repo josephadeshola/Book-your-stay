@@ -206,7 +206,7 @@ const Service = () => {
       <div className="d-md-flex d-flex get-overflow col-12 mt-5 pb-3 justify-content-between">
         {allServices.map((eachItem) => (
           <div
-            data-aos={eachItem.effect}
+            // data-aos={eachItem.effect}
             className="mx-auto px-md-3 px-2 shadow  rounded py-md-4 py-2 col-md-3 col-12"
           >
             <img
