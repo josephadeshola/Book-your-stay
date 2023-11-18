@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import image from "../assets/image/logo.png";
+
 const Navbar = () => {
   return (
     <div>
@@ -20,7 +21,7 @@ const Navbar = () => {
           <div className="d-md-block d-none">
             <ul class=" d-flex gap-md-5 mt-3 ">
               <li style={{ listStyle: "none" }} class="nav-item ">
-                <Link class="nav-link" to={"/home"}>
+                <Link class="nav-link" to={"/"}>
                   Home
                 </Link>
               </li>
@@ -105,7 +106,7 @@ const Navbar = () => {
 
                     <Link
                       class="nav-link  fw-bold text-light fs-1"
-                      to={"/home"}
+                      to={"/"}
                     >
                     Home
                     </Link>

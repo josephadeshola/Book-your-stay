@@ -5,7 +5,6 @@ import Carousel from "./Carousel";
 const About = () => {
   return (
     <div>
-      <Navbar />
           <div  id="carouselExampleIndicators" class="carousel col-12 get-margin slide">
             <div  class="carousel-indicators gap-md-4">
               <button

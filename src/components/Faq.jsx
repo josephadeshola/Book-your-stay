@@ -153,7 +153,9 @@ const Faq = () => {
                   alt=""
                 />
 
-                <div data-aos="zoom-out-down" className="py-5 pb-4  get-position bg-light  shadow col-md-6 px-5 rounded">
+                <div 
+                // data-aos="zoom-out-down" 
+                className="py-5 pb-4  get-position bg-light  shadow col-md-6 px-5 rounded">
                   <h1>"</h1>
                   <p>
                     <h5 style={{ color: "rgb(197, 197, 18)" }}>Review</h5>

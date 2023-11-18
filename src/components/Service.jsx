@@ -184,7 +184,9 @@ const Service = () => {
 
   return (
     <div>
-      <div data-aos="zoom-out-right" className="px-md-5 px-3">
+      <div 
+      // data-aos="zoom-out-right"
+       className="px-md-5 px-3">
         <h6 className="mt-5" style={{ color: "#dcaa14c2" }}>
           HOT OFFER
         </h6>
