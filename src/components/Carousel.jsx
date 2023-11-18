@@ -84,21 +84,21 @@ const Carousel = () => {
         className=" py-4 px-5 d-md-flex justify-content-between"
       >
         <div
-          // data-aos="zoom-out-left"
+          data-aos="zoom-out-left"
           className="d-grid text-center fs-md-6 text-light"
         >
           <i class="bi bi-person-video2 mt-2 fs-1  "></i>
           <small>Happy Customer</small>
         </div>
         <div
-          // data-aos="zoom-out-left"
+          data-aos="zoom-out-left"
           className="d-grid text-center fs-md-6 text-light"
         >
           <i class="bi bi-emoji-smile-fill mt-2 fs-1  "></i>
           <small>Best Destination</small>
         </div>
         <div
-          // data-aos="zoom-out-left"
+          data-aos="zoom-out-left"
           className="d-grid text-center fs-md-6 text-light"
         >
           <i class="bi bi-asterisk mt-2 fs-1  "></i>

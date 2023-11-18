@@ -258,7 +258,7 @@ const Service = () => {
         {viewAll.map((eachItem, index) => (
           <div
             key={index}
-            // data-aos={eachItem.effect}
+            data-aos={eachItem.effect}
             className={`mx-auto px-md-3 px-2 shadow  rounded py-md-4 py-2 col-md-9 col-12 ${
               showAllProduct ? "" : "d-none"
             }`}

@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+
 
 const Faq = () => {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+    duration: 800
+    });
+  }, []);
   return (
     <div>
       <div className="container">
@@ -154,7 +163,7 @@ const Faq = () => {
                 />
 
                 <div 
-                // data-aos="zoom-out-down" 
+                data-aos="zoom-out-down" 
                 className="py-5 pb-4  get-position bg-light  shadow col-md-6 px-5 rounded">
                   <h1>"</h1>
                   <p>
