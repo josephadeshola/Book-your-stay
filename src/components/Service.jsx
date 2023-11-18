@@ -1,6 +1,14 @@
-import React, { useState } from "react";
-
+import React, { useState,useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 const Service = () => {
+
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+    duration: 800
+    });
+  }, []);
   let allServices = [
     {
       image:
@@ -185,7 +193,7 @@ const Service = () => {
   return (
     <div>
       <div 
-      // data-aos="zoom-out-right"
+      data-aos="zoom-out-right"
        className="px-md-5 px-3">
         <h6 className="mt-5" style={{ color: "#dcaa14c2" }}>
           HOT OFFER
@@ -208,7 +216,7 @@ const Service = () => {
       <div className="d-md-flex d-flex get-overflow col-12 mt-5 pb-3 justify-content-between">
         {allServices.map((eachItem) => (
           <div
-            // data-aos={eachItem.effect}
+            data-aos={eachItem.effect}
             className="mx-auto px-md-3 px-2 shadow  rounded py-md-4 py-2 col-md-3 col-12"
           >
             <img
