@@ -1,7 +1,10 @@
 * {
     font-size: 14px;
   }
-  
+  .navbar-toggler{
+   
+    border:none;
+  }
   .get-img {
     height: 60px;
   }
