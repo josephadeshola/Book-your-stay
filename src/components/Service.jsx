@@ -226,7 +226,11 @@ const Service = () => {
               alt=""
             />
             <div className="mt-4 px-md-0 px-3 pb-3">
+              {/* <div className="d-grid"> */}
+
+              {/* <button className="btn w-50 text-center py-2">Book Now</button> */}
               <name className="mt-3">{eachItem.name}</name>
+              {/* </div> */}
               <star className="float-end star mt-2">
                 <i
                   style={{ color: "#dcaa14c2" }}

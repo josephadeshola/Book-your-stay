@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css'
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Faq = () => {
   useEffect(() => {
     AOS.init({
       offset: 200,
-    duration: 800
+      duration: 800,
     });
   }, []);
   return (
@@ -162,13 +161,14 @@ const Faq = () => {
                   alt=""
                 />
 
-                <div 
-                data-aos="zoom-out-down" 
-                className="py-5 pb-4  get-position bg-light  shadow col-md-6 px-5 rounded">
-                  <h1>"</h1>
+                <div
+                  data-aos="zoom-out-down"
+                  className="py-5 pb-4  get-position bg-light shadow col-md-6 px-5 rounded"
+                >
+                  <h6>"</h6>
                   <p>
-                    <h5 style={{ color: "rgb(197, 197, 18)" }}>Review</h5>
-                    i really enjoyed the booking hotels from Named. With easy
+                    <h5 style={{ color: "rgb(197, 197, 18)" }}>Review</h5>i
+                    really enjoyed the booking hotels from Named. With easy
                     booking step, i can think about my other holiday preparation
                   </p>
                   <b>Brooklyn Simmons</b>
