@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css'
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Info = () => {
   useEffect(() => {
     AOS.init({
       offset: 200,
-    duration: 800
+      duration: 800,
     });
   }, []);
   let allServices = [
@@ -45,17 +44,18 @@ const Info = () => {
 
   return (
     <div>
-    
       <div className="container">
         <div className="row">
-           <div  data-aos="zoom-out-left"  className="mt-5 d-md-flex justify-content-between">
+          <div
+            data-aos="zoom-out-left"
+            className="mt-5 d-md-flex justify-content-between"
+          >
             <img
               className="get-h col-md-5 col-12 rounded"
               src="https://img.freepik.com/free-photo/full-shot-man-carrying-baggage_23-2149963942.jpg?w=740&t=st=1698924057~exp=1698924657~hmac=aa4b9d54a4e384824424d02f60ce09f3588c1b68f043b4700c6d442fd9f5548f"
               alt=""
             />
-            <div  className="col-md-6 " data-aos="zoom-out-right">
-                 
+            <div className="col-md-6 " data-aos="zoom-out-right">
               <h6 style={{ color: "#dcaa14c2" }} className="mt-5">
                 BENEFIT
               </h6>
@@ -97,8 +97,8 @@ const Info = () => {
           </div>
         </div>
       </div>
-    
-      <div   data-aos="zoom-out-right" className="px-md-5 px-3">
+
+      <div data-aos="zoom-out-right" className="px-md-5 px-3">
         <h6 className="mt-5" style={{ color: "#dcaa14c2" }}>
           RECOMMENDED HOTEL
         </h6>
@@ -119,8 +119,8 @@ const Info = () => {
       <div className="d-md-flex d-flex get-overflow  col-12 mt-5 pb-3 justify-content-between">
         {allServices.map((eachItem) => (
           <div
-          data-aos={eachItem.effect}
-          className="mx-auto px-md-3 px-2 shadow  rounded py-md-4 py-2 col-md-3 col-12"
+            data-aos={eachItem.effect}
+            className="mx-auto px-md-3 px-2 shadow  rounded py-md-4 py-2 col-md-3 col-12"
           >
             <img
               style={{ height: "35vh" }}
@@ -129,7 +129,10 @@ const Info = () => {
               alt=""
             />
             <div className="mt-4 px-md-0 px-3 pb-3">
-              <name className="mt-3">{eachItem.name}</name>
+              <div className="d-grid">
+                <button className="btn w-50 text-center py-2">Book Now</button>
+                <name className="mt-3">{eachItem.name}</name>
+              </div>
               <star className="float-end star mt-2">
                 <i
                   style={{ color: "#dcaa14c2" }}
@@ -156,7 +159,6 @@ const Info = () => {
         ))}
       </div>
     </div>
-    
   );
 };
 

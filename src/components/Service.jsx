@@ -1,12 +1,11 @@
-import React, { useState,useEffect } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css'
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Service = () => {
-
   useEffect(() => {
     AOS.init({
       offset: 200,
-    duration: 800
+      duration: 800,
     });
   }, []);
   let allServices = [
@@ -49,7 +48,7 @@ const Service = () => {
   let viewAll = [
     {
       image:
-      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60", 
+        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
       name: "Hazelwood Hotel",
       price: "$930.85",
       star: "4.8 (45)",
@@ -192,9 +191,7 @@ const Service = () => {
 
   return (
     <div>
-      <div 
-      data-aos="zoom-out-right"
-       className="px-md-5 px-3">
+      <div data-aos="zoom-out-right" className="px-md-5 px-3">
         <h6 className="mt-5" style={{ color: "#dcaa14c2" }}>
           HOT OFFER
         </h6>
@@ -227,9 +224,8 @@ const Service = () => {
             />
             <div className="mt-4 px-md-0 px-3 pb-3">
               <div className="d-grid">
-
-              <button className="btn w-50 text-center py-2">Book Now</button>
-              <name className="mt-3">{eachItem.name}</name>
+                <button className="btn w-50 text-center py-2">Book Now</button>
+                <name className="mt-3">{eachItem.name}</name>
               </div>
               <star className="float-end star mt-2">
                 <i
@@ -252,7 +248,6 @@ const Service = () => {
                 <i class="bi bi-calendar2-day-fill fs-6"></i>
                 {eachItem.day}
               </day>
-              {/* <button className="btn ">Book Now</button> */}
             </div>
           </div>
         ))}
@@ -274,7 +269,10 @@ const Service = () => {
               alt=""
             />
             <div className="mt-4 px-md-0 px-3 pb-3">
-              <name className="mt-3">{eachItem.name}</name>
+              <div className="d-grid">
+                <button className="btn w-50 text-center py-2">Book Now</button>
+                <name className="mt-3">{eachItem.name}</name>
+              </div>
               <star className="float-end star mt-2">
                 <i
                   style={{ color: "#dcaa14c2" }}
