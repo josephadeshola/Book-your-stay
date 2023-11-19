@@ -10,7 +10,7 @@ const Carousel = () => {
         <div class="carousel-inner ">
           <div class="carousel-item active">
             <img
-              src="https://img.freepik.com/free-photo/beautiful-silhouette-palm-tree-with-umbrella-chair_74190-2099.jpg?w=740&t=st=1698859882~exp=1698860482~hmac=f1f69d92e841ead1256a2b2c7cc54eaf44c5de0910ea5ceb8dad7491dceb15fa"
+              src="https://img.freepik.com/premium-photo/interior-hotel-long-corridor-with-striped-walkway_164357-8546.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais"
               class="d-block w-100 home-img"
               alt="..."
             />

@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const About = () => {
   return (
     <div>
@@ -33,28 +32,25 @@ const About = () => {
             aria-label="Slide 3"
           ></button>
         </div>
-        
-        <div
-          // style={{ height: "50vh",}}
-          class="new-high carousel-inner"
-        >
+
+        <div class="new-high carousel-inner">
           <div class=" get-height carousel-item active">
             <img
-              src="https://img.freepik.com/free-photo/outdoor-blue-health-travel-leisure_1203-4670.jpg?w=740&t=st=1700291184~exp=1700291784~hmac=a8fb03531183171d1a79cadf99c868280f6c48fd1ec8e37adfeeb04b5369c912"
+              src="https://img.freepik.com/free-photo/room-with-blue-wall-white-ceiling-with-light-it_1340-37650.jpg?t=st=1700408879~exp=1700412479~hmac=524592f73205d21cb48784e183d2bdeb24c125126271495bc4fd6a9817860e72&w=740"
               class="imgHeight  d-block w-100"
               alt="..."
             />
           </div>
           <div class="carousel-item">
             <img
-              src="https://img.freepik.com/free-photo/type-entertainment-complex-popular-resort-with-pools-water-parks-turkey-with-more-than-5-million-visitors-year-amara-dolce-vita-luxury-hotel-resort-tekirova-kemer_146671-18728.jpg?w=740&t=st=1700281706~exp=1700282306~hmac=ddd4a936d3092450166da992c4f051650cd25e9f8992968adf74ea41059357f7"
+              src="https://img.freepik.com/premium-photo/cafe-interior-with-tables-chairs-sunsetgenerative-ai_841229-2495.jpg?w=740"
               class="imgHeight d-block w-100"
               alt="..."
             />
           </div>
           <div class="carousel-item">
             <img
-              src="https://img.freepik.com/free-photo/receptionists-elegant-suits-during-work-hours_23-2149714407.jpg?w=740&t=st=1699619717~exp=1699620317~hmac=6b7378566ea42e6ca5eef5b6c8a463cf5ffa9caeb9288e76737d35aacddab4a0"
+              src="https://img.freepik.com/premium-photo/empty-hotel-lobby_693838-1192.jpg?w=740"
               class="imgHeight d-block w-100"
               alt="..."
             />
@@ -62,10 +58,11 @@ const About = () => {
         </div>
 
         <div className="about-position text-center position-absolute">
-          <h1 className="about-h1">
-           About Our Hotel
-          </h1>
-         <p className="p-about"> Experience Luxury, Comfort, and Exceptional Service</p>
+          <h1 className="about-h1 text-light">About Our Hotel</h1>
+          <p className="p-about text-light">
+            {" "}
+            Experience Luxury, Comfort, and Exceptional Service
+          </p>
         </div>
 
         <button
@@ -76,7 +73,7 @@ const About = () => {
         >
           <span
             style={{ borderRadius: "50px" }}
-            class="carousel-control-prev-icon  bg-warning  py-3  py-md-4 px-3  px-md-4"
+            class="carousel-control-prev-icon  bg-dark py-3  py-md-4 px-3  px-md-4"
             aria-hidden="true"
           ></span>
           <span class="visually-hidden">Previous</span>
@@ -89,12 +86,113 @@ const About = () => {
         >
           <span
             style={{ borderRadius: "50px" }}
-            class="carousel-control-next-icon  bg-warning  py-3  py-md-4 px-3  px-md-4"
+            class="carousel-control-next-icon  bg-dark  py-3  py-md-4 px-3  px-md-4"
             aria-hidden="true"
           ></span>
-          <span class="visually-hidden">Next</span>
+          <span class="visually-hidden ">Next</span>
         </button>
       </div>
+
+      <section className="about">
+        <div className="container-fluid">
+          <div className="row mt-md-5 px-md-5 py-md-5 ">
+            <div className="col-md-6 col-12">
+              <div>
+                <img
+                  className="col-12 rounded col-md-9"
+                  src="https://mediacity.co.in/riorelax/static/media/about_img_02.7e903ba6dfa05e8fba95.png"
+                  alt=""
+                />
+                <img
+                  className="col-6 imgPosition col-md-7"
+                  src="https://mediacity.co.in/riorelax/static/media/about_img_03.1c5c297b3a2fd0ad6b03.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="col-md-6 get-sm-m col-12">
+              <h5 className="about_h5"> About Us</h5>
+              <h1 className="about_h1"> Most Safe & Rated Hotel In London.</h1>
+              <p>
+                Welcome to Our Hotel, Experience a world of comfort and luxury
+                at our elegant hotel. With stunning views, exceptional service,
+                and top-notch amenities, your stay with us will be truly
+                unforgettable.
+              </p>
+              <p>
+                Fine Dining Experience, Indulge your senses in a culinary
+                journey like no other. Our talented chefs craft exquisite dishes
+                that blend local flavors with international cuisine, ensuring an
+                unforgettable dining experience.
+              </p>
+              <div
+                className=""
+                style={{ color: "#673624f7", fontWeight: "500" }}
+              >
+                <div className="d-flex gap-2">
+                  <i class="bi bi-check2"></i>
+                  <p>24 Month / 24,000km Nationwide Warranty monotone</p>
+                </div>
+                <div className="d-flex gap-2">
+                  <i class="bi bi-check2"></i>
+                  <p>
+                    Curabitur dapibus nisl a urna congue, in pharetra urna
+                    accumsan.
+                  </p>
+                </div>
+                <div className="d-flex gap-2">
+                  <i class="bi bi-check2"></i>
+                  <p>Customer Rewards Program and excellent technology</p>
+                </div>
+              </div>
+              <button className="btn py-3 px-4 fw-bold">Discover More</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="resort">
+        <div className="container-fluid">
+          <div className="row mt-md-0 mt-5 px-md-5 py-md-5 ">
+            <div className="col-md-6 col-12">
+              <div>
+                <img
+                  className="col-12 get_height rounded col-md-9"
+                  src="https://mediacity.co.in/riorelax/static/media/feature.19e9aa21add79eabff7d.png"
+                  alt=""
+                />
+                <img
+                  className="col-6 imgPosition col-md-7"
+                  src="https://mediacity.co.in/riorelax/static/media/about_img_03.1c5c297b3a2fd0ad6b03.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="col-md-6 get-sm-m col-12">
+              <h5 className="about_h5">Luxury Hotel & Resort</h5>
+              <h1 className="about_h1">Pearl Of The Adriatic.</h1>
+              <p>
+                Welcome to Our Hotel, Experience a world of comfort and luxury
+                at our elegant hotel. With stunning views, exceptional service,
+                and top-notch amenities, your stay with us will be truly
+                unforgettable.
+              </p>
+              <p>
+                Fine Dining Experience, Indulge your senses in a culinary
+                journey like no other. Our talented chefs craft exquisite dishes
+                that blend local flavors with international cuisine, ensuring an
+                unforgettable dining experience.
+              </p>
+              <button className="btn py-3 px-4 fw-bold">Discover More</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="blog">
+        <div>
+          <h5>Our Blog</h5>
+          <h3>Latest Blog & News</h3>
+        </div>
+      </section>
     </div>
   );
 };

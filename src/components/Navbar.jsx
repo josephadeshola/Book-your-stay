@@ -6,8 +6,8 @@ const Navbar = () => {
   return (
     <div>
       <nav
-        style={{ backgroundColor: "white" }}
-        class="navbar fixed-top px-md-3"
+        style={{ backgroundColor: "white"}}
+        class="navbar shadow fixed-top py-1 px-md-3"
       >
         <div class="container-fluid">
           <a class="navbar-brand get-font" href="#">

@@ -214,11 +214,11 @@ const Service = () => {
         {allServices.map((eachItem) => (
           <div
             data-aos={eachItem.effect}
-            className="mx-auto px-md-3 px-2 shadow  rounded py-md-4 py-2 col-md-3 col-12"
+            className="mx-auto px-md-3 px-2 img-container shadow  rounded py-md-4 py-2 col-md-3 col-12"
           >
             <img
               style={{ height: "35vh" }}
-              className="col-md-12 col-12 rounded mx-auto"
+              className="col-md-12 get col-12 rounded mx-auto"
               src={eachItem.image}
               alt=""
             />
