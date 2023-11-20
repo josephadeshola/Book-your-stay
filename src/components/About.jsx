@@ -1,5 +1,5 @@
 import React from "react";
-
+import Footer from "./Footer"
 const About = () => {
   return (
     <div>
@@ -95,9 +95,9 @@ const About = () => {
 
       <section className="about">
         <div className="container-fluid">
-          <div className="row mt-md-5 px-md-5 py-md-5 ">
+          <div className="row mt-md-5 px-md-5 ">
             <div className="col-md-6 col-12">
-              <div>
+              <div className="d-md-flex d-flex">
                 <img
                   className="col-12 rounded col-md-9"
                   src="https://mediacity.co.in/riorelax/static/media/about_img_02.7e903ba6dfa05e8fba95.png"
@@ -110,7 +110,7 @@ const About = () => {
                 />
               </div>
             </div>
-            <div className="col-md-6 get-sm-m col-12">
+            <div className="col-md-6 mt-md-0  mt-5 col-12">
               <h5 className="about_h5"> About Us</h5>
               <h1 className="about_h1"> Most Safe & Rated Hotel In London.</h1>
               <p>
@@ -152,22 +152,22 @@ const About = () => {
       </section>
       <section className="resort">
         <div className="container-fluid">
-          <div className="row mt-md-0 mt-5 px-md-5 py-md-5 ">
+          <div className="row mt-md-5 py-5 mt-5 px-md-5 py-md-5 ">
             <div className="col-md-6 col-12">
-              <div>
+              <div className="d-md-flex d-flex">
                 <img
                   className="col-12 get_height rounded col-md-9"
                   src="https://mediacity.co.in/riorelax/static/media/feature.19e9aa21add79eabff7d.png"
                   alt=""
                 />
                 <img
-                  className="col-6 imgPosition col-md-7"
+                  className="col-6 imgPosition2 col-md-7"
                   src="https://mediacity.co.in/riorelax/static/media/about_img_03.1c5c297b3a2fd0ad6b03.png"
                   alt=""
                 />
               </div>
             </div>
-            <div className="col-md-6 get-sm-m col-12">
+            <div className="col-md-6 mt-5 col-12">
               <h5 className="about_h5">Luxury Hotel & Resort</h5>
               <h1 className="about_h1">Pearl Of The Adriatic.</h1>
               <p>
@@ -188,10 +188,18 @@ const About = () => {
         </div>
       </section>
       <section className="blog">
-        <div>
-          <h5>Our Blog</h5>
-          <h3>Latest Blog & News</h3>
+        <div  style={{backgroundColor:"#c1bebe61"}} className="text-center container-fluid py-5 ">
+       <h5 className="mt-4">Newsletter</h5>
+       <h1> Get Best Offers On The Hotel</h1>
+        <p className="col-12 "> With the subscription, enjoy your favourite Hotels without having to think about it</p> 
+        <div className="d-md-flex col-12 justify-content-center pb-5 text-center">
+          <input type="text" className="py-3 col-md-4 col-8 rounded bg-light shadow border border-none" placeholder="Your Email Address" />
+          <button className="btn py-md-3 py-3 px-1 px-md-4">SUBSCRIBE NOW</button>
         </div>
+        </div>
+      </section>
+      <section>
+        <Footer/>
       </section>
     </div>
   );

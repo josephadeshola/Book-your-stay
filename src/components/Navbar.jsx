@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import image from "../assets/image/logo.png";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div>
       <nav
@@ -10,13 +10,13 @@ const Navbar = () => {
         class="navbar shadow fixed-top py-1 px-md-3"
       >
         <div class="container-fluid">
-          <a class="navbar-brand get-font" href="#">
+          <Link class="navbar-brand get-font" to="/">
             <img className="get-img" src={image} alt="" />
             <b>
               <span style={{ color: "#dcaa14c2" }}>D</span>O{" "}
               <span style={{ color: "#dcaa14c2" }}>R</span>C
             </b>
-          </a>
+          </Link>
 
           <div className="d-md-block d-none">
             <ul class=" d-flex gap-md-5 mt-3 ">

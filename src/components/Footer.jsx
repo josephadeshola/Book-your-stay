@@ -65,8 +65,17 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <hr className="text-light bg-light border border-1"/>
-           <p className="text-secondary text-center">@ copyright 2023 hotel. All rights reserved</p>
+            <hr className="text-light bg-light border border-1" />
+            <div className="d-md-flex justify-content-between pb-md-0 pb-2">
+              <p className="text-secondary mt-3 text-center">
+                @ copyright 2023 hotel. All rights reserved
+              </p>
+              <div className="d-flex justify-content-center gap-4">
+                <i class="bi px-2 rounded py-1 fs-2 bi-twitter"></i>
+                <i class="bi px-2 rounded py-1 fs-2 bi-instagram"></i>
+                <i class="bi px-2 rounded py-1 fs-2 bi-facebook"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
