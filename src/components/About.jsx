@@ -168,7 +168,7 @@ const About = () => {
               </div>
             </div>
             <div className="col-md-6 mt-5 col-12">
-              <h5 className="about_h5">Luxury Hotel & Resort</h5>
+              <h5 className="about_h5 mt-md-0 mt-4">Luxury Hotel & Resort</h5>
               <h1 className="about_h1">Pearl Of The Adriatic.</h1>
               <p>
                 Welcome to Our Hotel, Experience a world of comfort and luxury
