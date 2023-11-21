@@ -8,6 +8,7 @@ const Service = () => {
       duration: 800,
     });
   }, []);
+
   let allServices = [
     {
       image:
@@ -191,6 +192,126 @@ const Service = () => {
 
   return (
     <div>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog col-12">
+          <div class="modal-content">
+            <div class="modal-header ">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                BOOKING FORM
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body w-100">
+              <div className="d-md-flex col-12 gap-2 justify-content-between ">
+                <div>
+                  <div>
+                    <label htmlFor="" className="mt-3 pb-3">
+                      <i class="bi bi-patch-check"></i> Check In Date
+                    </label>
+                    <input
+                      type="datetime-local"
+                      placeholder=""
+                      className="col-12  py-3 my_modal shadow px-2"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="" className="mt-3 ">
+                      <i class="bi bi-people"></i> Adults
+                    </label>
+                    <select
+                      type="text"
+                      placeholder=""
+                      className="col-12  py-3 my_modal  mt-3 shadow px-2"
+                      name=""
+                      id=""
+                    >
+                      <option value="">Adults</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="" className="mt-3">
+                      <i class="bi bi-hospital"></i> Room
+                    </label>
+                    <select
+                      type="text"
+                      placeholder=""
+                      className="col-12  py-3 my_modal  mt-3 shadow px-2"
+                      name=""
+                      id=""
+                    >
+                      <option value="">Room</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <label htmlFor="" className="mt-3 pb-3">
+                      <i class="bi bi-x-octagon"></i> Check Out Date
+                    </label>
+                    <input
+                      type="datetime-local"
+                      placeholder=""
+                      className="col-12  py-3 my_modal  shadow px-2"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="" className="mt-3">
+                      <i class="bi bi-diagram-2"></i> Child
+                    </label>
+                    <select
+                      type="text"
+                      placeholder=""
+                      className="col-12  py-3 my_modal  mt-3 shadow px-2"
+                      name=""
+                      id=""
+                    >
+                      <option value="">Child</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div data-aos="zoom-out-right" className="px-md-5 px-3">
         <h6 className="mt-5" style={{ color: "#dcaa14c2" }}>
           HOT OFFER
@@ -203,7 +324,7 @@ const Service = () => {
 
         <a
           style={{ color: "#dcaa14c2", cursor: "pointer" }}
-          className="float-end text-decoration-none "
+          className="px-2 py-1 rounded float-end get_shadow text-decoration-none "
           onClick={handleviewAll}
         >
           View all
@@ -224,7 +345,13 @@ const Service = () => {
             />
             <div className="mt-4 px-md-0 px-3 pb-3">
               <div className="d-grid">
-                <button className="btn w-50 text-center py-2">Book Now</button>
+                <button
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  className="btn w-50 rounded text-center py-2"
+                >
+                  Book Now
+                </button>
                 <name className="mt-3">{eachItem.name}</name>
               </div>
               <star className="float-end star mt-2">
@@ -270,7 +397,13 @@ const Service = () => {
             />
             <div className="mt-4 px-md-0 px-3 pb-3">
               <div className="d-grid">
-                <button className="btn w-50 text-center py-2">Book Now</button>
+                <button
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  className="btn w-50 rounded text-center py-2"
+                >
+                  Book Now
+                </button>
                 <name className="mt-3">{eachItem.name}</name>
               </div>
               <star className="float-end star mt-2">

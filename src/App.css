@@ -144,8 +144,18 @@ div.at-container {
   color: white;
   cursor: pointer;
 } 
+.get_shadow:hover{
+  background-color: #dcaa14c2;
+  color: white !important;
+  box-shadow: 0 0 10px rgb(197, 197, 18)!important;
 
+}
 
+/* modal style */
+.my_modal{
+ border: 1px solid #dcaa14c2;
+
+}
 
 @keyframes bounce-top {
 
