@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
+import DisplayRoom from "./DisplayRooms";
+
 const Service = () => {
   useEffect(() => {
     AOS.init({
@@ -9,11 +12,32 @@ const Service = () => {
     });
   }, []);
 
+  const [selectedRoom, setSelectedRoom] = useState(null);
+  const [openOption, setOpenOption] = useState(false);
+  const [options, setOptions] = useState({
+    adult: 1,
+    children: 0,
+    room: 1,
+  });
+
+  const handleOption = (name, operation) => {
+    setOptions((prev) => {
+      return {
+        ...prev,
+        [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
+      };
+    });
+  };
+  // const handleBookNow = (room) => {
+  //   setSelectedRoom(room);
+  
+  // };
   let allServices = [
     {
       image:
         "https://img.freepik.com/free-photo/dining-terrace-open-restaurant-with-sofas-chairs-tables_114579-2728.jpg?w=740&t=st=1698871489~exp=1698872089~hmac=1945f04efb7990150257482e024a4c4616c9a2094b41cfbf605bcde21331d375",
       name: "Venice Hotel",
+      id: "1",
       price: "$750.35",
       star: "4.8 (45)",
       effect: "zoom-out-down",
@@ -25,6 +49,7 @@ const Service = () => {
         "https://img.freepik.com/free-photo/beautiful-sky-orchid-water-outdoor_1203-5205.jpg?w=740&t=st=1698871624~exp=1698872224~hmac=eda0fd8a95a80cd1a1094e23fc8042d4a77d8c245af0035186d679b08ca617de",
       name: "Cedar Point",
       price: "$830.75",
+      id: "2",
       star: "4.8 (45)",
       effect: "zoom-out-left",
       location: "6391 Elgin St.Celina",
@@ -35,12 +60,14 @@ const Service = () => {
         "https://img.freepik.com/free-photo/white-sky-umbrella-nobody-party_1203-4522.jpg?2&w=740&t=st=1698872266~exp=1698872866~hmac=43f0185d30af577e0d597a22b3061382644b0f25e3baf765e8b0b1020591cbb9",
       name: "Hazelwood Hotel",
       price: "$930.85",
+      id: "3",
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
       day: "6Day/5Night",
     },
   ];
+
   const [showAllProduct, setShowAllProduct] = useState(false);
   const handleviewAll = () => {
     setShowAllProduct(true);
@@ -52,6 +79,7 @@ const Service = () => {
         "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
       name: "Hazelwood Hotel",
       price: "$930.85",
+      id: "4",
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
@@ -62,6 +90,7 @@ const Service = () => {
         "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
       name: "Hazelwood Hotel",
       price: "$930.85",
+      id: "5",
       star: "4.8 (45)",
       effect: "zoom-out-down",
       location: "preston Rd. inglewood",
@@ -72,6 +101,7 @@ const Service = () => {
         "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
       name: "Hazelwood Hotel",
       price: "$930.85",
+      id: "6",
       star: "4.8 (45)",
       effect: "zoom-out-left",
       location: "preston Rd. inglewood",
@@ -82,6 +112,7 @@ const Service = () => {
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
       name: "Hazelwood Hotel",
       price: "$930.85",
+      id: "7",
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
@@ -92,6 +123,7 @@ const Service = () => {
         "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
       name: "Hazelwood Hotel",
       price: "$930.85",
+      id: "8",
       star: "4.8 (45)",
       effect: "zoom-out-top",
       location: "preston Rd. inglewood",
@@ -102,6 +134,7 @@ const Service = () => {
         "https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
       name: "Hazelwood Hotel",
       price: "$930.85",
+      id: "9",
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
@@ -112,6 +145,7 @@ const Service = () => {
         "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsJTIwcm9vbXxlbnwwfDB8MHx8fDI%3D&auto=format&fit=crop&w=400&q=60",
       name: "Hazelwood Hotel",
       price: "$930.85",
+      id: "10",
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
@@ -122,6 +156,7 @@ const Service = () => {
         "https://images.unsplash.com/photo-1630660664869-c9d3cc676880?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdGVsJTIwcm9vbXxlbnwwfDB8MHx8fDI%3D%3D&auto=format&fit=crop&w=400&q=60",
       name: "Hazelwood Hotel",
       price: "$930.85",
+      id: "11",
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
@@ -133,6 +168,7 @@ const Service = () => {
         "https://img.freepik.com/premium-photo/classic-minimalist-bedroom-hotel_377429-342.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       name: "Hazelwood Hotel",
       price: "$930.85",
+      id: "12",
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
@@ -143,6 +179,7 @@ const Service = () => {
         "https://img.freepik.com/free-photo/tidy-hotel-room-with-brown-curtains_1203-1493.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       name: "Hazelwood Hotel",
       price: "$930.85",
+      id: "13",
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
@@ -153,6 +190,7 @@ const Service = () => {
         "https://img.freepik.com/free-photo/elegant-hotel-room-with-big-bed_1203-1494.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       name: "Hazelwood Hotel",
       price: "$930.85",
+      id: "14",
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
@@ -163,6 +201,7 @@ const Service = () => {
         "https://img.freepik.com/free-photo/pillow-bed_74190-6244.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais  ",
       name: "Hazelwood Hotel",
       price: "$930.85",
+      id: "15",
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
@@ -173,6 +212,7 @@ const Service = () => {
         "https://img.freepik.com/premium-photo/interior-hotel-bedroom-with-double-bed-generative-ai_629315-11308.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       name: "Hazelwood Hotel",
       price: "$930.85",
+      id: "16",
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
@@ -183,6 +223,7 @@ const Service = () => {
         "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1822.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       name: "Hazelwood Hotel",
       price: "$930.85",
+      id: "17",
       star: "4.8 (45)",
       effect: "zoom-out-right",
       location: "preston Rd. inglewood",
@@ -225,25 +266,7 @@ const Service = () => {
                       className="col-12  py-3 my_modal shadow px-2"
                     />
                   </div>
-                  <div>
-                    <label htmlFor="" className="mt-3 ">
-                      <i class="bi bi-people"></i> Adults
-                    </label>
-                    <select
-                      type="text"
-                      placeholder=""
-                      className="col-12  py-3 my_modal  mt-3 shadow px-2"
-                      name=""
-                      id=""
-                    >
-                      <option value="">Adults</option>
-                      <option value="">1</option>
-                      <option value="">2</option>
-                      <option value="">3</option>
-                      <option value="">4</option>
-                      <option value="">5</option>
-                    </select>
-                  </div>
+
                   <div>
                     <label htmlFor="" className="mt-3">
                       <i class="bi bi-hospital"></i> Room
@@ -276,23 +299,32 @@ const Service = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="" className="mt-3">
-                      <i class="bi bi-diagram-2"></i> Child
+                    <label htmlFor="" className="mt-3 ">
+                      <i class="bi bi-people"></i> Adults
                     </label>
-                    <select
-                      type="text"
-                      placeholder=""
-                      className="col-12  py-3 my_modal  mt-3 shadow px-2"
-                      name=""
-                      id=""
-                    >
-                      <option value="">Child</option>
-                      <option value="">1</option>
-                      <option value="">2</option>
-                      <option value="">3</option>
-                      <option value="">4</option>
-                      <option value="">5</option>
-                    </select>
+                    <div className="headerSearchItem">
+                      <div onClick={()=>setOpenOption(!openOption)} className="headerSearchText col-12  py-3  my_modal mt-3 shadow px-2">{`${options.adult} adult . ${options.children} children . ${options.room} room`}</div>
+                        {openOption  &&  <div className="options shadow px-2 py-2">
+                        <div className="optionItem mt-3 d-flex justify-content-between text-center">
+                          <span className="optionText">Adult</span>
+                          <button className="optionCounterButton ms-3 border border-warning bg-light rounded px-3" disabled={options.adult <= 1} onClick={()=>handleOption("adult", "d")}>-</button>
+                          <span className="optionCounterNumber">{options.adult}</span>
+                          <button className="optionCounterButton border border-warning bg-light rounded px-3" disabled={options.childrqqen <= 0} onClick={()=>handleOption("adult", "i")}>+</button>
+                        </div>
+                        <div className="optionItem mt-3 d-flex justify-content-between text-center">
+                          <span className="optionText">children</span>
+                          <button className="optionCounterButton border border-warning bg-light rounded px-3"  disabled={options.room <= 1}  onClick={()=>handleOption("children", "d")}>-</button>
+                          <span className="optionCounterNumber">{options.children}</span>
+                          <button className="optionCounterButton border border-warning bg-light rounded px-3"  onClick={()=>handleOption("children", "i")}>+</button>
+                        </div>
+                        <div className="optionItem mt-3 d-flex justify-content-between text-center">
+                          <span className="optionText">Room</span>
+                          <button className="optionCounterButton ms-3 border border-warning bg-light rounded px-3"  onClick={()=>handleOption("room", "d")}>-</button>
+                          <span className="optionCounterNumber">{options.room}</span>
+                          <button className="optionCounterButton border border-warning bg-light rounded px-3"  onClick={()=>handleOption("room", "i")}>+</button>
+                        </div>
+                      </div>}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -300,13 +332,23 @@ const Service = () => {
             <div class="modal-footer">
               <button
                 type="button"
-                class="btn btn-secondary"
+                class="btn py-3 btn-secondary"
                 data-bs-dismiss="modal"
               >
                 Close
               </button>
-              <button type="button" class="btn btn-primary">
-                Save changes
+              <button
+                type="button"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                class="py-3 btn btn-primary"
+              >
+                <Link
+                  className="text-decoration-none text-light"
+                  to="/disrooms"
+                >
+                  CHECK AVAILABILITY
+                </Link>
               </button>
             </div>
           </div>
@@ -336,6 +378,7 @@ const Service = () => {
           <div
             data-aos={eachItem.effect}
             className="mx-auto px-md-3 px-2 img-container shadow  rounded py-md-4 py-2 col-md-3 col-12"
+            key={eachItem.id}
           >
             <img
               style={{ height: "35vh" }}
@@ -345,13 +388,20 @@ const Service = () => {
             />
             <div className="mt-4 px-md-0 px-3 pb-3">
               <div className="d-grid">
-                <button
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
-                  className="btn w-50 rounded text-center py-2"
-                >
-                  Book Now
-                </button>
+                {/* <Link
+                  className="text-decoration-none text-dark"
+                  // to={`/rooms/${eachItem.id}`}
+                > */}
+                  <button
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    className="btn w-50 rounded text-center py-2"
+                    // onClick={() => handleBookNow(eachItem)}
+                  >
+                    Book Now
+                  </button>
+                {/* </Link> */}
+
                 <name className="mt-3">{eachItem.name}</name>
               </div>
               <star className="float-end star mt-2">
@@ -379,7 +429,7 @@ const Service = () => {
           </div>
         ))}
       </div>
-
+      {/* {selectedRoom && <DisplayRoom room={selectedRoom} />} */}
       <div className=" get-overflow  col-12 col-md-12 mt-5 pb-3 justify-content-between">
         {viewAll.map((eachItem, index) => (
           <div

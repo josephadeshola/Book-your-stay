@@ -284,6 +284,15 @@ div.at-container {
   font-weight: 600;
   color: rgb(128, 117, 117);
 }
+.gievMarfhf{
+  margin-top: 10pc;
+}
+.getOption{
+  height: 50vh;
+}
+.optionCounterButton :disabled{
+  cursor:  not-allowed;
+}
 @media (max-width:688px) {
   * {
     font-size: 15px;
