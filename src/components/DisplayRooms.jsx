@@ -1,56 +1,111 @@
-// import React, { useEffect, useState } from 'react';
-// import { useLocation } from 'react-router';
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './displayroom.css'
 
 
 const DisplayRooms = () => {
-  // const location = useLocation()
-  // console.log(location);
+  const location = useLocation()
+  console.log(location);
+  const [checkOut, setCheckOut] = useState(location.state.getDate.checkout)
+  const [checkin, setCheckIn] = useState(location.state.getDate.checkin)
+  const [adult, setAdult] = useState(location.state.getDate.options.adult)
+  const [children, setChildren] = useState(location.state.getDate.options.children)
+  const [room, setRoom] = useState(location.state.getDate.options.room)
+  const Rooms= [
+    {
+      image:"https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg?w=740&t=st=1701021559~exp=1701022159~hmac=d0d12f6e11d6298ef245c98067fea82b33379873733449ce8e5cde2ab53a1243"
+    },
+    {
+      image:"https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg?w=740&t=st=1701021559~exp=1701022159~hmac=d0d12f6e11d6298ef245c98067fea82b33379873733449ce8e5cde2ab53a1243https://img.freepik.com/premium-photo/hotel_664434-4822.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais"
+    },
+    {
+      image:"https://img.freepik.com/free-photo/luxury-bedroom-suite-resort-high-rise-hotel-with-working-table_105762-1783.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais"
+    },
+    {
+      image:"https://img.freepik.com/free-photo/3d-rendering-modern-luxury-bedroom-suite-bathroom_105762-1936.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais"
+    },
+    {
+      image:"https://img.freepik.com/premium-photo/modern-bedroom-with-working-desk-bedding_41487-836.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais"
+    },
+    {
+      image:"https://img.freepik.com/premium-photo/luxury-roombedroom-interior_940802-664.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais"
+    },
+    {
+      image:"https://img.freepik.com/free-photo/bedroom-with-bed-chair-front-sliding-glass-door_1340-25294.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais"
+    },
+    {
+      image:"https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais"
+    },
+    {
+      image:"https://img.freepik.com/free-photo/luxury-bedroom-interior-with-rich-furniture-scenic-view-from-walkout-deck_1258-111480.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais"
+    },
+    {
+      image:"https://img.freepik.com/premium-photo/travel-concept-beautiful-modern-mansions-hotels-bedroom-interior-design_872147-40588.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais"
+    },
+    {
+      image:"https://img.freepik.com/premium-photo/luxury-modern-cozy-sea-view-double-bedroom_36036-382.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais"
+    },
+    {
+      image:"https://img.freepik.com/free-photo/3d-rendering-beautiful-comtemporary-luxury-bedroom-suite-hotel-with-tv_105762-2071.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais"
+    },
+  ]
     return (
       <div>
         <div className='container ' >
           <div className="row">
-            <div style={{backgroundColor:" #dcaa14c2"}} className='shadow pb-3 col-md-4 col-12 rounded'>
+            {/* <div style={{overflowY:"scroll"}}> */}
+            <div className='shadow get_bg pb-3 col-md-4 col-12 rounded'>
               <div className='text-light'>
                 <h4 className='px-4 my-'>Search</h4>
                 <div className='px-4'>
-                <label htmlFor="" className='mt'>Destination</label>
-                <input type="text" className='col-12 py-2 border border-none rounded' placeholder='search your destination' />
+                <label htmlFor="" className='fw-bold'>Destination</label>
+                <input type="text" className='col-12 py-2 border border-none rounded' placeholder="Good hotel" />
                 </div>
                 <div className='px-4'>
-                <label htmlFor="" className='mt-2'>Check-in date</label>
-                <input type="text" className='col-12 py-2 border border-none rounded' placeholder='Check-in date' />
+                <label htmlFor="" className='mt-2 fw-bold'>Check-in date</label>
+                <input type="text" className='col-12 py-2 border border-none rounded' placeholder={checkin} />
                 </div>
                 <div className='px-4'>
-                <label htmlFor="" className='mt-2'>Check-out date</label>
-                <input type="text" className='col-12 py-2 border border-none rounded' placeholder='Check-out date' />
+                <label htmlFor="" className='mt-2 fw-bold'>Check-out date</label>
+                <input type="text" className='col-12 py-2 border border-none rounded' placeholder={checkOut} />
                 </div>
-                <b className='px-4 '> Options</b>
+                <b className='px-4 fs-5 '> Options</b>
                 <div className='d-flex mt-3 justify-content-between px-4'>
-                <span>Min Price per night</span> 
+                <span className='fw-bold'>Min Price per night</span> 
                 <input type="increment" className='col-7 py-2 border border-none rounded' placeholder='' />
                 </div>
                 <div className='d-flex justify-content-between px-4 mt-3'>
-                <span>Max Price per night</span> 
-                <input type="increment" className='col-7 py-2 border border-none rounded' placeholder='' />
+                <span className='fw-bold'>Max Price per night</span> 
+                <input type="number" className='col-7 py-2 border border-none rounded' placeholder='' />
                 </div>
                 <div className='d-flex justify-content-between px-4 mt-3'>
-                <span>Adult</span> 
-                <input type="increment" className='col-7 py-2 border border-none rounded' placeholder='' />
+                <span className='fw-bold'>Adult</span> 
+                <input type="number" min={1} className='col-7 py-2 border border-none rounded fw-bold' placeholder={adult} />
                 </div>
                 <div className='d-flex justify-content-between px-4 mt-3'>
-                <span>Children</span> 
-                <input type="increment" className='col-7 py-2 border border-none rounded' placeholder='' />
+                <span className='fw-bold'>Children</span> 
+                <input type="number" min={0} className='col-7 py-2 border border-none rounded fw-bold' placeholder={children} />
                 </div>
                 <div className='d-flex justify-content-between px-4 mt-3'>
-                <span>Room</span> 
-                <input type="increment" className='col-7 py-2 border border-none rounded' placeholder='' />
+                <span className='fw-bold'>Room</span> 
+                <input type="number" min={1} className='col-7 py-2 border border-none rounded fw-bold' placeholder={room} />
                 </div>
-
-              </div>
+                </div>
+              {/* </div> */}
             </div>
-            <div className='col-md-8 col-12 '>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt adipisci cumque ad molestias rerum? Suscipit eaque nesciunt vel adipisci nam ipsam sit beatae pariatur? Iste aliquid tempore odit libero dolore dolorum voluptates alias. Quo natus deserunt blanditiis in voluptate numquam pariatur quaerat reprehenderit dolorem officiis velit voluptas deleniti quae cvcvcdvdsint ullam quod, aperiam quisquam mollitia vitae assumenda molestias necessitatibus!
+
+            <div style={{overflowY:"scroll", height:"85vh"}} className='col-md-8  col-12 '>
+             <div className='get-grid'>
+              {
+                Rooms.map((allimag)=>(
+                  <>
+                  <div className='col-md-12 gap-style col-12 ' key={allimag.image}>
+                    <img  src={allimag.image} className='img-fluid col-12  ' />
+                  </div>
+                  </>
+                ))
+              }
+             </div>
             </div>
           </div>
         </div>
