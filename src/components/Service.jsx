@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
-import DisplayRoom from "./DisplayRooms";
+import { Link, useNavigate } from "react-router-dom";
 
 const Service = () => {
+  const navigate = useNavigate()
   useEffect(() => {
     AOS.init({
       offset: 200,
@@ -14,6 +14,9 @@ const Service = () => {
 
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [openOption, setOpenOption] = useState(false);
+  const [checkin, setCheckIN] = useState("")
+  const [checkout, setCheckOut] = useState("")
+ 
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
@@ -28,10 +31,17 @@ const Service = () => {
       };
     });
   };
-  // const handleBookNow = (room) => {
-  //   setSelectedRoom(room);
+  const handleSearch = (e) => {
+    e.preventDefault()
+    let getDate={
+      checkin:checkin,
+      checkout:checkout,
+      options:options
+    }
+    console.log(getDate);
+    navigate("/findrooms",{state:{getDate}})
   
-  // };
+  };
   let allServices = [
     {
       image:
@@ -254,52 +264,34 @@ const Service = () => {
               ></button>
             </div>
             <div class="modal-body w-100">
-              <div className="d-md-flex col-12 gap-2 justify-content-between ">
+              <div className=" col-12 gap-2 ">
                 <div>
                   <div>
-                    <label htmlFor="" className="mt-3 pb-3">
+                    <label htmlFor="" className="mt-2 pb-2">
                       <i class="bi bi-patch-check"></i> Check In Date
                     </label>
                     <input
                       type="datetime-local"
                       placeholder=""
                       className="col-12  py-3 my_modal shadow px-2"
+                      onChange={(e)=>setCheckIN(e.target.value)}
                     />
-                  </div>
-
-                  <div>
-                    <label htmlFor="" className="mt-3">
-                      <i class="bi bi-hospital"></i> Room
-                    </label>
-                    <select
-                      type="text"
-                      placeholder=""
-                      className="col-12  py-3 my_modal  mt-3 shadow px-2"
-                      name=""
-                      id=""
-                    >
-                      <option value="">Room</option>
-                      <option value="">1</option>
-                      <option value="">2</option>
-                      <option value="">3</option>
-                      <option value="">4</option>
-                      <option value="">5</option>
-                    </select>
                   </div>
                 </div>
                 <div>
                   <div>
-                    <label htmlFor="" className="mt-3 pb-3">
+                    <label htmlFor="" className="mt-2 pb-2">
                       <i class="bi bi-x-octagon"></i> Check Out Date
                     </label>
                     <input
                       type="datetime-local"
                       placeholder=""
                       className="col-12  py-3 my_modal  shadow px-2"
+                      onChange={(e)=>setCheckOut(e.target.value)}
                     />
                   </div>
-                  <div>
-                    <label htmlFor="" className="mt-3 ">
+                  <div className="col-12 mx-auto">
+                    <label htmlFor="" className="mt-2 ">
                       <i class="bi bi-people"></i> Adults
                     </label>
                     <div className="headerSearchItem">
@@ -342,13 +334,9 @@ const Service = () => {
                 data-bs-dismiss="modal"
                 aria-label="Close"
                 class="py-3 btn btn-primary"
+                onClick={handleSearch}
               >
-                <Link
-                  className="text-decoration-none text-light"
-                  to="/disrooms"
-                >
                   CHECK AVAILABILITY
-                </Link>
               </button>
             </div>
           </div>

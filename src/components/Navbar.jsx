@@ -31,7 +31,7 @@ const Navbar = (props) => {
                 </Link>
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
-                <Link class="nav-link " to="/modal">
+                <Link class="nav-link " to="/findrooms">
                   Rooms
                 </Link>
               </li>
