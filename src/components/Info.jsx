@@ -48,7 +48,7 @@ const Info = () => {
         <div className="row">
           <div
             data-aos="zoom-out-left"
-            className="mt-md-5 mt-1 d-md-flex justify-content-between"
+            className="mt-md-5 d-md-flex justify-content-between"
           >
             <img
               className="get-h col-md-5 col-12 rounded"
