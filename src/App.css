@@ -322,7 +322,7 @@ div.at-container {
   .get-overflow {
     overflow-y: scroll;
     display: flex;
-    gap: 20px;
+    gap: 0px;
 
   }
 
