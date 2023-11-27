@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import { Link, useNavigate } from "react-router-dom";
 
 const Service = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   useEffect(() => {
     AOS.init({
       offset: 200,
@@ -14,9 +14,8 @@ const Service = () => {
 
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [openOption, setOpenOption] = useState(false);
-  const [checkin, setCheckIN] = useState("")
-  const [checkout, setCheckOut] = useState("")
- 
+  const [checkin, setCheckIN] = useState("");
+  const [checkout, setCheckOut] = useState("");
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
@@ -31,16 +30,16 @@ const Service = () => {
       };
     });
   };
+
   const handleSearch = (e) => {
-    e.preventDefault()
-    let getDate={
-      checkin:checkin,
-      checkout:checkout,
-      options:options
-    }
+    e.preventDefault();
+    let getDate = {
+      checkin: checkin,
+      checkout: checkout,
+      options: options,
+    };
     console.log(getDate);
-    navigate("/findrooms",{state:{getDate}})
-  
+    navigate("/findrooms", { state: { getDate, allServices } });
   };
   let allServices = [
     {
@@ -274,7 +273,7 @@ const Service = () => {
                       type="datetime-local"
                       placeholder=""
                       className="col-12  py-3 my_modal shadow px-2"
-                      onChange={(e)=>setCheckIN(e.target.value)}
+                      onChange={(e) => setCheckIN(e.target.value)}
                     />
                   </div>
                 </div>
@@ -287,7 +286,7 @@ const Service = () => {
                       type="datetime-local"
                       placeholder=""
                       className="col-12  py-3 my_modal  shadow px-2"
-                      onChange={(e)=>setCheckOut(e.target.value)}
+                      onChange={(e) => setCheckOut(e.target.value)}
                     />
                   </div>
                   <div className="col-12 mx-auto">
@@ -295,27 +294,71 @@ const Service = () => {
                       <i class="bi bi-people"></i> Adults
                     </label>
                     <div className="headerSearchItem">
-                      <div onClick={()=>setOpenOption(!openOption)} className="headerSearchText col-12  py-3  my_modal mt-3 shadow px-2">{`${options.adult} adult . ${options.children} children . ${options.room} room`}</div>
-                        {openOption  &&  <div className="options shadow px-2 py-2">
-                        <div className="optionItem mt-3 d-flex justify-content-between text-center">
-                          <span className="optionText">Adult</span>
-                          <button className="optionCounterButton ms-3 border border-warning bg-light rounded px-3" disabled={options.adult <= 1} onClick={()=>handleOption("adult", "d")}>-</button>
-                          <span className="optionCounterNumber">{options.adult}</span>
-                          <button className="optionCounterButton border border-warning bg-light rounded px-3" disabled={options.childrqqen <= 0} onClick={()=>handleOption("adult", "i")}>+</button>
+                      <div
+                        onClick={() => setOpenOption(!openOption)}
+                        className="headerSearchText col-12  py-3  my_modal mt-3 shadow px-2"
+                      >{`${options.adult} adult . ${options.children} children . ${options.room} room`}</div>
+                      {openOption && (
+                        <div className="options shadow px-2 py-2">
+                          <div className="optionItem mt-3 d-flex justify-content-between text-center">
+                            <span className="optionText">Adult</span>
+                            <button
+                              className="optionCounterButton ms-3 border border-warning bg-light rounded px-3"
+                              disabled={options.adult <= 1}
+                              onClick={() => handleOption("adult", "d")}
+                            >
+                              -
+                            </button>
+                            <span className="optionCounterNumber">
+                              {options.adult}
+                            </span>
+                            <button
+                              className="optionCounterButton border border-warning bg-light rounded px-3"
+                              disabled={options.childrqqen <= 0}
+                              onClick={() => handleOption("adult", "i")}
+                            >
+                              +
+                            </button>
+                          </div>
+                          <div className="optionItem mt-3 d-flex justify-content-between text-center">
+                            <span className="optionText">children</span>
+                            <button
+                              className="optionCounterButton border border-warning bg-light rounded px-3"
+                              disabled={options.room <= 1}
+                              onClick={() => handleOption("children", "d")}
+                            >
+                              -
+                            </button>
+                            <span className="optionCounterNumber">
+                              {options.children}
+                            </span>
+                            <button
+                              className="optionCounterButton border border-warning bg-light rounded px-3"
+                              onClick={() => handleOption("children", "i")}
+                            >
+                              +
+                            </button>
+                          </div>
+                          <div className="optionItem mt-3 d-flex justify-content-between text-center">
+                            <span className="optionText">Room</span>
+                            <button
+                              className="optionCounterButton ms-3 border border-warning bg-light rounded px-3"
+                              onClick={() => handleOption("room", "d")}
+                            >
+                              -
+                            </button>
+                            <span className="optionCounterNumber">
+                              {options.room}
+                            </span>
+                            <button
+                              className="optionCounterButton border border-warning bg-light rounded px-3"
+                              onClick={() => handleOption("room", "i")}
+                            >
+                              +
+                            </button>
+                          </div>
                         </div>
-                        <div className="optionItem mt-3 d-flex justify-content-between text-center">
-                          <span className="optionText">children</span>
-                          <button className="optionCounterButton border border-warning bg-light rounded px-3"  disabled={options.room <= 1}  onClick={()=>handleOption("children", "d")}>-</button>
-                          <span className="optionCounterNumber">{options.children}</span>
-                          <button className="optionCounterButton border border-warning bg-light rounded px-3"  onClick={()=>handleOption("children", "i")}>+</button>
-                        </div>
-                        <div className="optionItem mt-3 d-flex justify-content-between text-center">
-                          <span className="optionText">Room</span>
-                          <button className="optionCounterButton ms-3 border border-warning bg-light rounded px-3"  onClick={()=>handleOption("room", "d")}>-</button>
-                          <span className="optionCounterNumber">{options.room}</span>
-                          <button className="optionCounterButton border border-warning bg-light rounded px-3"  onClick={()=>handleOption("room", "i")}>+</button>
-                        </div>
-                      </div>}
+                      )}
                     </div>
                   </div>
                 </div>
@@ -336,7 +379,7 @@ const Service = () => {
                 class="py-3 btn btn-primary"
                 onClick={handleSearch}
               >
-                  CHECK AVAILABILITY
+                CHECK AVAILABILITY
               </button>
             </div>
           </div>
@@ -376,19 +419,13 @@ const Service = () => {
             />
             <div className="mt-4 px-md-0 px-3 pb-3">
               <div className="d-grid">
-                {/* <Link
-                  className="text-decoration-none text-dark"
-                  // to={`/rooms/${eachItem.id}`}
-                > */}
-                  <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                    className="btn w-50 rounded text-center py-2"
-                    // onClick={() => handleBookNow(eachItem)}
-                  >
-                    Book Now
-                  </button>
-                {/* </Link> */}
+                <button
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  className="btn w-50 rounded text-center py-2"
+                >
+                  Book Now
+                </button>
 
                 <name className="mt-3">{eachItem.name}</name>
               </div>
@@ -417,7 +454,7 @@ const Service = () => {
           </div>
         ))}
       </div>
-      {/* {selectedRoom && <DisplayRoom room={selectedRoom} />} */}
+
       <div className=" get-overflow  col-12 col-md-12 mt-5 pb-3 justify-content-between">
         {viewAll.map((eachItem, index) => (
           <div

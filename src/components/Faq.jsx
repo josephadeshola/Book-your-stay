@@ -14,7 +14,7 @@ const Faq = () => {
       <div className="container">
         <div className="row">
           <div className="mt-4 ">
-            <div className="text-center mt-5 ">
+            <div className="text-center mt-md-5 mt-2 ">
               <h5 style={{ color: "#dcaa14c2" }}>FAQs</h5>
               <h1>Frequently ask question</h1>
               <p className="col-12 col-md-6 mx-auto">
