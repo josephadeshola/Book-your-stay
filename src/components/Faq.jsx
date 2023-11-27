@@ -13,8 +13,8 @@ const Faq = () => {
     <div>
       <div className="container">
         <div className="row">
-          <div className="mt-md-4 mt-2 ">
-            <div className="text-center mt-md-5 mt-2 ">
+          <div>
+            <div className="text-center">
               <h5 style={{ color: "#dcaa14c2" }}>FAQs</h5>
               <h1>Frequently ask question</h1>
               <p className="col-12 col-md-6 mx-auto">

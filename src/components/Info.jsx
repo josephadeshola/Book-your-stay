@@ -48,7 +48,7 @@ const Info = () => {
         <div className="row">
           <div
             data-aos="zoom-out-left"
-            className="mt-md-5 d-md-flex justify-content-between"
+            className=" d-md-flex justify-content-between"
           >
             <img
               className="get-h col-md-5 col-12 rounded"
@@ -120,7 +120,7 @@ const Info = () => {
         {allServices.map((eachItem) => (
           <div
             data-aos={eachItem.effect}
-            className="mx-auto px-md-3 px-2 shadow  rounded py-md-4 py-2 col-md-3 col-12"
+            className="mx-auto px-md-3 img-container px-2 shadow  rounded py-md-4 py-2 col-md-3 col-12"
           >
             <img
               style={{ height: "35vh" }}
