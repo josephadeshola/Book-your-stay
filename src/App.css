@@ -322,7 +322,7 @@ div.at-container {
   .get-overflow {
     overflow-y: scroll;
     display: flex;
-    gap: 0px;
+    gap: 20px;
 
   }
 
@@ -336,6 +336,9 @@ div.at-container {
     bottom: 60px;
     left: 0px;
 
+  }
+  .get-h {
+    height: 50vh;
   }
 
   /* About page */
