@@ -143,19 +143,20 @@ const DisplayRooms = () => {
               </div>
             </div>
 
-            <div className="room-h border d-md-flex justify-content-between  col-md-8 gap-md-3 py-3 px-2">
-            <div className="col-md-4 col-12">
-                <img src={getImg.image} className="img-fluid img-h col-md-4" />
+            <div className="room-h border shadow d-md-flex justify-content-between  col-md-8 gap-md-3 py-3 px-4">
+            <div className="col-md-4  col-12">
+                <img src={getImg.image} className="img-fluid col-md-4" />
                 </div>
-                <div className="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi facilis suscipit deleniti molestiae ex repellendus officiis sed? Quaerat error officia molestias nihil, sed dolores et dolor, facilis odio ex vel doloribus odit harum at doloremque, illo voluptatum sunt distinctio qui.</div>
-                
-                  {/* <div className="d-md-flex d-flex">
+                <div className="col-md-8 col-12 px-2">
+                  
+                  <div className="d-md-flex mt-3 d-flex">
                     <h5 className="w-100 fw-bold text-success">
                       Tower Street Apartments
                     </h5>
+                    <p className="fw-bold">Excellent</p>
                   </div>
                   <p>500m from center</p>
-                  <div className="alert alert-success col-8 py-1 fw-bold">
+                  <div className="alert alert-success col-md-4 col-5 py-1 fw-bold">
                     Free airport taxi
                   </div>
                   <p className="fw-bold">
@@ -163,8 +164,10 @@ const DisplayRooms = () => {
                   </p>
                   <div className="d-flex justify-content-between ">
                     <p>Entire studio * 1 bedroom * 21m2 1 full bed</p>
-                    <p className="">{getImg.price}</p>
-                  </div> */}
+                    <p className="fw-bold fs-4">{getImg.price}</p>
+                  </div>
+                </div>
+                
          
             </div>
 

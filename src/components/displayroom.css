@@ -12,7 +12,7 @@
 
 .img-fluid {
     width: 100% !important;
-    height: 30vh;
+    height: 34vh;
 }
 
 .get-grid {
@@ -37,6 +37,9 @@
   ::-webkit-scrollbar-thumb:hover {
     background-color:#a99808;
   }
+  .room-h{
+        height: 39vh;
+  }
 
 
 @media (max-width:688px) {
@@ -51,5 +54,12 @@
         row-gap: 2px !important;
         cursor: pointer;
     }
+    .img-fluid {
+      width: 100% !important;
+      height: 34vh;
+  }
+    .room-h{
+      height: 73vh;
+}
    
 }
