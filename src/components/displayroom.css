@@ -38,6 +38,7 @@
     background-color:#a99808;
   }
 
+
 @media (max-width:688px) {
     .img-fluid {
         margin-top: 10px;
@@ -50,4 +51,5 @@
         row-gap: 2px !important;
         cursor: pointer;
     }
+   
 }

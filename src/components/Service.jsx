@@ -3,6 +3,41 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link, useNavigate } from "react-router-dom";
 
+export let allServices = [
+  {
+    image:
+      "https://img.freepik.com/free-photo/dining-terrace-open-restaurant-with-sofas-chairs-tables_114579-2728.jpg?w=740&t=st=1698871489~exp=1698872089~hmac=1945f04efb7990150257482e024a4c4616c9a2094b41cfbf605bcde21331d375",
+    name: "Venice Hotel",
+    id: "1",
+    price: "$750.35",
+    star: "4.8 (45)",
+    effect: "zoom-out-down",
+    location: "2715 Sh, South Dakota",
+    day: "4Day/3Night",
+  },
+  {
+    image:
+      "https://img.freepik.com/free-photo/beautiful-sky-orchid-water-outdoor_1203-5205.jpg?w=740&t=st=1698871624~exp=1698872224~hmac=eda0fd8a95a80cd1a1094e23fc8042d4a77d8c245af0035186d679b08ca617de",
+    name: "Cedar Point",
+    price: "$830.75",
+    id: "2",
+    star: "4.8 (45)",
+    effect: "zoom-out-left",
+    location: "6391 Elgin St.Celina",
+    day: "5Day/3Night",
+  },
+  {
+    image:
+      "https://img.freepik.com/free-photo/white-sky-umbrella-nobody-party_1203-4522.jpg?2&w=740&t=st=1698872266~exp=1698872866~hmac=43f0185d30af577e0d597a22b3061382644b0f25e3baf765e8b0b1020591cbb9",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    id: "3",
+    star: "4.8 (45)",
+    effect: "zoom-out-right",
+    location: "preston Rd. inglewood",
+    day: "6Day/5Night",
+  },
+];
 const Service = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -12,70 +47,8 @@ const Service = () => {
     });
   }, []);
 
-  const [selectedRoom, setSelectedRoom] = useState(null);
-  const [openOption, setOpenOption] = useState(false);
-  const [checkin, setCheckIN] = useState("");
-  const [checkout, setCheckOut] = useState("");
-  const [options, setOptions] = useState({
-    adult: 1,
-    children: 0,
-    room: 1,
-  });
 
-  const handleOption = (name, operation) => {
-    setOptions((prev) => {
-      return {
-        ...prev,
-        [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
-      };
-    });
-  };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    let getDate = {
-      checkin: checkin,
-      checkout: checkout,
-      options: options,
-    };
-    console.log(getDate);
-    navigate("/findrooms", { state: { getDate, allServices } });
-  };
-  let allServices = [
-    {
-      image:
-        "https://img.freepik.com/free-photo/dining-terrace-open-restaurant-with-sofas-chairs-tables_114579-2728.jpg?w=740&t=st=1698871489~exp=1698872089~hmac=1945f04efb7990150257482e024a4c4616c9a2094b41cfbf605bcde21331d375",
-      name: "Venice Hotel",
-      id: "1",
-      price: "$750.35",
-      star: "4.8 (45)",
-      effect: "zoom-out-down",
-      location: "2715 Sh, South Dakota",
-      day: "4Day/3Night",
-    },
-    {
-      image:
-        "https://img.freepik.com/free-photo/beautiful-sky-orchid-water-outdoor_1203-5205.jpg?w=740&t=st=1698871624~exp=1698872224~hmac=eda0fd8a95a80cd1a1094e23fc8042d4a77d8c245af0035186d679b08ca617de",
-      name: "Cedar Point",
-      price: "$830.75",
-      id: "2",
-      star: "4.8 (45)",
-      effect: "zoom-out-left",
-      location: "6391 Elgin St.Celina",
-      day: "5Day/3Night",
-    },
-    {
-      image:
-        "https://img.freepik.com/free-photo/white-sky-umbrella-nobody-party_1203-4522.jpg?2&w=740&t=st=1698872266~exp=1698872866~hmac=43f0185d30af577e0d597a22b3061382644b0f25e3baf765e8b0b1020591cbb9",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      id: "3",
-      star: "4.8 (45)",
-      effect: "zoom-out-right",
-      location: "preston Rd. inglewood",
-      day: "6Day/5Night",
-    },
-  ];
 
   const [showAllProduct, setShowAllProduct] = useState(false);
   const handleviewAll = () => {
@@ -239,6 +212,42 @@ const Service = () => {
       day: "6Day/5Night",
     },
   ];
+
+
+  const [selectedRoom, setSelectedRoom] = useState(null);
+  const [openOption, setOpenOption] = useState(false);
+  const [checkin, setCheckIN] = useState("");
+  const [checkout, setCheckOut] = useState("");
+  const [options, setOptions] = useState({
+    adult: 1,
+    children: 0,
+    room: 1,
+  });
+
+  const handleOption = (name, operation) => {
+    setOptions((prev) => {
+      return {
+        ...prev,
+        [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
+      };
+    });
+  };
+//  const handelBook=(id)=>{
+//   const room = allServices.find((item) => item.id === id);
+//     setSelectedRoom(room);
+//     console.log(setSelectedRoom)
+//  }
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    let getDate = {
+      checkin: checkin,
+      checkout: checkout,
+      options: options,
+    };
+    console.log(getDate);
+    navigate(`/findrooms/${selectedRoom}`, { state: { getDate,}});
+  };
 
   return (
     <div>
@@ -423,6 +432,7 @@ const Service = () => {
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                   className="btn w-50 rounded text-center py-2"
+                  onClick={()=>setSelectedRoom(eachItem.id)}
                 >
                   Book Now
                 </button>

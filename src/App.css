@@ -306,7 +306,7 @@ div.at-container {
 
   .move-img {
     position: absolute;
-    bottom: 250px;
+    bottom: 210px;
     text-align: center;
     font-size: 23px;
 
@@ -314,7 +314,7 @@ div.at-container {
 
   .p-position {
     position: absolute;
-    bottom: 170px;
+    bottom: 150px;
     text-align: center;
 
   }
