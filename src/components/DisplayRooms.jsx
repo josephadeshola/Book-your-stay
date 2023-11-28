@@ -147,24 +147,32 @@ const DisplayRooms = () => {
             <div className="col-md-4  col-12">
                 <img src={getImg.image} className="img-fluid col-md-4" />
                 </div>
-                <div className="col-md-8 col-12 px-2">
+                <div className="col-md-8 col-12 px-1">
                   
-                  <div className="d-md-flex mt-3 d-flex">
-                    <h5 className="w-100 fw-bold text-success">
+                  <div className="d-md-flex mt-md-3 d-flex">
+                    <h5 style={{color:'#a99808'}} className="w-100 fw-bold">
                       Tower Street Apartments
                     </h5>
-                    <p className="fw-bold">Excellent</p>
+                    <div className="fw-bold">Excellent</div>
                   </div>
-                  <p>500m from center</p>
+                  <div>500m from center</div>
                   <div className="alert alert-success col-md-4 col-5 py-1 fw-bold">
                     Free airport taxi
                   </div>
-                  <p className="fw-bold">
+                  <div className="fw-bold">
                     Studio apartment with air conditioning
-                  </p>
+                  </div>
                   <div className="d-flex justify-content-between ">
-                    <p>Entire studio * 1 bedroom * 21m2 1 full bed</p>
-                    <p className="fw-bold fs-4">{getImg.price}</p>
+                    <div>Entire studio * 1 bedroom * 21m2 1 full bed</div>
+                    <div className="fw-bold fs-4">{getImg.price}</div>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                  <div className="text-success fw-bold">Free cancellation</div>
+                  <div>Include taxi and fee</div>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <p className="text-success">you can cancel later, os lock in this great price today!</p>
+                    <button className="btn rounded col-4 py-1">SEE AVAILABILITY</button>
                   </div>
                 </div>
                 
