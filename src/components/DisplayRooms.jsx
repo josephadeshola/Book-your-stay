@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import "./displayroom.css";
-import { allServices, viewAll,} from "./Service";
-import { allServicesTwo} from "./Info"
+import { allServices, viewAll } from "./Service";
+import { allServicesTwo } from "./Info";
 import { toast } from "react-toastify";
 
 const DisplayRooms = () => {
@@ -18,7 +18,9 @@ const DisplayRooms = () => {
   const [room, setRoom] = useState(location.state.getDate.options.room);
   const [diplayavailability, setDiplayavailability] = useState(false);
   const [getImg, setImg] = useState(
-    [...allServices,...viewAll,...allServicesTwo].find((item) => item.id === roomId)
+    [...allServices, ...viewAll, ...allServicesTwo].find(
+      (item) => item.id === roomId
+    )
   );
 
   const handelAvailability = () => {
@@ -27,6 +29,15 @@ const DisplayRooms = () => {
       setDiplayavailability(true);
     }, 6000);
   };
+
+  const [open, setOpen] = useState(false);
+  const [view, setView] = useState(false);
+
+  const handelViewImg = (i) => {
+    console.log(i);
+    setView(true);
+  };
+
   const Rooms = [
     {
       image:
@@ -81,6 +92,58 @@ const DisplayRooms = () => {
     <div>
       <div className="container ">
         <div className="row  ">
+          {view && (
+            <div
+              className="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog col-12">
+                <div className="modal-content">
+                  <div className="modal-header ">
+                    <h1 className="modal-title fs-5" id="exampleModalLabel">
+                      BOOKING FORM
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body w-100">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Ipsam nam eos eius quibusdam, hic fuga. Repellat porro et
+                    provident minus commodi, corporis debitis numquam
+                    consectetur vel obcaecati amet voluptate autem nemo
+                    blanditiis, natus ipsum voluptatibus perspiciatis a sint ut
+                    libero molestiae facilis optio. Autem voluptate fugiat
+                    dolorum quidem inventore explicabo necessitatibus animi
+                    quas, accusamus harum minima non, enim consectetur. Porro.
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn py-3 btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="button"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                      class="py-3 btn btn-primary"
+                    >
+                      Proceed on your booking
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
           <div className="d-md-flex gap-md-3 justify-content-between">
             <div className="shadow  get_bg pb-3 col-md-4 col-12 rounded">
               <div className="text-light">
@@ -209,7 +272,7 @@ const DisplayRooms = () => {
               </div>
               {diplayavailability && (
                 <div className="col-md-12 col-12 get-grid mt-3">
-                  {Rooms.map((allimag) => (
+                  {Rooms.map((allimag, i) => (
                     <>
                       <div
                         className="col-md-12 gap-style col-12"
@@ -218,6 +281,9 @@ const DisplayRooms = () => {
                         <img
                           src={allimag.image}
                           className="img-fluid rounded col-12  "
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModal"
+                          onClick={() => handelViewImg(i)}
                         />
                       </div>
                     </>

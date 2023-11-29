@@ -246,16 +246,16 @@ const Service = () => {
   return (
     <div>
       <div
-        class="modal fade"
+        className="modal fade"
         id="exampleModal"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog col-12">
-          <div class="modal-content">
-            <div class="modal-header ">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
+        <div className="modal-dialog col-12">
+          <div className="modal-content">
+            <div className="modal-header ">
+              <h1 className="modal-title fs-5" id="exampleModalLabel">
                 BOOKING FORM
               </h1>
               <button
