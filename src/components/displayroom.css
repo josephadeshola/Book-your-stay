@@ -44,6 +44,10 @@
  
 
 @media (max-width:688px) {
+  .get_bg {
+  
+    height:80vh;
+}
     .img-fluid {
         margin-top: 10px;
         width: 100% !important;
@@ -55,10 +59,7 @@
         row-gap: 2px !important;
         cursor: pointer;
     }
-    /* .img-fluid {
-      width: 100% !important;
-      height: 34vh;
-  } */
+   
     .room-h{
       height: 85vh;
 }
