@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
 
 const Info = () => {
-  useEffect(() => {
-    AOS.init({
-      offset: 200,
-      duration: 800,
-    });
-  }, []);
+  // useEffect(() => {
+  //   AOS.init({
+  //     offset: 200,
+  //     duration: 800,
+  //   });
+  // }, []);
   let allServices = [
     {
       image:

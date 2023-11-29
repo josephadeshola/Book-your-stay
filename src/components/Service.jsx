@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
 import { Link, useNavigate } from "react-router-dom";
 
 export let allServices = [
@@ -40,15 +40,12 @@ export let allServices = [
 ];
 const Service = () => {
   const navigate = useNavigate();
-  useEffect(() => {
-    AOS.init({
-      offset: 200,
-      duration: 800,
-    });
-  }, []);
-
-
-
+  // useEffect(() => {
+  //   AOS.init({
+  //     offset: 200,
+  //     duration: 800,
+  //   });
+  // }, []);
 
   const [showAllProduct, setShowAllProduct] = useState(false);
   const handleviewAll = () => {
