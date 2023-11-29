@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 // import "aos/dist/aos.css";
 import {toast} from 'react-toastify'
 import { Link, useNavigate } from "react-router-dom";
+// import {allServicesTwo } from "./Info"
 
 export let allServices = [
   {

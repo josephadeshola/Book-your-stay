@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import "./displayroom.css";
-import { allServices, viewAll } from "./Service";
+import { allServices, viewAll,} from "./Service";
+import { allServicesTwo} from "./Info"
 import { toast } from "react-toastify";
 
 const DisplayRooms = () => {
@@ -17,7 +18,7 @@ const DisplayRooms = () => {
   const [room, setRoom] = useState(location.state.getDate.options.room);
   const [diplayavailability, setDiplayavailability] = useState(false);
   const [getImg, setImg] = useState(
-    [...allServices,...viewAll].find((item) => item.id === roomId)
+    [...allServices,...viewAll,...allServicesTwo].find((item) => item.id === roomId)
   );
 
   const handelAvailability = () => {

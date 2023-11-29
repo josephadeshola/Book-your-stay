@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 // import AOS from "aos";
 // import "aos/dist/aos.css";
-export   let allServicesTwo = [
+export let allServicesTwo = [
   {
     image:
       "https://img.freepik.com/free-photo/some-delicious-meal-bed-bedroom-side-view_176474-3911.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
     name: "Venice Hotel",
+    id: "18",
     price: "$750.35",
     star: "4.8 (45)",
     effect: "zoom-out-down",
@@ -17,6 +20,7 @@ export   let allServicesTwo = [
     image:
       "https://img.freepik.com/premium-photo/tag-reservation-placed-table_159341-1242.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
     name: "Cedar Point",
+    id: "19",
     price: "$830.75",
     star: "4.8 (45)",
     effect: "zoom-out-left",
@@ -27,6 +31,7 @@ export   let allServicesTwo = [
     image:
       "https://img.freepik.com/free-photo/romantic-bedroom_74190-3738.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
     name: "Hazelwood Hotel",
+    id: "20",
     price: "$930.85",
     star: "4.8 (45)",
     effect: "zoom-out-right",
@@ -41,10 +46,24 @@ const Info = () => {
   //     duration: 800,
   //   });
   // }, []);
-
-  const [selectedRoom,setSelectedRoom] = useState(null)
-
-
+  const navigate = useNavigate();
+  const [checkin, setCheckIN] = useState("");
+  const [checkout, setCheckOut] = useState("");
+  
+  const handleBooking = (selectedRoom) => {
+    let getDate = {
+      checkin: checkin,
+      checkout: checkout, 
+      options: {
+        adult: 1,
+        children: 0,
+        room: 1,
+      },
+    };
+    
+    toast.success("Successfully booked")
+    navigate(`/findrooms/${selectedRoom}`, { state: { getDate } });
+  };
   return (
     <div>
       <div className="container">
@@ -137,8 +156,7 @@ const Info = () => {
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                   className="btn w-50 rounded text-center py-2"
-                  onClick={()=>setSelectedRoom(eachItem.id)}
-
+                  onClick={() => handleBooking(eachItem.id)}
                 >
                   Book Now
                 </button>
