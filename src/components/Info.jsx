@@ -1,7 +1,39 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+
 // import AOS from "aos";
 // import "aos/dist/aos.css";
-
+export   let allServicesTwo = [
+  {
+    image:
+      "https://img.freepik.com/free-photo/some-delicious-meal-bed-bedroom-side-view_176474-3911.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
+    name: "Venice Hotel",
+    price: "$750.35",
+    star: "4.8 (45)",
+    effect: "zoom-out-down",
+    location: "2715 Sh, South Dakota",
+    day: "4Day/3Night",
+  },
+  {
+    image:
+      "https://img.freepik.com/premium-photo/tag-reservation-placed-table_159341-1242.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
+    name: "Cedar Point",
+    price: "$830.75",
+    star: "4.8 (45)",
+    effect: "zoom-out-left",
+    location: "6391 Elgin St.Celina",
+    day: "5Day/3Night",
+  },
+  {
+    image:
+      "https://img.freepik.com/free-photo/romantic-bedroom_74190-3738.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    star: "4.8 (45)",
+    effect: "zoom-out-right",
+    location: "preston Rd. inglewood",
+    day: "6Day/5Night",
+  },
+];
 const Info = () => {
   // useEffect(() => {
   //   AOS.init({
@@ -9,38 +41,9 @@ const Info = () => {
   //     duration: 800,
   //   });
   // }, []);
-  let allServices = [
-    {
-      image:
-        "https://img.freepik.com/free-photo/some-delicious-meal-bed-bedroom-side-view_176474-3911.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-      name: "Venice Hotel",
-      price: "$750.35",
-      star: "4.8 (45)",
-      effect: "zoom-out-down",
-      location: "2715 Sh, South Dakota",
-      day: "4Day/3Night",
-    },
-    {
-      image:
-        "https://img.freepik.com/premium-photo/tag-reservation-placed-table_159341-1242.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-      name: "Cedar Point",
-      price: "$830.75",
-      star: "4.8 (45)",
-      effect: "zoom-out-left",
-      location: "6391 Elgin St.Celina",
-      day: "5Day/3Night",
-    },
-    {
-      image:
-        "https://img.freepik.com/free-photo/romantic-bedroom_74190-3738.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      star: "4.8 (45)",
-      effect: "zoom-out-right",
-      location: "preston Rd. inglewood",
-      day: "6Day/5Night",
-    },
-  ];
+
+  const [selectedRoom,setSelectedRoom] = useState(null)
+
 
   return (
     <div>
@@ -117,7 +120,7 @@ const Info = () => {
       </div>
 
       <div className="d-md-flex d-flex get-overflow  col-12 mt-5 pb-3 justify-content-between">
-        {allServices.map((eachItem) => (
+        {allServicesTwo.map((eachItem) => (
           <div
             data-aos={eachItem.effect}
             className="mx-auto px-md-3 img-container px-2 shadow  rounded py-md-4 py-2 col-md-3 col-12"
@@ -134,6 +137,8 @@ const Info = () => {
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                   className="btn w-50 rounded text-center py-2"
+                  onClick={()=>setSelectedRoom(eachItem.id)}
+
                 >
                   Book Now
                 </button>

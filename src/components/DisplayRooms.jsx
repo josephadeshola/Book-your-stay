@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import "./displayroom.css";
+import { allServices, viewAll } from "./Service";
+import { toast } from "react-toastify";
 
-import { allServices } from "./Service";
 const DisplayRooms = () => {
   const location = useLocation();
   const { roomId } = useParams();
@@ -14,12 +15,17 @@ const DisplayRooms = () => {
     location.state.getDate.options.children
   );
   const [room, setRoom] = useState(location.state.getDate.options.room);
-
+  const [diplayavailability, setDiplayavailability] = useState(false);
   const [getImg, setImg] = useState(
-    allServices.find((item) => item.id === roomId)
+    [...allServices,...viewAll].find((item) => item.id === roomId)
   );
-  console.log(getImg);
 
+  const handelAvailability = () => {
+    toast.success("Loading Rooms");
+    setTimeout(() => {
+      setDiplayavailability(true);
+    }, 6000);
+  };
   const Rooms = [
     {
       image:
@@ -156,7 +162,7 @@ const DisplayRooms = () => {
             </div>
 
             <div className="mx-auto col-md-8 ">
-              <div className="border d-md-flex  shadow justify-content-between gap-md-3 py-3 px-4  col-12">
+              <div className="border mt-md-0 mt-3 d-md-flex  shadow justify-content-between gap-md-3 py-3 px-4  col-12">
                 <div className="col-md-4 col-12">
                   <img
                     src={getImg.image}
@@ -171,44 +177,52 @@ const DisplayRooms = () => {
                     <div className="fw-bold">Excellent</div>
                   </div>
                   <div>500m from center</div>
-                  <div className="alert alert-success col-md-4 col-5 py-1 fw-bold">
+                  <div className="alert alert-success col-md-4 col-6 mt-md-0 mt-2 py-1 fw-bold">
                     Free airport taxi
                   </div>
                   <div className="fw-bold">
                     Studio apartment with air conditioning
                   </div>
-                  <div className="d-flex justify-content-between ">
+                  <div className="d-md-flex mt-md-2 mt-3 justify-content-between ">
                     <div>Entire studio * 1 bedroom * 21m2 1 full bed</div>
                     <div className="fw-bold fs-4">{getImg.price}</div>
                   </div>
-                  <div className="d-flex justify-content-between">
+                  <div className="d-md-flex mt-md-3 mt-3 justify-content-between">
                     <div className="text-success fw-bold">
                       Free cancellation
                     </div>
                     <div>Include taxi and fee</div>
                   </div>
-                  <div className="d-flex justify-content-between">
+                  <div className="d-md-flex mt-md-3 mt-3 justify-content-between">
                     <p className="text-success">
                       you can cancel later, os lock in this great price today!
                     </p>
-                    <button className="btn rounded col-4 py-0">
+                    <button
+                      onClick={handelAvailability}
+                      className="btn rounded  col-md-4 col-12 py-3  py-0"
+                    >
                       SEE AVAILABILITY
                     </button>
                   </div>
                 </div>
               </div>
-              <div className="col-md-12 col-12 get-grid mt-3">
-                {Rooms.map((allimag) => (
-                  <>
-                    <div
-                      className="col-md-12 gap-style col-12"
-                      key={allimag.image}
-                    >
-                      <img src={allimag.image} className="img-fluid col-12  " />
-                    </div>
-                  </>
-                ))}
-              </div>
+              {diplayavailability && (
+                <div className="col-md-12 col-12 get-grid mt-3">
+                  {Rooms.map((allimag) => (
+                    <>
+                      <div
+                        className="col-md-12 gap-style col-12"
+                        key={allimag.image}
+                      >
+                        <img
+                          src={allimag.image}
+                          className="img-fluid rounded col-12  "
+                        />
+                      </div>
+                    </>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

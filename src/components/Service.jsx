@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import AOS from "aos";
 // import "aos/dist/aos.css";
+import {toast} from 'react-toastify'
 import { Link, useNavigate } from "react-router-dom";
 
 export let allServices = [
@@ -38,6 +39,164 @@ export let allServices = [
     day: "6Day/5Night",
   },
 ];
+
+export let viewAll = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    id: "4",
+    star: "4.8 (45)",
+    effect: "zoom-out-right",
+    location: "preston Rd. inglewood",
+    day: "$196 per night",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    id: "5",
+    star: "4.8 (45)",
+    effect: "zoom-out-down",
+    location: "preston Rd. inglewood",
+    day: "$257 per night",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    id: "6",
+    star: "4.8 (45)",
+    effect: "zoom-out-left",
+    location: "preston Rd. inglewood",
+    day: "$181 per night",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    id: "7",
+    star: "4.8 (45)",
+    effect: "zoom-out-right",
+    location: "preston Rd. inglewood",
+    day: "$116 per night",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    id: "8",
+    star: "4.8 (45)",
+    effect: "zoom-out-top",
+    location: "preston Rd. inglewood",
+    day: "$657 per night",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    id: "9",
+    star: "4.8 (45)",
+    effect: "zoom-out-right",
+    location: "preston Rd. inglewood",
+    day: "$157 per night",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsJTIwcm9vbXxlbnwwfDB8MHx8fDI%3D&auto=format&fit=crop&w=400&q=60",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    id: "10",
+    star: "4.8 (45)",
+    effect: "zoom-out-right",
+    location: "preston Rd. inglewood",
+    day: "$746 per night",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1630660664869-c9d3cc676880?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdGVsJTIwcm9vbXxlbnwwfDB8MHx8fDI%3D%3D&auto=format&fit=crop&w=400&q=60",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    id: "11",
+    star: "4.8 (45)",
+    effect: "zoom-out-right",
+    location: "preston Rd. inglewood",
+    day: "$65 per night",
+  },
+
+  {
+    image:
+      "https://img.freepik.com/premium-photo/classic-minimalist-bedroom-hotel_377429-342.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    id: "12",
+    star: "4.8 (45)",
+    effect: "zoom-out-right",
+    location: "preston Rd. inglewood",
+    day: "6Day/5Night",
+  },
+  {
+    image:
+      "https://img.freepik.com/free-photo/tidy-hotel-room-with-brown-curtains_1203-1493.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    id: "13",
+    star: "4.8 (45)",
+    effect: "zoom-out-right",
+    location: "preston Rd. inglewood",
+    day: "6Day/5Night",
+  },
+  {
+    image:
+      "https://img.freepik.com/free-photo/elegant-hotel-room-with-big-bed_1203-1494.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    id: "14",
+    star: "4.8 (45)",
+    effect: "zoom-out-right",
+    location: "preston Rd. inglewood",
+    day: "6Day/5Night",
+  },
+  {
+    image:
+      "https://img.freepik.com/free-photo/pillow-bed_74190-6244.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais  ",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    id: "15",
+    star: "4.8 (45)",
+    effect: "zoom-out-right",
+    location: "preston Rd. inglewood",
+    day: "6Day/5Night",
+  },
+  {
+    image:
+      "https://img.freepik.com/premium-photo/interior-hotel-bedroom-with-double-bed-generative-ai_629315-11308.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    id: "16",
+    star: "4.8 (45)",
+    effect: "zoom-out-right",
+    location: "preston Rd. inglewood",
+    day: "6Day/5Night",
+  },
+  {
+    image:
+      "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1822.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
+    name: "Hazelwood Hotel",
+    price: "$930.85",
+    id: "17",
+    star: "4.8 (45)",
+    effect: "zoom-out-right",
+    location: "preston Rd. inglewood",
+    day: "6Day/5Night",
+  },
+];
 const Service = () => {
   const navigate = useNavigate();
   // useEffect(() => {
@@ -52,165 +211,7 @@ const Service = () => {
     setShowAllProduct(true);
   };
 
-  let viewAll = [
-    {
-      image:
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      id: "4",
-      star: "4.8 (45)",
-      effect: "zoom-out-right",
-      location: "preston Rd. inglewood",
-      day: "$196 per night",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      id: "5",
-      star: "4.8 (45)",
-      effect: "zoom-out-down",
-      location: "preston Rd. inglewood",
-      day: "$257 per night",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      id: "6",
-      star: "4.8 (45)",
-      effect: "zoom-out-left",
-      location: "preston Rd. inglewood",
-      day: "$181 per night",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      id: "7",
-      star: "4.8 (45)",
-      effect: "zoom-out-right",
-      location: "preston Rd. inglewood",
-      day: "$116 per night",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      id: "8",
-      star: "4.8 (45)",
-      effect: "zoom-out-top",
-      location: "preston Rd. inglewood",
-      day: "$657 per night",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWwlMjByb29tfGVufDB8MHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=400&q=60",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      id: "9",
-      star: "4.8 (45)",
-      effect: "zoom-out-right",
-      location: "preston Rd. inglewood",
-      day: "$157 per night",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsJTIwcm9vbXxlbnwwfDB8MHx8fDI%3D&auto=format&fit=crop&w=400&q=60",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      id: "10",
-      star: "4.8 (45)",
-      effect: "zoom-out-right",
-      location: "preston Rd. inglewood",
-      day: "$746 per night",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1630660664869-c9d3cc676880?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdGVsJTIwcm9vbXxlbnwwfDB8MHx8fDI%3D%3D&auto=format&fit=crop&w=400&q=60",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      id: "11",
-      star: "4.8 (45)",
-      effect: "zoom-out-right",
-      location: "preston Rd. inglewood",
-      day: "$65 per night",
-    },
-
-    {
-      image:
-        "https://img.freepik.com/premium-photo/classic-minimalist-bedroom-hotel_377429-342.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      id: "12",
-      star: "4.8 (45)",
-      effect: "zoom-out-right",
-      location: "preston Rd. inglewood",
-      day: "6Day/5Night",
-    },
-    {
-      image:
-        "https://img.freepik.com/free-photo/tidy-hotel-room-with-brown-curtains_1203-1493.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      id: "13",
-      star: "4.8 (45)",
-      effect: "zoom-out-right",
-      location: "preston Rd. inglewood",
-      day: "6Day/5Night",
-    },
-    {
-      image:
-        "https://img.freepik.com/free-photo/elegant-hotel-room-with-big-bed_1203-1494.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      id: "14",
-      star: "4.8 (45)",
-      effect: "zoom-out-right",
-      location: "preston Rd. inglewood",
-      day: "6Day/5Night",
-    },
-    {
-      image:
-        "https://img.freepik.com/free-photo/pillow-bed_74190-6244.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais  ",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      id: "15",
-      star: "4.8 (45)",
-      effect: "zoom-out-right",
-      location: "preston Rd. inglewood",
-      day: "6Day/5Night",
-    },
-    {
-      image:
-        "https://img.freepik.com/premium-photo/interior-hotel-bedroom-with-double-bed-generative-ai_629315-11308.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      id: "16",
-      star: "4.8 (45)",
-      effect: "zoom-out-right",
-      location: "preston Rd. inglewood",
-      day: "6Day/5Night",
-    },
-    {
-      image:
-        "https://img.freepik.com/free-photo/interior-modern-comfortable-hotel-room_1232-1822.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-      name: "Hazelwood Hotel",
-      price: "$930.85",
-      id: "17",
-      star: "4.8 (45)",
-      effect: "zoom-out-right",
-      location: "preston Rd. inglewood",
-      day: "6Day/5Night",
-    },
-  ];
-
-
+ 
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [openOption, setOpenOption] = useState(false);
   const [checkin, setCheckIN] = useState("");
@@ -229,11 +230,6 @@ const Service = () => {
       };
     });
   };
-//  const handelBook=(id)=>{
-//   const room = allServices.find((item) => item.id === id);
-//     setSelectedRoom(room);
-//     console.log(setSelectedRoom)
-//  }
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -242,7 +238,7 @@ const Service = () => {
       checkout: checkout,
       options: options,
     };
-    console.log(getDate);
+    toast.success("successfully Booked")
     navigate(`/findrooms/${selectedRoom}`, { state: { getDate,}});
   };
 
@@ -385,7 +381,7 @@ const Service = () => {
                 class="py-3 btn btn-primary"
                 onClick={handleSearch}
               >
-                CHECK AVAILABILITY
+                Proceed on your booking
               </button>
             </div>
           </div>
@@ -483,6 +479,8 @@ const Service = () => {
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                   className="btn w-50 rounded text-center py-2"
+                  onClick={()=>setSelectedRoom(eachItem.id)}
+
                 >
                   Book Now
                 </button>
