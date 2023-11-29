@@ -126,13 +126,6 @@ const DisplayRooms = () => {
                   <div class="modal-footer">
                     <button
                       type="button"
-                      class="btn py-3 btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button
-                      type="button"
                       data-bs-dismiss="modal"
                       aria-label="Close"
                       class="py-3 btn btn-primary"
