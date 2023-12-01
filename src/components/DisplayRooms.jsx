@@ -95,14 +95,11 @@ const DisplayRooms = () => {
     }, 6000);
   };
   const [view, setView] = useState(false);
-
-  const [handelViewImg, setHandelView] = useState(
-    Rooms.find((eachRoom) => eachRoom.id === anotherParam)
-  );
-  console.log(handelViewImg.image);
-  //   setView(true);
-  //  const [findImg, setFindImg] = useState(
-  //   )
+  const [setHandelView, setSetHandelView] = useState([])
+  const  handelView=(selectedImg)=>{
+    setSetHandelView([selectedImg])
+    setView(true)
+  }
 
   return (
     <div>
@@ -130,7 +127,9 @@ const DisplayRooms = () => {
                     ></button>
                   </div>
                   <div class="modal-body w-100">
-                    <img src={handelViewImg.image} alt="" />
+                  {setHandelView.map((img, index) => (
+                      <img className="col-5" key={index} src={img.image} alt="" />
+                    ))}
                   </div>
                   <div class="modal-footer">
                     <button
@@ -150,7 +149,7 @@ const DisplayRooms = () => {
             <div className="shadow  get_bg pb-3 col-md-4 col-12 rounded">
               <div className="text-light">
                 <h4 className="px-md-4 px-2">Search</h4>
-                <div className="px-4">
+                <div className="px-4 mt-3">
                   <label htmlFor="" className="fw-bold">
                     Room Destination
                   </label>
@@ -160,7 +159,7 @@ const DisplayRooms = () => {
                     placeholder={standardRoom}
                   />
                 </div>
-                <div className="px-4">
+                <div className="px-4 mt-3">
                   <label htmlFor="" className="mt-2 fw-bold">
                     Check-in date
                   </label>
@@ -170,7 +169,7 @@ const DisplayRooms = () => {
                     placeholder={checkin}
                   />
                 </div>
-                <div className="px-4">
+                <div className="px-4 mt-3">
                   <label htmlFor="" className="mt-2 fw-bold">
                     Check-out date
                   </label>
@@ -180,24 +179,8 @@ const DisplayRooms = () => {
                     placeholder={checkOut}
                   />
                 </div>
-                <b className="px-4 fs-5 "> Options</b>
-                <div className="d-flex mt-3 justify-content-between px-4">
-                  <span className="fw-bold">Min Price per night</span>
-                  <input
-                    type="increment"
-                    className="col-7 py-2 border border-none rounded"
-                    placeholder=""
-                  />
-                </div>
-                <div className="d-flex justify-content-between px-4 mt-3">
-                  <span className="fw-bold">Max Price per night</span>
-                  <input
-                    type="number"
-                    className="col-7 py-2 border border-none rounded"
-                    placeholder=""
-                  />
-                </div>
-                <div className="d-flex justify-content-between px-4 mt-3">
+                
+                <div className="d-flex justify-content-between px-4 mt-4">
                   <span className="fw-bold">Adult</span>
                   <input
                     type="number"
@@ -206,7 +189,7 @@ const DisplayRooms = () => {
                     placeholder={adult}
                   />
                 </div>
-                <div className="d-flex justify-content-between px-4 mt-3">
+                <div className="d-flex justify-content-between px-4 mt-4">
                   <span className="fw-bold">Children</span>
                   <input
                     type="number"
@@ -215,7 +198,7 @@ const DisplayRooms = () => {
                     placeholder={children}
                   />
                 </div>
-                <div className="d-flex justify-content-between px-4 mt-3">
+                <div className="d-flex justify-content-between px-4 mt-4">
                   <span className="fw-bold">Room</span>
                   <input
                     type="number"
@@ -285,7 +268,7 @@ const DisplayRooms = () => {
                           className="img-fluid rounded col-12  "
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModal"
-                          onClick={() => setHandelView(allimag)}
+                          onClick={() => handelView(allimag)}
                         />
                       </div>
                     </>
