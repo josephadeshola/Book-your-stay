@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import AOS from "aos";
 // import "aos/dist/aos.css";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 // import {allServicesTwo } from "./Info"
 
@@ -223,7 +223,6 @@ const Service = () => {
     adult: 1,
     children: 0,
     room: 1,
-    
   });
 
   const handleOption = (name, operation) => {
@@ -241,14 +240,14 @@ const Service = () => {
       checkin: checkin,
       checkout: checkout,
       options: options,
-      name:name,
-      email:email,
-      number:number,
-      standardRoom:standardRoom
+      name: name,
+      email: email,
+      number: number,
+      standardRoom: standardRoom,
     };
-    console.log(getDate)
-    toast.success("successfully Booked")
-    navigate(`/findrooms/${selectedRoom}`, { state: { getDate,}});
+    console.log(getDate);
+    toast.success("successfully Booked");
+    navigate(`/findrooms/${selectedRoom}`, { state: { getDate } });
   };
 
   return (
@@ -278,7 +277,7 @@ const Service = () => {
                 <div>
                   <div>
                     <label htmlFor="" className="mt-2 pb-2">
-                    <i class="bi bi-person-check text-warning"></i> Your Name
+                      <i class="bi bi-person-check text-warning"></i> Your Name
                     </label>
                     <input
                       type="text"
@@ -300,7 +299,7 @@ const Service = () => {
                   </div>
                   <div>
                     <label htmlFor="" className="mt-2 pb-2">
-                    <i class="bi bi-telephone text-warning"></i> Phone Number
+                      <i class="bi bi-telephone text-warning"></i> Phone Number
                     </label>
                     <input
                       type="text"
@@ -311,9 +310,14 @@ const Service = () => {
                   </div>
                   <div>
                     <label htmlFor="" className="mt-2 pb-2">
-                    <i class="bi bi-flower2 text-warning"></i> Select Room
+                      <i class="bi bi-flower2 text-warning"></i> Select Room
                     </label>
-                    <select  onChange={(e) =>setStandardRoom(e.target.value)}  className="col-12  py-3 my_modal shadow px-2" name="Standard Room" id="">
+                    <select
+                      onChange={(e) => setStandardRoom(e.target.value)}
+                      className="col-12  py-3 my_modal shadow px-2"
+                      name="Standard Room"
+                      id=""
+                    >
                       <option>Premier Room</option>
                       <option>Family Suite</option>
                       <option>Luxury Suite</option>
@@ -322,7 +326,8 @@ const Service = () => {
                   </div>
                   <div>
                     <label htmlFor="" className="mt-2 pb-2">
-                      <i class="bi bi-patch-check text-warning"></i> Check In Date
+                      <i class="bi bi-patch-check text-warning"></i> Check In
+                      Date
                     </label>
                     <input
                       type="datetime-local"
@@ -335,7 +340,8 @@ const Service = () => {
                 <div>
                   <div>
                     <label htmlFor="" className="mt-2 pb-2">
-                      <i class="bi bi-x-octagon text-warning"></i> Check Out Date
+                      <i class="bi bi-x-octagon text-warning"></i> Check Out
+                      Date
                     </label>
                     <input
                       type="datetime-local"
@@ -369,7 +375,6 @@ const Service = () => {
                             </span>
                             <button
                               className="optionCounterButton border border-warning bg-light rounded px-3"
-                              disabled={options.childrqqen <= 0}
                               onClick={() => handleOption("adult", "i")}
                             >
                               +
@@ -379,7 +384,7 @@ const Service = () => {
                             <span className="optionText">children</span>
                             <button
                               className="optionCounterButton border border-warning bg-light rounded px-3"
-                              disabled={options.room <= 1}
+                              disabled={options.children <= 0}
                               onClick={() => handleOption("children", "d")}
                             >
                               -
@@ -397,6 +402,7 @@ const Service = () => {
                           <div className="optionItem mt-3 d-flex justify-content-between text-center">
                             <span className="optionText">Room</span>
                             <button
+                              disabled={options.room <= 1}
                               className="optionCounterButton ms-3 border border-warning bg-light rounded px-3"
                               onClick={() => handleOption("room", "d")}
                             >
@@ -420,13 +426,6 @@ const Service = () => {
               </div>
             </div>
             <div class="modal-footer">
-              <button
-                type="button"
-                class="btn py-3 btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
               <button
                 type="button"
                 data-bs-dismiss="modal"
@@ -478,7 +477,7 @@ const Service = () => {
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                   className="btn w-50 rounded text-center py-2"
-                  onClick={()=>setSelectedRoom(eachItem.id)}
+                  onClick={() => setSelectedRoom(eachItem.id)}
                 >
                   Book Now
                 </button>
@@ -532,8 +531,7 @@ const Service = () => {
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                   className="btn w-50 rounded text-center py-2"
-                  onClick={()=>setSelectedRoom(eachItem.id)}
-
+                  onClick={() => setSelectedRoom(eachItem.id)}
                 >
                   Book Now
                 </button>
