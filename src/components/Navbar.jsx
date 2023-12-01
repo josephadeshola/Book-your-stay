@@ -32,12 +32,12 @@ const Navbar = (props) => {
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
                 <Link class="nav-link " to="/findrooms">
-                  Rooms
+                 Booking
                 </Link>
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
                 <a class="nav-link " href="#">
-                  Book
+                  Contact
                 </a>
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
@@ -129,7 +129,7 @@ const Navbar = (props) => {
                   <div className="d-flex gap-3">
                     <i class="bi bi-hospital mt-2 fs-1 text-light"></i>
                     <a class="nav-link fw-bold text-light fs-1" href="#">
-                      Rooms
+                      Booking
                     </a>
                   </div>
                   <hr className="border border-primary " />
@@ -138,7 +138,7 @@ const Navbar = (props) => {
                   <div className="d-flex gap-3">
                     <i class="bi bi-pc-display-horizontal text-light mt-2 fs-1"></i>
                     <a class="nav-link fw-bold text-light fs-1" href="#">
-                      Book
+                     Contact
                     </a>
                   </div>
                   <hr className="border border-primary " />

@@ -8,7 +8,7 @@ const DisplayRooms = () => {
   const Rooms = [
     {
       image:
-        "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg?w=740&t=st=1701021559~exp=1701022159~hmac=d0d12f6e11d6298ef245c98067fea82b33379873733449ce8e5cde2ab53a1243",
+        "https://img.freepik.com/free-photo/pillow-bed-with-light-lamp_74190-2095.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       id: "21",
     },
     {
@@ -265,7 +265,7 @@ const DisplayRooms = () => {
                       >
                         <img
                           src={allimag.image}
-                          className="img-fluid rounded col-12  "
+                          className="img-fluid shadow rounded col-12  "
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModal"
                           onClick={() => handelView(allimag)}
