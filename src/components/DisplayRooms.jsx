@@ -4,36 +4,32 @@ import "./displayroom.css";
 import { allServices, viewAll } from "./Service";
 import { allServicesTwo } from "./Info";
 import { toast } from "react-toastify";
-
-
-
 const DisplayRooms = () => {
-
   const Rooms = [
     {
       image:
         "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg?w=740&t=st=1701021559~exp=1701022159~hmac=d0d12f6e11d6298ef245c98067fea82b33379873733449ce8e5cde2ab53a1243",
-        id:"21"
+      id: "21",
     },
     {
       image:
         "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg?w=740&t=st=1701021559~exp=1701022159~hmac=d0d12f6e11d6298ef245c98067fea82b33379873733449ce8e5cde2ab53a1243https://img.freepik.com/premium-photo/hotel_664434-4822.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-        id:"22"
+      id: "22",
     },
     {
       image:
         "https://img.freepik.com/free-photo/luxury-bedroom-suite-resort-high-rise-hotel-with-working-table_105762-1783.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-        id:"23"
+      id: "23",
     },
     {
       image:
         "https://img.freepik.com/free-photo/3d-rendering-modern-luxury-bedroom-suite-bathroom_105762-1936.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-        id:"24"
+      id: "24",
     },
     {
       image:
         "https://img.freepik.com/premium-photo/modern-bedroom-with-working-desk-bedding_41487-836.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-        id:"25"
+      id: "25",
     },
     {
       image:
@@ -42,27 +38,27 @@ const DisplayRooms = () => {
     {
       image:
         "https://img.freepik.com/free-photo/bedroom-with-bed-chair-front-sliding-glass-door_1340-25294.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-        id:"26"
+      id: "26",
     },
     {
       image:
         "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-        id:"27"
+      id: "27",
     },
     {
       image:
         "https://img.freepik.com/free-photo/luxury-bedroom-interior-with-rich-furniture-scenic-view-from-walkout-deck_1258-111480.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-        id:"28"
+      id: "28",
     },
     {
       image:
         "https://img.freepik.com/premium-photo/travel-concept-beautiful-modern-mansions-hotels-bedroom-interior-design_872147-40588.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-        id:"29"
+      id: "29",
     },
     {
       image:
         "https://img.freepik.com/premium-photo/luxury-modern-cozy-sea-view-double-bedroom_36036-382.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-        id:"30"
+      id: "30",
     },
     {
       image:
@@ -70,16 +66,17 @@ const DisplayRooms = () => {
     },
   ];
   const location = useLocation();
-  const { roomId,anotherParam } = useParams();
+  console.log(location);
+  const { roomId, anotherParam } = useParams();
   const [checkOut, setCheckOut] = useState(location.state.getDate.checkout);
   const [checkin, setCheckIn] = useState(location.state.getDate.checkin);
   const [adult, setAdult] = useState(location.state.getDate.options.adult);
   const [name, setName] = useState(location.state.getDate.options.name);
-  const [email, setEmail]= useState(location.state.getDate.options.email);
-  const [standardRoom, setStandardRoom]= useState(location.state.getDate.options.standardRoom);
-  const [number, setNumber] = useState(
-    location.state.getDate.options.number
+  const [email, setEmail] = useState(location.state.getDate.options.email);
+  const [standardRoom, setStandardRoom] = useState(
+    location.state.getDate.standardRoom
   );
+  const [number, setNumber] = useState(location.state.getDate.options.number);
   const [children, setChildren] = useState(
     location.state.getDate.options.children
   );
@@ -90,10 +87,7 @@ const DisplayRooms = () => {
       (item) => item.id === roomId
     )
   );
-  useEffect(() => {
-    const modalElement = document.getElementById('exampleModal');
-    // const bootstrapModal = new bootstrap.Modal(modalElement);
-  }, []);
+
   const handelAvailability = () => {
     toast.success("Loading Rooms");
     setTimeout(() => {
@@ -102,16 +96,14 @@ const DisplayRooms = () => {
   };
   const [view, setView] = useState(false);
 
-  const [handelViewImg , setHandelView]= useState(
-      Rooms.find((eachRoom)=>eachRoom.id===anotherParam)
-      )
-      console.log(handelViewImg.image);
-      //   setView(true);
+  const [handelViewImg, setHandelView] = useState(
+    Rooms.find((eachRoom) => eachRoom.id === anotherParam)
+  );
+  console.log(handelViewImg.image);
+  //   setView(true);
   //  const [findImg, setFindImg] = useState(
   //   )
- 
 
- 
   return (
     <div>
       <div className="container ">
@@ -138,7 +130,7 @@ const DisplayRooms = () => {
                     ></button>
                   </div>
                   <div class="modal-body w-100">
-                   <img src={handelViewImg.image} alt="" />
+                    <img src={handelViewImg.image} alt="" />
                   </div>
                   <div class="modal-footer">
                     <button
@@ -160,7 +152,7 @@ const DisplayRooms = () => {
                 <h4 className="px-md-4 px-2">Search</h4>
                 <div className="px-4">
                   <label htmlFor="" className="fw-bold">
-                    Destination
+                    Room Destination
                   </label>
                   <input
                     type="text"
@@ -293,7 +285,7 @@ const DisplayRooms = () => {
                           className="img-fluid rounded col-12  "
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModal"
-                          onClick={() => setHandelView(allimag.id)}
+                          onClick={() => setHandelView(allimag)}
                         />
                       </div>
                     </>

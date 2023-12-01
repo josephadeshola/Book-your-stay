@@ -223,6 +223,7 @@ const Service = () => {
     adult: 1,
     children: 0,
     room: 1,
+    
   });
 
   const handleOption = (name, operation) => {
@@ -243,7 +244,7 @@ const Service = () => {
       name:name,
       email:email,
       number:number,
-      standardRoom: standardRoom
+      standardRoom:standardRoom
     };
     console.log(getDate)
     toast.success("successfully Booked")
