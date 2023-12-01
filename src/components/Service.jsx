@@ -240,8 +240,12 @@ const Service = () => {
       checkin: checkin,
       checkout: checkout,
       options: options,
+      name:name,
+      email:email,
+      number:number,
+      standardRoom: standardRoom
     };
-    console.log()
+    console.log(getDate)
     toast.success("successfully Booked")
     navigate(`/findrooms/${selectedRoom}`, { state: { getDate,}});
   };
@@ -308,8 +312,7 @@ const Service = () => {
                     <label htmlFor="" className="mt-2 pb-2">
                     <i class="bi bi-flower2 text-warning"></i> Select Room
                     </label>
-                    <select  onChange={(e) => setRoom(e.target.value)}  className="col-12  py-3 my_modal shadow px-2" name="Standard Room" id="">
-                      <option>Deluxe Room</option>
+                    <select  onChange={(e) =>setStandardRoom(e.target.value)}  className="col-12  py-3 my_modal shadow px-2" name="Standard Room" id="">
                       <option>Premier Room</option>
                       <option>Family Suite</option>
                       <option>Luxury Suite</option>

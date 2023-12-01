@@ -165,7 +165,7 @@ const DisplayRooms = () => {
                   <input
                     type="text"
                     className="col-12 py-2 border border-none rounded"
-                    placeholder="Good hotel"
+                    placeholder={standardRoom}
                   />
                 </div>
                 <div className="px-4">
