@@ -211,12 +211,14 @@ const Service = () => {
   const handleviewAll = () => {
     setShowAllProduct(true);
   };
-
- 
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [openOption, setOpenOption] = useState(false);
   const [checkin, setCheckIN] = useState("");
   const [checkout, setCheckOut] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
+  const [standardRoom, setStandardRoom] = useState("");
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
@@ -239,6 +241,7 @@ const Service = () => {
       checkout: checkout,
       options: options,
     };
+    console.log()
     toast.success("successfully Booked")
     navigate(`/findrooms/${selectedRoom}`, { state: { getDate,}});
   };
@@ -270,7 +273,52 @@ const Service = () => {
                 <div>
                   <div>
                     <label htmlFor="" className="mt-2 pb-2">
-                      <i class="bi bi-patch-check"></i> Check In Date
+                    <i class="bi bi-person-check text-warning"></i> Your Name
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      className="col-12  py-3 my_modal shadow px-2"
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="" className="mt-2 pb-2">
+                      <i class="bi bi-envelope text-warning"></i> Your Email
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="Your Email"
+                      className="col-12  py-3 my_modal shadow px-2"
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="" className="mt-2 pb-2">
+                    <i class="bi bi-telephone text-warning"></i> Phone Number
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Phone Number"
+                      className="col-12  py-3 my_modal shadow px-2"
+                      onChange={(e) => setNumber(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="" className="mt-2 pb-2">
+                    <i class="bi bi-flower2 text-warning"></i> Select Room
+                    </label>
+                    <select  onChange={(e) => setRoom(e.target.value)}  className="col-12  py-3 my_modal shadow px-2" name="Standard Room" id="">
+                      <option>Deluxe Room</option>
+                      <option>Premier Room</option>
+                      <option>Family Suite</option>
+                      <option>Luxury Suite</option>
+                      <option>President Suite</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="" className="mt-2 pb-2">
+                      <i class="bi bi-patch-check text-warning"></i> Check In Date
                     </label>
                     <input
                       type="datetime-local"
@@ -283,7 +331,7 @@ const Service = () => {
                 <div>
                   <div>
                     <label htmlFor="" className="mt-2 pb-2">
-                      <i class="bi bi-x-octagon"></i> Check Out Date
+                      <i class="bi bi-x-octagon text-warning"></i> Check Out Date
                     </label>
                     <input
                       type="datetime-local"
@@ -294,7 +342,7 @@ const Service = () => {
                   </div>
                   <div className="col-12 mx-auto">
                     <label htmlFor="" className="mt-2 ">
-                      <i class="bi bi-people"></i> Adults
+                      <i class="bi bi-people text-warning"></i> Adults
                     </label>
                     <div className="headerSearchItem">
                       <div
