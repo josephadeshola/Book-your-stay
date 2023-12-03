@@ -40,12 +40,13 @@
   }
   ::-webkit-scrollbar-thumb:hover {
     background-color:#a99808;
+    color: rgba(202, 228, 237, 0.518);
   } 
 
 @media (max-width:688px) {
   .get_bg {
   
-    height:80vh;
+    height:60vh;
 }
     .img-fluid {
         margin-top: 10px;

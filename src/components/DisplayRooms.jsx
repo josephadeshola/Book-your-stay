@@ -10,86 +10,86 @@ const DisplayRooms = () => {
       image:
         "https://img.freepik.com/free-photo/pillow-bed-with-light-lamp_74190-2095.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       id: "21",
-      name:"DELUXE ROOM",
-      price:"$479"
+      name: "DELUXE ROOM",
+      price: "$479",
     },
     {
       image:
         "https://img.freepik.com/free-photo/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg?w=740&t=st=1701021559~exp=1701022159~hmac=d0d12f6e11d6298ef245c98067fea82b33379873733449ce8e5cde2ab53a1243https://img.freepik.com/premium-photo/hotel_664434-4822.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       id: "22",
-      name:"STANDARD ROOM",
-      price:"$399"
+      name: "STANDARD ROOM",
+      price: "$399",
     },
     {
       image:
         "https://img.freepik.com/free-photo/luxury-bedroom-suite-resort-high-rise-hotel-with-working-table_105762-1783.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       id: "23",
-      name:"PREMIER ROOM",
-      price:"$200"
+      name: "PREMIER ROOM",
+      price: "$200",
     },
     {
       image:
         "https://img.freepik.com/free-photo/3d-rendering-modern-luxury-bedroom-suite-bathroom_105762-1936.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       id: "24",
-      name:"FAMILY SUITE",
-      price:"$400"
+      name: "FAMILY SUITE",
+      price: "$400",
     },
     {
       image:
         "https://img.freepik.com/premium-photo/modern-bedroom-with-working-desk-bedding_41487-836.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       id: "25",
-      name:"LUXURY SUITE",
-      price:"$500"
+      name: "LUXURY SUITE",
+      price: "$500",
     },
-    
+
     {
       image:
         "https://img.freepik.com/free-photo/bedroom-with-bed-chair-front-sliding-glass-door_1340-25294.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       id: "26",
-      name:"KING ROOM",
-      price:"$250"
+      name: "KING ROOM",
+      price: "$250",
     },
     {
       image:
         "https://img.freepik.com/free-photo/modern-luxury-bedroom-suite-bathroom_105762-1791.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       id: "27",
-      name:"EFFICIENCY ROOM",
-      price:"$320"
+      name: "EFFICIENCY ROOM",
+      price: "$320",
     },
     {
       image:
         "https://img.freepik.com/free-photo/luxury-bedroom-interior-with-rich-furniture-scenic-view-from-walkout-deck_1258-111480.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       id: "28",
-      name:"QUAD ROOM",
-      price:"$304"
+      name: "QUAD ROOM",
+      price: "$304",
     },
     {
       image:
         "https://img.freepik.com/premium-photo/travel-concept-beautiful-modern-mansions-hotels-bedroom-interior-design_872147-40588.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       id: "29",
-      name:"TRIPLE ROOM",
-      price:"$500"
+      name: "TRIPLE ROOM",
+      price: "$500",
     },
     {
       image:
         "https://img.freepik.com/premium-photo/luxury-modern-cozy-sea-view-double-bedroom_36036-382.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
       id: "30",
-      name:"LUXURY SUITE",
-      price:"$450"
+      name: "LUXURY SUITE",
+      price: "$450",
     },
     {
       image:
         "https://img.freepik.com/free-photo/3d-rendering-beautiful-comtemporary-luxury-bedroom-suite-hotel-with-tv_105762-2071.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-        id:"31",
-        name:"FAMILY SUITE",
-        price:"$600"
+      id: "31",
+      name: "FAMILY SUITE",
+      price: "$600",
     },
     {
       image:
         "https://img.freepik.com/premium-photo/luxury-roombedroom-interior_940802-664.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais",
-        id:"32",
-        name:"PRESIDENTIAL SUITE",
-        price:"$490"
+      id: "32",
+      name: "PRESIDENTIAL SUITE",
+      price: "$490",
     },
   ];
   const location = useLocation();
@@ -122,11 +122,11 @@ const DisplayRooms = () => {
     }, 6000);
   };
   const [view, setView] = useState(false);
-  const [setHandelView, setSetHandelView] = useState([])
-  const  handelView=(selectedImg)=>{
-    setSetHandelView([selectedImg])
-    setView(true)
-  }
+  const [setHandelView, setSetHandelView] = useState([]);
+  const handelView = (selectedImg) => {
+    setSetHandelView([selectedImg]);
+    setView(true);
+  };
 
   return (
     <div>
@@ -144,26 +144,44 @@ const DisplayRooms = () => {
                 <div className="modal-content">
                   <div className="modal-header ">
                     <h1 className="modal-title fs-5" id="exampleModalLabel">
-                      BOOKING FORM
+                      Room information
                     </h1>
                     <button
                       type="button"
-                      class="btn-close"
+                      class="btn-close bg-warning"
                       data-bs-dismiss="modal"
                       aria-label="Close"
                     ></button>
                   </div>
                   <div class="modal-body w-100">
-                    <div className="d-flex gap-md-3">
-                  {setHandelView.map((img, index) => (
-                    <>
-                      <img className="col-4 rounded" key={index} src={img.image} alt="" />
-                      <div>
-                      <p>{img.name}</p>
-                      <div>{img.price}</div>
-                      </div>
-                    </>
-                    ))}
+                    <div className="">
+                      {setHandelView.map((img, index) => (
+                        <>
+                          <img
+                            height="280vh"
+                            className="col-12 rounded"
+                            key={index}
+                            src={img.image}
+                            alt=""
+                          />
+                          <div>
+                            <p className="fw-bold mt-2">{img.name}</p>
+                            <div className="fw-bold">{img.price}</div>
+                            <p style={{backgroundColor:"rgba(202, 228, 237, 0.518)"}} className="py-2 px-3 rounded">
+                           <span className="fw-bold "> <i class="bi fs-3 bi-stars"></i> Highlights</span> <br />
+                             <span> Soundproofed Air conditioning
+                              Connecting rooms available Free cots/infant beds
+                              LCD TV Separate bedroom Premium bedding Rainfall
+                              showerhead
+                              </span>
+                            </p>
+                            <p>
+                              <i class="bi bi-wifi"></i>
+                              Free WiFi
+                              </p>
+                          </div>
+                        </>
+                      ))}
                     </div>
                   </div>
                   <div class="modal-footer">
@@ -173,7 +191,7 @@ const DisplayRooms = () => {
                       aria-label="Close"
                       class="py-2 px-4 rounded btn btn-primary"
                     >
-                     BOOK NOW
+                      BOOK NOW
                     </button>
                   </div>
                 </div>
@@ -214,7 +232,7 @@ const DisplayRooms = () => {
                     placeholder={checkOut}
                   />
                 </div>
-                
+
                 <div className="d-flex justify-content-between px-4 mt-4">
                   <span className="fw-bold">Adult</span>
                   <input
