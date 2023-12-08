@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import image from "../assets/image/logo.png";
 
-const Navbar = (props) => {
+const Navbar = () => {
   return (
     <div>
       <nav
@@ -52,13 +52,17 @@ const Navbar = (props) => {
               className="btn d-md-block d-none rounded text-light px-4 py-2"
               style={{ backgroundColor: "#dcaa14c2" }}
             >
+              <Link className="text-decoration-none text-light" to={"/create"}>
               Signup
+              </Link>
             </button>
             <button
               className="btn d-md-block d-none rounded text-light px-4 py-2"
               style={{ backgroundColor: "#dcaa14c2" }}
             >
+              <Link className="text-decoration-none text-light" to={"/login"}>
               Login
+              </Link>
             </button>
           </div>
 

@@ -113,6 +113,10 @@ div.at-container {
   margin-top: 90px;
 
 }
+.bg-color{
+  background: linear-gradient(to right, #AE8625, #F7EF8A, #D2AC47, #EDC967);
+
+}
 
 .btn {
   background-color: #dcaa14c2;
@@ -156,6 +160,7 @@ div.at-container {
  border: 1px solid #dcaa14c2;
 
 }
+
 
 @keyframes bounce-top {
 

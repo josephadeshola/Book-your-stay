@@ -140,9 +140,9 @@ const DisplayRooms = () => {
               aria-labelledby="exampleModalLabel"
               aria-hidden="true"
             >
-              <div className="modal-dialog col-12">
-                <div className="modal-content">
-                  <div className="modal-header ">
+              <div className="modal-dialog col-12 overflow-">
+                <div className="modal-content overflow-y-scroll">
+                  <div className="modal-header">
                     <h1 className="modal-title fs-5" id="exampleModalLabel">
                       Room information
                     </h1>
@@ -166,7 +166,7 @@ const DisplayRooms = () => {
                           />
                           <div>
                             <p className="fw-bold mt-2">{img.name}</p>
-                            <div className="fw-bold">{img.price}</div>
+                            <div className="fw-bold mb-3">{img.price}</div>
                             <p style={{backgroundColor:"rgba(202, 228, 237, 0.518)"}} className="py-2 px-3 rounded">
                            <span className="fw-bold "> <i class="bi fs-3 bi-stars"></i> Highlights</span> <br />
                              <span> Soundproofed Air conditioning
@@ -176,9 +176,25 @@ const DisplayRooms = () => {
                               </span>
                             </p>
                             <p>
-                              <i class="bi bi-wifi"></i>
-                              Free WiFi
+                              <i style={{color:"#a99808 "}} class="bi bi-wifi"></i> Free WiFi
                               </p>
+                            <p>
+                            <i style={{color:"#a99808 "}} class="bi bi-tree"></i> Restaurant                             
+                             </p>
+                            <p>
+                            <i style={{color:"#a99808 "}} class="bi bi-bus-front"></i> Airport transfer                             
+                             </p>
+                            <p>
+                            <i style={{color:"#a99808 "}} class="bi bi-people"></i>  Sleeps 3                            
+                             </p>
+
+                             <div className="border rounded px-2">
+                              <h4>Room options</h4>
+                              <p>Cancellation policy</p>
+                              <div className="d-flex gap-2 ">
+                              <p><a href="">More details on all policy options</a></p> <i class="bi text-danger bi-exclamation-circle"></i>
+                              </div>
+                             </div>
                           </div>
                         </>
                       ))}
@@ -191,7 +207,7 @@ const DisplayRooms = () => {
                       aria-label="Close"
                       class="py-2 px-4 rounded btn btn-primary"
                     >
-                      BOOK NOW
+                      Reserve
                     </button>
                   </div>
                 </div>

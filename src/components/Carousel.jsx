@@ -80,8 +80,7 @@ const Carousel = () => {
       </div>
 
       <div
-        style={{ backgroundColor: "#dcaa14c2" }}
-        className=" py-4 px-5 d-md-flex justify-content-between"
+        className=" py-4 bg-color px-5 d-md-flex justify-content-between"
       >
         <div
           data-aos="zoom-out-left"

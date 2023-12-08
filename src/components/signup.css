@@ -1,0 +1,50 @@
+.top-div {
+    margin-top: 4pc;
+    height: 20vh;
+    border-radius:0px 0px 20px 20px ;
+    background: linear-gradient(to top, #AE8625, #F7EF8A, #D2AC47, #EDC967);
+
+}
+.bottom-div {
+    position: relative;
+    position: fixed;
+    bottom: 0px;
+    background: linear-gradient(to bottom, #AE8625, #F7EF8A, #D2AC47, #EDC967);
+    height: 20vh;
+    border-radius:20px 20px 0px 0px ;
+}
+.btn{
+    background: linear-gradient(to right, #AE8625, #F7EF8A, #D2AC47, #EDC967);
+
+}
+.get-hover:hover{
+ border-bottom: 2px solid #fff;
+     
+}
+.input-group {
+    position: relative;
+  }
+  
+  .get-position {
+    position: absolute;
+    right: 40px; /* Adjust the right distance based on your design */
+    top: 50%; /* Center vertically */
+    transform: translateY(-5%);
+    cursor: pointer;
+  }
+  
+  /* Additional styles for the eye icon */
+  .get-position:hover {
+    color: #a99808; /* Change color on hover if desired */
+  }
+  
+
+@media (max-width:688px) {
+    .bottom-div { 
+        position: relative;
+        position: fixed;
+        bottom: 0px;
+        height: 10vh;
+        border-radius:20px 20px 1px 1px ;
+    }  
+}

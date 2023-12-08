@@ -7,6 +7,8 @@ import DisplayRooms from "./components/DisplayRooms";
 import Roomselected from "./components/Roomselected";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Signup from "./components/Signup";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/findrooms/:roomId" element={<DisplayRooms />}></Route>
         <Route path="/roomselect" element={<Roomselected />}></Route>
+        <Route path="/create" element={<Signup/>}></Route>
+        <Route path="/login" element={<Login />}> </Route>
       </Routes>
     </div>
   );
