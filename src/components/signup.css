@@ -21,22 +21,7 @@
  border-bottom: 2px solid #fff;
      
 }
-.input-group {
-    position: relative;
-  }
-  
-  .get-position {
-    position: absolute;
-    right: 40px; /* Adjust the right distance based on your design */
-    top: 50%; /* Center vertically */
-    transform: translateY(-5%);
-    cursor: pointer;
-  }
-  
-  /* Additional styles for the eye icon */
-  .get-position:hover {
-    color: #a99808; /* Change color on hover if desired */
-  }
+
   
 
 @media (max-width:688px) {
