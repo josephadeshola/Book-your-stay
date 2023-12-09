@@ -45,7 +45,7 @@ const Signup = () => {
             </div>
           </div>
           <div>
-            <h3 className="text-center mt-md-2 mt-5 py-3 py-md-0">
+            <h3 className="text-center mt-md-2 py-3 py-md-0">
               Create An Account
             </h3>
 

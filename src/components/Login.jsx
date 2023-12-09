@@ -41,7 +41,7 @@ const Login = () => {
             </div>
           </div>
           <div>
-            <h3 className="text-center mt-md-2 mt-5 py-4 py-md-0">
+            <h3 className="text-center mt-md-2  py-4 py-md-0">
               Login Account
             </h3>
             <div className="col-md-6 mx-auto">

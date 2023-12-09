@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div>
       <nav
-        style={{ backgroundColor: "white"}}
+        style={{ backgroundColor: "white" }}
         class="navbar shadow fixed-top py-1 px-md-3"
       >
         <div class="container-fluid">
@@ -32,7 +32,7 @@ const Navbar = () => {
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
                 <Link class="nav-link " to="/findrooms">
-                 Booking
+                  Booking
                 </Link>
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
@@ -53,7 +53,7 @@ const Navbar = () => {
               style={{ backgroundColor: "#dcaa14c2" }}
             >
               <Link className="text-decoration-none text-light" to={"/create"}>
-              Signup
+                Signup
               </Link>
             </button>
             <button
@@ -61,7 +61,7 @@ const Navbar = () => {
               style={{ backgroundColor: "#dcaa14c2" }}
             >
               <Link className="text-decoration-none text-light" to={"/login"}>
-              Login
+                Login
               </Link>
             </button>
           </div>
@@ -108,11 +108,8 @@ const Navbar = () => {
                   <div className="d-flex gap-3">
                     <i class="bi bi-house mt-2 fs-1 text-light "></i>
 
-                    <Link
-                      class="nav-link  fw-bold text-light fs-1"
-                      to={"/"}
-                    >
-                    Home
+                    <Link class="nav-link  fw-bold text-light fs-1" to={"/"}>
+                      Home
                     </Link>
                   </div>
                   <hr className="border border-primary" />
@@ -142,7 +139,7 @@ const Navbar = () => {
                   <div className="d-flex gap-3">
                     <i class="bi bi-pc-display-horizontal text-light mt-2 fs-1"></i>
                     <a class="nav-link fw-bold text-light fs-1" href="#">
-                     Contact
+                      Contact
                     </a>
                   </div>
                   <hr className="border border-primary " />
@@ -158,24 +155,29 @@ const Navbar = () => {
                   <hr className="border border-primary " />
                 </li>
                 <div className="d-flex gap-2">
-            <button
-              className="btn rounded text-light px-4 py-2"
-              style={{ backgroundColor: "#dcaa14c2" }}
-            >
-              <Link className="text-decoration-none text-light" to={"/create"}>
-              Signup
-              </Link>
-            </button>
-            <button
-              className="btn rounded text-light px-4 py-2"
-              style={{ backgroundColor: "#dcaa14c2" }}
-            >
-              <Link className="text-decoration-none text-light" to={"/login"}>
-              Login
-              </Link>
-            </button>
-          </div>
-
+                  <button
+                    className="btn rounded text-light px-4 py-2"
+                    style={{ backgroundColor: "#dcaa14c2" }}
+                  >
+                    <Link
+                      className="text-decoration-none text-light"
+                      to={"/create"}
+                    >
+                      Signup
+                    </Link>
+                  </button>
+                  <button
+                    className="btn rounded text-light px-4 py-2"
+                    style={{ backgroundColor: "#dcaa14c2" }}
+                  >
+                    <Link
+                      className="text-decoration-none text-light"
+                      to={"/login"}
+                    >
+                      Login
+                    </Link>
+                  </button>
+                </div>
               </ul>
             </div>
           </div>
