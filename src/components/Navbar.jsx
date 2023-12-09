@@ -157,6 +157,25 @@ const Navbar = () => {
                   </div>
                   <hr className="border border-primary " />
                 </li>
+                <div className="d-flex gap-2">
+            <button
+              className="btn rounded text-light px-4 py-2"
+              style={{ backgroundColor: "#dcaa14c2" }}
+            >
+              <Link className="text-decoration-none text-light" to={"/create"}>
+              Signup
+              </Link>
+            </button>
+            <button
+              className="btn rounded text-light px-4 py-2"
+              style={{ backgroundColor: "#dcaa14c2" }}
+            >
+              <Link className="text-decoration-none text-light" to={"/login"}>
+              Login
+              </Link>
+            </button>
+          </div>
+
               </ul>
             </div>
           </div>
