@@ -13,7 +13,7 @@ const Signup = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="top-div  py-4">
-                  <Link to={"/"}>
+                  <Link className="icon-size" to={"/"}>
             <button class="button">
               <div class="button-box">
                 <span class="button-elem">
