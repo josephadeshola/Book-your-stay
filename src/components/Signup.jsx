@@ -12,7 +12,7 @@ const Signup = () => {
     <div>
       <div className="container-fluid">
         <div className="row">
-          <div className="top-div  py-4">
+          <div className="top-div  py-md-4 py-0 ">
                   <Link className="icon-size" to={"/"}>
             <button class="button">
               <div class="button-box">

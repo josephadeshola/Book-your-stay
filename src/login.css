@@ -23,4 +23,24 @@
           height: 8vh;
           border-radius:20px 20px 1px 1px ;
       }  
+      .button-elem {
+        display: block;
+        width: 18px;
+        height: 18px;
+        margin: 17px 18px 0 18px;
+        transform: rotate(180deg);
+        fill: #F0EEEF;
+      }
+      .button {
+        top: 10px;
+        display: block;
+        position: relative;
+        width: 49px;
+        height: 49px;
+        margin: 0;
+        overflow: hidden;
+        outline: none;
+        background-color: transparent;
+        border: 0;
+      }
     }

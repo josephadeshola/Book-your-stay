@@ -13,7 +13,7 @@ const Login = () => {
         <div className="row">
           <div
             style={{ backgroundColor: "#a99808 " }}
-            className="top-div text-center py-4"
+            className="top-div text-center py-md-4 py-0"
           >
                  <Link to={"/create"}>
             <button class="button">
@@ -31,7 +31,7 @@ const Login = () => {
               </div>
             </button>
                   </Link>
-            <div className="d-flex justify-content-center mt-5 gap-4">
+            <div className="d-flex justify-content-center mt-md-5  gap-4">
               <Link to={"/create"} className="text-light text-decoration-none">
                 Sign Up
               </Link>
