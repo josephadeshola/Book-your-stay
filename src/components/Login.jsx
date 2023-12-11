@@ -99,7 +99,7 @@ const Login = () => {
           </div>
           <div
             style={{ backgroundColor: "#a99808 " }}
-            className="bottom-div py-5"
+            className="bottom-div py-3"
           ></div>
         </div>
       </div>

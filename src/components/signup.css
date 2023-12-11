@@ -1,6 +1,6 @@
 .top-div {
     margin-top: 4pc;
-    height: 20vh;
+    height: 15vh;
     border-radius:0px 0px 20px 20px ;
     background: linear-gradient(to top, #AE8625, #F7EF8A, #D2AC47, #EDC967);
 
@@ -10,7 +10,7 @@
     position: fixed;
     bottom: 0px;
     background: linear-gradient(to bottom, #AE8625, #F7EF8A, #D2AC47, #EDC967);
-    height: 20vh;
+    height: 15vh;
     border-radius:20px 20px 0px 0px ;
 }
 .btn{
@@ -96,7 +96,7 @@
 @media (max-width:688px) {
   .top-div {
     margin-top: 4pc;
-    height: 10vh;
+    height: 8vh;
     border-radius:0px 0px 20px 20px ;
     background: linear-gradient(to top, #AE8625, #F7EF8A, #D2AC47, #EDC967);
 
@@ -105,7 +105,7 @@
         position: relative;
         position: fixed;
         bottom: 0px;
-        height: 10vh;
+        height: 8vh;
         border-radius:20px 20px 1px 1px ;
     }  
 }
