@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
+import axios from "axios";
 import * as Yup from "yup";
+import { toast } from "react-toastify";
+
 import "./signup.css";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -16,6 +20,7 @@ const Signup = () => {
       email: "",
       password: "",
     },
+
     validationSchema: Yup.object({
       fullName: Yup.string()
         .min(3, "Full name must be at least 3 characters")
@@ -29,6 +34,28 @@ const Signup = () => {
     }),
     onSubmit: (values) => {
       console.log("users", values);
+      axios
+        .post("http://localhost:5600/user/register", values)
+        .then((res) => {
+          if (res.data.status == true) {
+            console.log("myresponse", res);
+            setTimeout(() => {
+              navigate("/login");
+            }, 5000);
+            toast.success(res.data.message);
+          } else {
+            toast.error(res.data.message);
+          }
+        })
+        .catch((err) => {
+          if (err.response) {
+            toast.error(err.response.data.message);
+          } else if (err.request) {
+            toast.error("No response received from the server");
+          } else {
+            toast.error("Error setting up the request");
+          }
+        });
     },
   });
   return (
@@ -94,13 +121,11 @@ const Signup = () => {
                     onChange={formik.handleChange}
                   />
                 </div>
-                  {formik.errors.fullName && formik.touched.fullName && (
-                    <small
-                      className="text-danger ms-4 mt-2 p-4"
-                    >
-                      {formik.errors.fullName}
-                    </small>
-                  )}
+                {formik.errors.fullName && formik.touched.fullName && (
+                  <small className="text-danger ms-4 mt-2 p-4">
+                    {formik.errors.fullName}
+                  </small>
+                )}
                 <div class="input-group flex-nowrap mt-md-3 mt-4">
                   <span
                     class="input-group-text border  border-none"
@@ -121,12 +146,10 @@ const Signup = () => {
                   />
                 </div>
                 {formik.errors.email && formik.touched.email && (
-                    <small
-                      className="text-danger ms-4 mt-2 p-4"
-                    >
-                      {formik.errors.email}
-                    </small>
-                  )}
+                  <small className="text-danger ms-4 mt-2 p-4">
+                    {formik.errors.email}
+                  </small>
+                )}
                 <div class="input-group flex-nowrap mt-md-3 mt-4">
                   <span
                     class="input-group-text border   border-none"
@@ -163,11 +186,9 @@ const Signup = () => {
                   </span>
                 </div>
                 {formik.errors.password && formik.touched.password && (
-                    <small
-                      className="text-danger ms-4 mt-2 p-4"
-                    >
-                      {formik.errors.password}
-                    </small>
+                  <small className="text-danger ms-4 mt-2 p-4">
+                    {formik.errors.password}
+                  </small>
                 )}
                 <div>
                   <button
