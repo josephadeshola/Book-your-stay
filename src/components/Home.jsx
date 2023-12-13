@@ -1,4 +1,4 @@
-import React from "react";
+
 import Navbar from "./Navbar";
 import Carousel from "./Carousel";
 import Service from "./Service";
@@ -7,6 +7,8 @@ import Faq from "./Faq";
 import Footer from "./Footer";
 
 const Home = () => {
+  
+
   return (
     <div>
       <Navbar />
