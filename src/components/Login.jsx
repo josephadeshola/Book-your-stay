@@ -5,6 +5,7 @@ import axios from "axios";
 import * as Yup from "yup";
 import "./login.css";
 import { toast } from "react-toastify";
+import baseUrl from "../BaseUrl";
 
 
 const Login = () => {
@@ -27,7 +28,7 @@ const Login = () => {
     }),
     onSubmit: (values) => {
       console.log("login Details", values);
-      axios.post("http://localhost:5600/user/login",values)
+      axios.post( baseUrl + "/login" ,values)
       .then((res)=>{
         if(res.data.status==true){
           toast.success(res.data.message);
