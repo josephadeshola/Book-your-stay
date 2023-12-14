@@ -28,7 +28,6 @@ const Login = () => {
     }),
     onSubmit: (values) => {
       console.log("login Details", values);
-      console.log(baseUrl + '/login');
       axios.post( baseUrl + "/login" ,values)
       .then((res)=>{
         if(res.data.status==true){
