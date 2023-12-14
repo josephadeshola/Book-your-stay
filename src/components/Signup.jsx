@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import { toast } from "react-toastify";
 
 import "./signup.css";
+import baseUrl from "../BaseUrl";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const Signup = () => {
     onSubmit: (values) => {
       console.log("users", values);
       axios
-        .post("http://localhost:5600/user/register", values)
+        .post(baseUrl + 'register', values)
         .then((res) => {
           if (res.data.status == true) {
             console.log("myresponse", res);

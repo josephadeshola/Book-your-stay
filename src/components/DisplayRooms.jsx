@@ -167,34 +167,65 @@ const DisplayRooms = () => {
                           <div>
                             <p className="fw-bold mt-2">{img.name}</p>
                             <div className="fw-bold mb-3">{img.price}</div>
-                            <p style={{backgroundColor:"rgba(202, 228, 237, 0.518)"}} className="py-2 px-3 rounded">
-                           <span className="fw-bold "> <i class="bi fs-3 bi-stars"></i> Highlights</span> <br />
-                             <span> Soundproofed Air conditioning
-                              Connecting rooms available Free cots/infant beds
-                              LCD TV Separate bedroom Premium bedding Rainfall
-                              showerhead
+                            <p
+                              style={{
+                                backgroundColor: "rgba(202, 228, 237, 0.518)",
+                              }}
+                              className="py-2 px-3 rounded"
+                            >
+                              <span className="fw-bold ">
+                                {" "}
+                                <i class="bi fs-3 bi-stars"></i> Highlights
+                              </span>{" "}
+                              <br />
+                              <span>
+                                {" "}
+                                Soundproofed Air conditioning Connecting rooms
+                                available Free cots/infant beds LCD TV Separate
+                                bedroom Premium bedding Rainfall showerhead
                               </span>
                             </p>
                             <p>
-                              <i style={{color:"#a99808 "}} class="bi bi-wifi"></i> Free WiFi
-                              </p>
+                              <i
+                                style={{ color: "#a99808 " }}
+                                class="bi bi-wifi"
+                              ></i>{" "}
+                              Free WiFi
+                            </p>
                             <p>
-                            <i style={{color:"#a99808 "}} class="bi bi-tree"></i> Restaurant                             
-                             </p>
+                              <i
+                                style={{ color: "#a99808 " }}
+                                class="bi bi-tree"
+                              ></i>{" "}
+                              Restaurant
+                            </p>
                             <p>
-                            <i style={{color:"#a99808 "}} class="bi bi-bus-front"></i> Airport transfer                             
-                             </p>
+                              <i
+                                style={{ color: "#a99808 " }}
+                                class="bi bi-bus-front"
+                              ></i>{" "}
+                              Airport transfer
+                            </p>
                             <p>
-                            <i style={{color:"#a99808 "}} class="bi bi-people"></i>  Sleeps 3                            
-                             </p>
+                              <i
+                                style={{ color: "#a99808 " }}
+                                class="bi bi-people"
+                              ></i>{" "}
+                              Sleeps 3
+                            </p>
 
-                             <div className="border rounded px-2">
+                            <div className="border rounded px-2">
                               <h4>Room options</h4>
                               <p>Cancellation policy</p>
                               <div className="d-flex gap-2 ">
-                              <p><a href="">More details on all policy options</a></p> <i class="bi text-danger bi-exclamation-circle"></i>
+                                <p>
+                                  <a href="">
+                                    More details on all policy options
+                                  </a>
+                                </p>{" "}
+                                <i class="bi text-danger bi-exclamation-circle"></i>
                               </div>
-                             </div>
+                            </div>
                           </div>
                         </>
                       ))}
@@ -277,6 +308,14 @@ const DisplayRooms = () => {
                   />
                 </div>
               </div>
+              <div className="px-4">
+                <button
+                  onClick={handelAvailability}
+                  className="btn rounded  w-100  mt-5 col-md-4 col-12 py-3  py-0"
+                >
+                  SEE AVAILABILITY
+                </button>
+              </div>
             </div>
 
             <div className="mx-auto col-md-8 ">
@@ -317,9 +356,9 @@ const DisplayRooms = () => {
                     </p>
                     <button
                       onClick={handelAvailability}
-                      className="btn rounded  col-md-4 col-12 py-3  py-0"
+                      className="btn rounded  col-md-3 col-12 py-3   py-0"
                     >
-                      SEE AVAILABILITY
+                      Reserve
                     </button>
                   </div>
                 </div>
