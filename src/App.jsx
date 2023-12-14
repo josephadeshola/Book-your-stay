@@ -10,7 +10,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import { useEffect, useState } from "react";
-import Loadingpage from "./components/loadingpage";
+// import Loadingpage from "./components/loadingpage";
+import Loadingpage from './components/Loadingpage'
 
 function App() {
   const [isloading, setIsLoading] = useState(true);
