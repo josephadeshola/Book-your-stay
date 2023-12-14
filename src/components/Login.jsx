@@ -28,11 +28,12 @@ const Login = () => {
     }),
     onSubmit: (values) => {
       console.log("login Details", values);
+      console.log(baseUrl + '/login');
       axios.post( baseUrl + "/login" ,values)
       .then((res)=>{
         if(res.data.status==true){
           toast.success(res.data.message);
-          console.log(baseUrl + '/login');
+          
 
         }
         else{
