@@ -98,12 +98,10 @@ const DisplayRooms = () => {
   const [checkOut, setCheckOut] = useState(location.state.getDate.checkout);
   const [checkin, setCheckIn] = useState(location.state.getDate.checkin);
   const [adult, setAdult] = useState(location.state.getDate.options.adult);
-  const [name, setName] = useState(location.state.getDate.options.name);
-  const [email, setEmail] = useState(location.state.getDate.options.email);
   const [standardRoom, setStandardRoom] = useState(
     location.state.getDate.standardRoom
   );
-  const [number, setNumber] = useState(location.state.getDate.options.number);
+  const [number, setNumber] = useState(location.state.getDate.options.phoneNumber);
   const [children, setChildren] = useState(
     location.state.getDate.options.children
   );

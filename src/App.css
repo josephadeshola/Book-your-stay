@@ -295,6 +295,9 @@ div.at-container {
 .getOption{
   height: 50vh;
 }
+.optionCounterButton{
+  cursor: pointer;
+}
 .optionCounterButton :disabled{
   cursor:  not-allowed;
 }

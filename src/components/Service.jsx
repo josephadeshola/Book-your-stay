@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 // import "aos/dist/aos.css";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
-// import {allServicesTwo } from "./Info"
+import axios from "axios";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 export let allServices = [
   {
@@ -211,13 +213,36 @@ const Service = () => {
   const handleviewAll = () => {
     setShowAllProduct(true);
   };
+  const formik = useFormik({
+    initialValues: {
+      phoneNumber: "",
+      standardRoom: "",
+      checkin: "",
+      checkout: "",
+    },
+    validationSchema:Yup.object({
+      phoneNumber: Yup.string()
+        .required("Phone number is required")
+        .matches(/^\d{10}$/, "Enter a valid 10-digit phone number"),
+      standardRoom: Yup.string().required("Please select a room"),
+      checkin: Yup.string().required("Check-in date is required"),
+      checkout: Yup.string().required("Check-out date is required"),
+    }),
+    onSubmit: (values) => {
+      let getDate = {
+        checkin: values.checkin,
+        checkout: values.checkout,
+        options: options,
+        phoneNumber: values.phoneNumber,
+        standardRoom: values.standardRoom,
+      };
+      console.log(values);
+      toast.success("successfully Booked");
+      navigate(`/findrooms/${selectedRoom}`, { state: { getDate } });
+    },
+  });
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [openOption, setOpenOption] = useState(false);
-  const [checkin, setCheckIN] = useState("");
-  const [checkout, setCheckOut] = useState("");
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [number, setNumber] = useState("");
   const [standardRoom, setStandardRoom] = useState("");
   const [options, setOptions] = useState({
     adult: 1,
@@ -234,21 +259,6 @@ const Service = () => {
     });
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    let getDate = {
-      checkin: checkin,
-      checkout: checkout,
-      options: options,
-      name: name,
-      email: email,
-      number: number,
-      standardRoom: standardRoom,
-    };
-    console.log(getDate);
-    toast.success("successfully Booked");
-    navigate(`/findrooms/${selectedRoom}`, { state: { getDate } });
-  };
 
   return (
     <div>
@@ -272,170 +282,199 @@ const Service = () => {
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body w-100">
-              <div className=" col-12 gap-2 ">
-                <div>
+            <form onSubmit={formik.handleSubmit}>
+              <div class="modal-body w-100">
+                <div className=" col-12 gap-2 ">
                   <div>
-                    <label htmlFor="" className="mt-2 pb-2">
-                      <i class="bi bi-person-check text-warning"></i> Your Name
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      className="col-12  py-3 my_modal shadow px-2"
-                      onChange={(e) => setName(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="" className="mt-2 pb-2">
-                      <i class="bi bi-envelope text-warning"></i> Your Email
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      className="col-12  py-3 my_modal shadow px-2"
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="" className="mt-2 pb-2">
-                      <i class="bi bi-telephone text-warning"></i> Phone Number
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Phone Number"
-                      className="col-12  py-3 my_modal shadow px-2"
-                      onChange={(e) => setNumber(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="" className="mt-2 pb-2">
-                      <i class="bi bi-flower2 text-warning"></i> Select Room
-                    </label>
-                    <select
-                      onChange={(e) => setStandardRoom(e.target.value)}
-                      className="col-12  py-3 my_modal shadow px-2"
-                      name="Standard Room"
-                      id=""
-                    >
-                      <option>Premier Room</option>
-                      <option>Family Suite</option>
-                      <option>Luxury Suite</option>
-                      <option>President Suite</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="" className="mt-2 pb-2">
-                      <i class="bi bi-patch-check text-warning"></i> Check In
-                      Date
-                    </label>
-                    <input
-                      type="datetime-local"
-                      placeholder=""
-                      className="col-12  py-3 my_modal shadow px-2"
-                      onChange={(e) => setCheckIN(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <div>
-                    <label htmlFor="" className="mt-2 pb-2">
-                      <i class="bi bi-x-octagon text-warning"></i> Check Out
-                      Date
-                    </label>
-                    <input
-                      type="datetime-local"
-                      placeholder=""
-                      className="col-12  py-3 my_modal  shadow px-2"
-                      onChange={(e) => setCheckOut(e.target.value)}
-                    />
-                  </div>
-                  <div className="col-12 mx-auto">
-                    <label htmlFor="" className="mt-2 ">
-                      <i class="bi bi-people text-warning"></i> Adults
-                    </label>
-                    <div className="headerSearchItem">
-                      <div
-                        onClick={() => setOpenOption(!openOption)}
-                        className="headerSearchText col-12  py-3  my_modal mt-3 shadow px-2"
-                      >{`${options.adult} adult . ${options.children} children . ${options.room} room`}</div>
-                      {openOption && (
-                        <div className="options shadow px-2 py-2">
-                          <div className="optionItem mt-3 d-flex justify-content-between text-center">
-                            <span className="optionText">Adult</span>
-                            <button
-                              className="optionCounterButton ms-3 border border-warning bg-light rounded px-3"
-                              disabled={options.adult <= 1}
-                              onClick={() => handleOption("adult", "d")}
-                            >
-                              -
-                            </button>
-                            <span className="optionCounterNumber">
-                              {options.adult}
-                            </span>
-                            <button
-                              className="optionCounterButton border border-warning bg-light rounded px-3"
-                              onClick={() => handleOption("adult", "i")}
-                            >
-                              +
-                            </button>
-                          </div>
-                          <div className="optionItem mt-3 d-flex justify-content-between text-center">
-                            <span className="optionText">children</span>
-                            <button
-                              className="optionCounterButton border border-warning bg-light rounded px-3"
-                              disabled={options.children <= 0}
-                              onClick={() => handleOption("children", "d")}
-                            >
-                              -
-                            </button>
-                            <span className="optionCounterNumber">
-                              {options.children}
-                            </span>
-                            <button
-                              className="optionCounterButton border border-warning bg-light rounded px-3"
-                              onClick={() => handleOption("children", "i")}
-                            >
-                              +
-                            </button>
-                          </div>
-                          <div className="optionItem mt-3 d-flex justify-content-between text-center">
-                            <span className="optionText">Room</span>
-                            <button
-                              disabled={options.room <= 1}
-                              className="optionCounterButton ms-3 border border-warning bg-light rounded px-3"
-                              onClick={() => handleOption("room", "d")}
-                            >
-                              -
-                            </button>
-                            <span className="optionCounterNumber">
-                              {options.room}
-                            </span>
-                            <button
-                              className="optionCounterButton border border-warning bg-light rounded px-3"
-                              onClick={() => handleOption("room", "i")}
-                            >
-                              +
-                            </button>
-                          </div>
+                    <div>
+                      <label htmlFor="" className="mt-2 pb-2">
+                        <i class="bi bi-telephone text-warning"></i> Phone
+                        Number
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="Phone Number"
+                        className={`col-12 py-3 my_modal shadow px-2 ${
+                          formik.touched.phoneNumber &&
+                          formik.errors.phoneNumber
+                            ? "is-invalid"
+                            : ""
+                        }`}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.phoneNumber}
+                        name="phoneNumber"
+                      />
+                      {formik.touched.phoneNumber &&
+                      formik.errors.phoneNumber ? (
+                        <div className="invalid-feedback">
+                          {formik.errors.phoneNumber}
                         </div>
-                      )}
+                      ) : null}
+                    </div>
+                    <div>
+                      <label htmlFor="" className="mt-2 pb-2">
+                        <i class="bi bi-flower2 text-warning"></i> Select Room
+                      </label>
+                      <select
+                        onChange={formik.handleChange}
+                        className={`col-12 py-3 my_modal shadow px-2 ${
+                          formik.touched.standardRoom &&
+                          formik.errors.standardRoom
+                            ? "is-invalid"
+                            : ""
+                        }`}
+                        name="standardRoom"
+                        value={formik.values.standardRoom}
+                      >
+                        <option>Premier Room</option>
+                        <option>Family Suite</option>
+                        <option>Luxury Suite</option>
+                        <option>President Suite</option>
+                      </select>
+                      {formik.touched.standardRoom &&
+                      formik.errors.standardRoom ? (
+                        <div className="invalid-feedback">
+                          {formik.errors.standardRoom}
+                        </div>
+                      ) : null}
+                    </div>
+                    <div>
+                      <label htmlFor="" className="mt-2 pb-2">
+                        <i class="bi bi-patch-check text-warning"></i> Check In
+                        Date
+                      </label>
+                      <input
+                        type="datetime-local"
+                        placeholder=""
+                        className={`col-12 py-3 my_modal shadow px-2 ${
+                          formik.touched.checkin && formik.errors.checkin
+                            ? "is-invalid"
+                            : ""
+                        }`}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.checkin}
+                        name="checkin"
+                      />
+                      {formik.touched.checkin && formik.errors.checkin ? (
+                        <div className="invalid-feedback">
+                          {formik.errors.checkin}
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                  <div>
+                    <div>
+                      <label htmlFor="" className="mt-2 pb-2">
+                        <i class="bi bi-x-octagon text-warning"></i> Check Out
+                        Date
+                      </label>
+                      <input
+                        type="datetime-local"
+                        placeholder=""
+                        className={`col-12 py-3 my_modal shadow px-2 ${
+                          formik.touched.checkout && formik.errors.checkout
+                            ? "is-invalid"
+                            : ""
+                        }`}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.checkout}
+                        name="checkout"
+                      />
+                      {formik.touched.checkout && formik.errors.checkout ? (
+                        <div className="invalid-feedback">
+                          {formik.errors.checkout}
+                        </div>
+                      ) : null}
+                    </div>
+                    <div className="col-12 mx-auto">
+                      <label htmlFor="" className="mt-2 ">
+                        <i class="bi bi-people text-warning"></i> Adults
+                      </label>
+                      <div className="headerSearchItem">
+                        <div
+                          onClick={() => setOpenOption(!openOption)}
+                          className="headerSearchText col-12  py-3  my_modal mt-3 shadow px-2"
+                        >{`${options.adult} adult . ${options.children} children . ${options.room} room`}</div>
+                        {openOption && (
+                          <div className="options shadow px-2 py-2">
+                            <div className="optionItem mt-3 d-flex justify-content-between text-center">
+                              <span className="optionText">Adult</span>
+                              <div
+                                className="optionCounterButton ms-3 border border-warning bg-light rounded px-3"
+                                disabled={options.adult <= 1}
+                                onClick={() => handleOption("adult", "d")}
+                              >
+                                -
+                              </div>
+                              <span className="optionCounterNumber">
+                                {options.adult}
+                              </span>
+                              <div
+                                className="optionCounterButton border border-warning bg-light rounded px-3"
+                                onClick={() => handleOption("adult", "i")}
+                              >
+                                +
+                              </div>
+                            </div>
+                            <div className="optionItem mt-3 d-flex justify-content-between text-center">
+                              <span className="optionText">children</span>
+                              <div
+                                className="optionCounterButton border border-warning bg-light rounded px-3"
+                                disabled={options.children <= 0}
+                                onClick={() => handleOption("children", "d")}
+                              >
+                                -
+                              </div>
+                              <span className="optionCounterNumber">
+                                {options.children}
+                              </span>
+                              <div
+                                className="optionCounterButton border border-warning bg-light rounded px-3"
+                                onClick={() => handleOption("children", "i")}
+                              >
+                                +
+                              </div>
+                            </div>
+                            <div className="optionItem mt-3 d-flex justify-content-between text-center">
+                              <span className="optionText">Room</span>
+                              <div
+                                disabled={options.room <= 1}
+                                className="optionCounterButton ms-3 border border-warning bg-light rounded px-3"
+                                onClick={() => handleOption("room", "d")}
+                              >
+                                -
+                              </div>
+                              <span className="optionCounterNumber">
+                                {options.room}
+                              </span>
+                              <div
+                                className="optionCounterButton border border-warning bg-light rounded px-3"
+                                onClick={() => handleOption("room", "i")}
+                              >
+                                +
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-                class="py-3 btn btn-primary"
-                onClick={handleSearch}
-              >
-                Proceed on your booking
-              </button>
-            </div>
+              <div class="modal-footer">
+                <button
+                  type="submit"
+                  data-bs-dismiss="modal"
+                  // aria-label="Close"
+                  class="py-3 btn btn-primary"
+                >
+                  Proceed on your booking
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
