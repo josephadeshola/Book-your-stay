@@ -167,7 +167,7 @@ const DisplayRooms = () => {
                           <div>
                             <p className="fw-bold mt-2">{img.name}</p>
                             <div className="fw-bold mb-3">{img.price}</div>
-                            <p
+                            {/* <p
                               style={{
                                 backgroundColor: "rgba(202, 228, 237, 0.518)",
                               }}
@@ -184,7 +184,7 @@ const DisplayRooms = () => {
                                 available Free cots/infant beds LCD TV Separate
                                 bedroom Premium bedding Rainfall showerhead
                               </span>
-                            </p>
+                            </p> */}
                             <p>
                               <i
                                 style={{ color: "#a99808 " }}
