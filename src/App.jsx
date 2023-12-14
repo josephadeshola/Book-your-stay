@@ -15,6 +15,7 @@ import Loadingpage from './components/Loadingpage'
 
 function App() {
   const [isloading, setIsLoading] = useState(true);
+  console.log(isloading);
 
   useEffect(() => {
     const timer = setTimeout(() => {
