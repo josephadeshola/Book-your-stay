@@ -32,6 +32,7 @@ const Login = () => {
       .then((res)=>{
         if(res.data.status==true){
           toast.success(res.data.message);
+          console.log(baseUrl + '/login');
 
         }
         else{
