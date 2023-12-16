@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import baseUrl from "../BaseUrl";
 
 export let allServices = [
   {
@@ -213,17 +214,41 @@ const Service = () => {
   const handleviewAll = () => {
     setShowAllProduct(true);
   };
+
+    const [selectedRoom, setSelectedRoom] = useState(null);
+  const [openOption, setOpenOption] = useState(false);
+  const [options, setOptions] = useState({
+    adult: 1,
+    children: 0,
+    room: 1,
+  });
+
+  // const handleOption = (name, operation) => {
+  //   setOptions((prev) => {
+  //     return {
+  //       ...prev,
+  //       [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
+  //     };
+  //   });
+  // };
+
   const formik = useFormik({
     initialValues: {
       phoneNumber: "",
       standardRoom: "",
       checkin: "",
       checkout: "",
+      options:"",
+      options: {
+        adult: 1,
+        children: 0,
+        room: 1,
+      }
     },
     validationSchema:Yup.object({
       phoneNumber: Yup.string()
         .required("Phone number is required")
-        .matches(/^\d{10}$/, "Enter a valid 10-digit phone number"),
+        .matches(/^\d{11}$/, "Enter a valid 11-digit phone number"),
       standardRoom: Yup.string().required("Please select a room"),
       checkin: Yup.string().required("Check-in date is required"),
       checkout: Yup.string().required("Check-out date is required"),
@@ -232,33 +257,36 @@ const Service = () => {
       let getDate = {
         checkin: values.checkin,
         checkout: values.checkout,
-        options: options,
         phoneNumber: values.phoneNumber,
         standardRoom: values.standardRoom,
+        options: values.options,
+        
       };
-      console.log(values);
+  
+      axios.post(baseUrl + '/info/users', values)
+      .then((res)=>{
+        console.log("data found", res);
+      })
+      .catch((err)=>{
+        console.log("error found" , err);
+      })
       toast.success("successfully Booked");
       navigate(`/findrooms/${selectedRoom}`, { state: { getDate } });
     },
   });
-  const [selectedRoom, setSelectedRoom] = useState(null);
-  const [openOption, setOpenOption] = useState(false);
-  const [standardRoom, setStandardRoom] = useState("");
-  const [options, setOptions] = useState({
-    adult: 1,
-    children: 0,
-    room: 1,
-  });
 
   const handleOption = (name, operation) => {
-    setOptions((prev) => {
+    formik.setValues((prev) => {
+      const updatedOptions = {
+        ...prev.options,
+        [name]: operation === "i" ? prev.options[name] + 1 : prev.options[name] - 1,
+      };
       return {
         ...prev,
-        [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
+        options: updatedOptions,
       };
     });
   };
-
 
   return (
     <div>
@@ -397,20 +425,20 @@ const Service = () => {
                         <div
                           onClick={() => setOpenOption(!openOption)}
                           className="headerSearchText col-12  py-3  my_modal mt-3 shadow px-2"
-                        >{`${options.adult} adult . ${options.children} children . ${options.room} room`}</div>
+                        >{`${formik.values.options.adult} adult . ${formik.values.options.children} children . ${formik.values.options.room} room`}</div>
                         {openOption && (
                           <div className="options shadow px-2 py-2">
                             <div className="optionItem mt-3 d-flex justify-content-between text-center">
                               <span className="optionText">Adult</span>
                               <div
                                 className="optionCounterButton ms-3 border border-warning bg-light rounded px-3"
-                                disabled={options.adult <= 1}
+                                disabled={formik.values.options.adult <= 1}
                                 onClick={() => handleOption("adult", "d")}
                               >
                                 -
                               </div>
                               <span className="optionCounterNumber">
-                                {options.adult}
+                                {formik.values.options.adult}
                               </span>
                               <div
                                 className="optionCounterButton border border-warning bg-light rounded px-3"
@@ -423,13 +451,13 @@ const Service = () => {
                               <span className="optionText">children</span>
                               <div
                                 className="optionCounterButton border border-warning bg-light rounded px-3"
-                                disabled={options.children <= 0}
+                                disabled={formik.values.options.children <= 0}
                                 onClick={() => handleOption("children", "d")}
                               >
                                 -
                               </div>
                               <span className="optionCounterNumber">
-                                {options.children}
+                                {formik.values.options.children}
                               </span>
                               <div
                                 className="optionCounterButton border border-warning bg-light rounded px-3"
@@ -441,14 +469,14 @@ const Service = () => {
                             <div className="optionItem mt-3 d-flex justify-content-between text-center">
                               <span className="optionText">Room</span>
                               <div
-                                disabled={options.room <= 1}
+                                disabled={formik.values.options.room <= 1}
                                 className="optionCounterButton ms-3 border border-warning bg-light rounded px-3"
                                 onClick={() => handleOption("room", "d")}
                               >
                                 -
                               </div>
                               <span className="optionCounterNumber">
-                                {options.room}
+                                {formik.values.options.room}
                               </span>
                               <div
                                 className="optionCounterButton border border-warning bg-light rounded px-3"

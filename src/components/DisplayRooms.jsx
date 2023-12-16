@@ -253,7 +253,8 @@ const DisplayRooms = () => {
                   </label>
                   <input
                     type="text"
-                    className="col-12 py-2 border border-none rounded"
+                    disabled
+                    className="col-12 py-2 border bg-light border-none rounded"
                     placeholder={standardRoom}
                   />
                 </div>
@@ -263,7 +264,8 @@ const DisplayRooms = () => {
                   </label>
                   <input
                     type="text"
-                    className="col-12 py-2 border border-none rounded"
+                    disabled
+                    className="col-12 py-2 border border-none bg-light rounded"
                     placeholder={checkin}
                   />
                 </div>
@@ -273,7 +275,8 @@ const DisplayRooms = () => {
                   </label>
                   <input
                     type="text"
-                    className="col-12 py-2 border border-none rounded"
+                    disabled
+                    className="col-12 py-2 border border-none bg-light rounded"
                     placeholder={checkOut}
                   />
                 </div>
@@ -282,8 +285,9 @@ const DisplayRooms = () => {
                   <span className="fw-bold">Adult</span>
                   <input
                     type="number"
+                    disabled
                     min={1}
-                    className="col-7 py-2 border border-none rounded fw-bold"
+                    className="col-7 py-2 border border-none bg-light rounded fw-bold"
                     placeholder={adult}
                   />
                 </div>
@@ -291,17 +295,19 @@ const DisplayRooms = () => {
                   <span className="fw-bold">Children</span>
                   <input
                     type="number"
+                    disabled
                     min={0}
-                    className="col-7 py-2 border border-none rounded fw-bold"
+                    className="col-7 py-2 border border-none bg-light rounded fw-bold"
                     placeholder={children}
                   />
                 </div>
-                <div className="d-flex justify-content-between px-4 mt-4">
+                <div className="d-flex justify-content-between  px-4 mt-4">
                   <span className="fw-bold">Room</span>
                   <input
                     type="number"
+                    disabled
                     min={1}
-                    className="col-7 py-2 border border-none rounded fw-bold"
+                    className="col-7 py-2 border bg-light border-none rounded fw-bold"
                     placeholder={room}
                   />
                 </div>
