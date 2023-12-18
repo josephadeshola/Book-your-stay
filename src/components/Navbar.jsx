@@ -148,9 +148,9 @@ const Navbar = () => {
                 <li class="nav-item">
                   <div className="d-flex gap-3 ">
                     <i class="bi bi-tags mt-2 fs-1 text-light"></i>
-                    <a class="nav-link fw-bold text-light fs-1" href="#">
-                      pricing
-                    </a>
+                    <Link class="nav-link fw-bold text-light fs-1 " to={"/dashboard"}>
+                 Dashboard
+                </Link>
                   </div>
                   <hr className="border border-primary " />
                 </li>

@@ -124,7 +124,7 @@ const Texttwo = () => {
                       >
                         <div className="d-flex gap-md-md-3 py-md-2">
                           <div className="alert-divIcon ">
-                            <i class="bi fs-md-2 bi-arrow-up-right-square"></i>
+                            <i class="bi fs-2 bi-arrow-up-right-square"></i>
                           </div>
                           <p>
                             <div>
@@ -135,7 +135,7 @@ const Texttwo = () => {
                         </div>
                         <div className="d-flex mt-3 justify-content-between">
                           <img className="col-3" src={imageBgColor} alt="" />
-                          <b className="fs-md-2">54</b>
+                          <b className="fs-2">54</b>
                         </div>
                       </div>
                       <div
@@ -158,7 +158,7 @@ const Texttwo = () => {
                         </div>
                         <div className="d-flex mt-3 justify-content-between">
                           <img className="col-3" src={imageBgColor} alt="" />
-                          <b className="fs-md-2">12</b>
+                          <b className="fs-2">12</b>
                         </div>
                       </div>
                       <div
