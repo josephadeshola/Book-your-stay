@@ -120,9 +120,9 @@ const Texttwo = () => {
                           backgroundColor: "white",
                           borderRadius: "20px",
                         }}
-                        className="shadow py-md-2 py-2 px-md-2 px-1 col-md-4  "
+                        className="shadow py-md-2 py-2 px-md-2 px-2 col-md-4  "
                       >
-                        <div className="d-flex gap-md-md-3 py-md-2">
+                        <div className="d-flex gap-md-3 py-md-2">
                           <div className="alert-divIcon ">
                             <i class="bi fs-2 bi-arrow-up-right-square"></i>
                           </div>
@@ -143,9 +143,9 @@ const Texttwo = () => {
                           backgroundColor: "white",
                           borderRadius: "20px",
                         }}
-                        className="shadow py-md-2 py-2   px-md-2 col-md-4  "
+                        className="shadow py-md-2 py-2 px-md-2 px-2 col-md-4  "
                       >
-                        <div className="d-flex gap-md-3 py-md-2 py-1">
+                        <div className="d-flex gap-md-3 py-md-2 py-2">
                           <div className="alert-divIcon ">
                             <i class="bi fs-2 bi-hdd-rack"></i>
                           </div>
@@ -163,7 +163,7 @@ const Texttwo = () => {
                       </div>
                       <div
                         style={{ borderRadius: "20px" }}
-                        className="shadow occupied py-md-2 px-md-2 px-2p py-2 mt-md-0 mt-3 col-md-4  "
+                        className="shadow occupied py-md-2 px-md-2 px-2 py-2 mt-md-0 mt-3 col-md-4  "
                       >
                         <div className="d-flex  justify-content-between">
                           <img className="col-3" src={imageBgColor} alt="" />
@@ -175,17 +175,70 @@ const Texttwo = () => {
                         </p>
                       </div>
                     </div>
-
-                    {/* <div className="container">
-                    <ul style={{listStyle:"none "}} className="">
-                      <li className="d-flex  mt-3 ">
-                        <a href="" style={{color:" rgb(56, 55, 55)"}} className="text-decoration-none ">Arrival</a>
-                        <a href="" style={{color:" rgb(56, 55, 55)"}} className="text-decoration-none ">Departure</a>
-                        <a href="" style={{color:" rgb(56, 55, 55)"}} className="text-decoration-none ">Stay-over</a>
-                        <a href="" style={{color:" rgb(56, 55, 55)"}} className="text-decoration-none ">In-house</a>
+                    <ul style={{ listStyle: "none " }} className="">
+                      <li className="d-flex justify-content-around text-center mt-5 ">
+                        <a
+                          href=""
+                          style={{ color: " rgb(56, 55, 55)" }}
+                          className="text-decoration-none "
+                        >
+                          Arrival
+                        </a>
+                        <a
+                          href=""
+                          style={{ color: " rgb(56, 55, 55)" }}
+                          className="text-decoration-none "
+                        >
+                          Departure
+                        </a>
+                        <a
+                          href=""
+                          style={{ color: " rgb(56, 55, 55)" }}
+                          className="text-decoration-none "
+                        >
+                          Stay-over
+                        </a>
+                        <a
+                          href=""
+                          style={{ color: " rgb(56, 55, 55)" }}
+                          className="text-decoration-none "
+                        >
+                          In-house
+                        </a>
                       </li>
                     </ul>
-                  </div> */}
+
+                    <table className="table table-striped shadow">
+                      <thead>
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Guest</th>
+                          <th scope="col">Room</th>
+                          <th scope="col">Date</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                          
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td colspan="2">Larry the Bird</td>
+                          <td>@twitter</td>
+                          
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
 
                   <div className="col-md-6 col-12 border border-danger mt-3 mt-md-0">
@@ -246,12 +299,6 @@ const Texttwo = () => {
                 </div>
               </div>
             </div>
-            {/* <ol className="breadcrumb">
-              <li className="breadcrumb-item">
-                <a href="index.html">Home</a>
-              </li>
-              <li className="breadcrumb-item active">Dashboard</li>
-            </ol> */}
           </nav>
         </div>
 
