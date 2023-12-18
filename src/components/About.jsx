@@ -1,8 +1,10 @@
 import React from "react";
 import Footer from "./Footer"
+import Navbar from "./Navbar";
 const About = () => {
   return (
     <div>
+      <Navbar/>
       <div
         id="carouselExampleIndicators"
         class="carousel col-12 get-margin slide"

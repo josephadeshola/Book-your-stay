@@ -4,6 +4,7 @@ import "./displayroom.css";
 import { allServices, viewAll } from "./Service";
 import { allServicesTwo } from "./Info";
 import { toast } from "react-toastify";
+import Navbar from "./Navbar";
 const DisplayRooms = () => {
   const Rooms = [
     {
@@ -128,6 +129,7 @@ const DisplayRooms = () => {
 
   return (
     <div>
+      <Navbar/>
       <div className="container ">
         <div className="row  ">
           {view && (

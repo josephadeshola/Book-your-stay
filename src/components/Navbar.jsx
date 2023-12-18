@@ -36,14 +36,14 @@ const Navbar = () => {
                 </Link>
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
-                <a class="nav-link " href="#">
+                <Link class="nav-link "to={""}>
                   Contact
-                </a>
+                </Link>
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
-                <a class="nav-link " href="#">
-                  pricing
-                </a>
+                <Link class="nav-link " to={"/dashboard"}>
+                 Dashboard
+                </Link>
               </li>
             </ul>
           </div>

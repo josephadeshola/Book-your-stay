@@ -11,6 +11,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import { useEffect, useState } from "react";
 import Loadingpage from './components/Loadingpage';
+import Texttwo from "./components/Texttwo";
 
 function App() {
   const [isloading, setIsLoading] = useState(true);
@@ -44,16 +45,15 @@ function App() {
         <Loadingpage />
       ) : (
         <>
-          <Navbar />
+          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />}></Route>
             <Route path="/findrooms/:roomId" element={<DisplayRooms />}></Route>
             <Route path="/roomselect" element={<Roomselected />}></Route>
             <Route path="/create" element={<Signup />}></Route>
-            <Route path="/login" element={<Login />}>
-              {" "}
-            </Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/dashboard" element={<Texttwo/>}></Route>
           </Routes>
         </>
       )}
