@@ -49,7 +49,7 @@ justify-content: right;
 .booked{
   height: 40px;
   width: 40px;
-  background-color: #EDC967;
+  background: linear-gradient(to top, #AE8625, #F7EF8A, #D2AC47, #EDC967);
   border-radius: 50px;
   text-align: center;
   color: #fff;
@@ -58,7 +58,7 @@ justify-content: right;
 
 }
 .booked-container{
-  margin-top: 70px;
+  margin-top: 85px;
 }
 :root {
     scroll-behavior: smooth;
@@ -107,6 +107,7 @@ justify-content: right;
       .open-sidebar .main {
         margin-left: 250px;
       }
+      
     /* } */
   /* .sidebar {
     position: fixed;

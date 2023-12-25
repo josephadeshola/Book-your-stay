@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./text.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import image from "../assets/image/logo.png";
 import imageBgColor from "../assets/image/bgimg.png";
+import ApexCharts from "react-apexcharts";
 import { Link } from "react-router-dom";
 
 const Texttwo = () => {
@@ -11,6 +12,58 @@ const Texttwo = () => {
   const openSideBar = () => {
     setSetVisibility(!setsisibility);
   };
+  const chartOptions = {
+    chart: {
+      height: 350,
+      type: "area",
+      toolbar: {
+        show: false,
+      },
+    },
+    series: [
+      { name: "Sales", data: [31, 40, 28, 51, 42, 82, 56] },
+      { name: "Revenue", data: [11, 32, 45, 32, 34, 52, 41] },
+      { name: "Customers", data: [15, 11, 32, 18, 9, 24, 11] },
+    ],
+    markers: {
+      size: 4,
+    },
+    colors: ["#4154f1", "#2eca6a", "#ff771d"],
+    fill: {
+      type: "gradient",
+      gradient: {
+        shadeIntensity: 1,
+        opacityFrom: 0.3,
+        opacityTo: 0.4,
+        stops: [0, 90, 100],
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+      width: 2,
+    },
+    xaxis: {
+      type: "datetime",
+      categories: [
+        "2018-09-19T00:00:00.000Z",
+        "2018-09-19T01:30:00.000Z",
+        "2018-09-19T02:30:00.000Z",
+        "2018-09-19T03:30:00.000Z",
+        "2018-09-19T04:30:00.000Z",
+        "2018-09-19T05:30:00.000Z",
+        "2018-09-19T06:30:00.000Z",
+      ],
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  };
+
   return (
     <div>
       <div className="d-flex">
@@ -153,7 +206,7 @@ const Texttwo = () => {
                           </div>
                           <p>
                             <div>
-                              <b> Departure </b>{" "}
+                              <b> Departure </b>
                             </div>
                             <small>This Week</small>
                           </p>
@@ -257,14 +310,14 @@ const Texttwo = () => {
                     </table>
                   </div>
 
-                  <div className="col-md-6 col-12 border px-3 border-danger mt-3 mt-md-0">
+                  <div className="col-md-6 col-12 px-3 mt-3 mt-md-0">
                     <div
                       style={{
                         borderTopLeftRadius: "10px",
                         borderBottomLeftRadius: "10px",
                         boxShadow: "0 0 5px  #d5c42aaa",
                       }}
-                      className=" float-md-end d-md-flex d-flex gap-md-2 gap-2 py-2  col-10 mx-auto px-2 col-md-6 "
+                      className=" float-md-end d-md-flex d-flex gap-md-2 gap-2 py-2  mt-4  col-10 mx-auto px-2 col-md-6 "
                     >
                       <img
                         className="col-md-2 col-2 shadow"
@@ -277,8 +330,8 @@ const Texttwo = () => {
                         josephay125d@gmail.com
                       </div>
                     </div>
-                    <div className="col-md-9 rounded mx-auto shadow booked-container py-2 bg-light px-md-5 px-3">
-                      <h4 className="fs-5">Today's Activities</h4>
+                    <div className="col-md-9 col-12 rounded mx-auto shadow booked-container py-2 px-md- px-3">
+                      <h4 className="fs-4  mt-3">Today's Activities</h4>
                       <div className="d-flex justify-content-between">
                         <div className="booked py-1">
                           5<h6 className="text-dark mt-3"> Booked</h6>
@@ -288,8 +341,59 @@ const Texttwo = () => {
                           <h6 className="text-dark mt-3"> Guest</h6>
                         </div>
                         <div className="">
-                          <div className="fs-3 fw-bold mt-4 text-success">$967</div>
+                          <div className="fs-3 fw-bold mt-4 text-success">
+                            $967
+                          </div>
                           <h6 className="text-dark mt-3">Revenue</h6>
+                        </div>
+                      </div>
+                      <div>
+                        <h5 className="mt-4 fw-bold">Weekly State </h5>
+                        <div className="col-12">
+                          <div className="col-12">
+                            <div style={{ border: "none" }} className="card">
+                              <div className="filter">
+                                <a
+                                  className="icon"
+                                  href="#"
+                                  data-bs-toggle="dropdown"
+                                >
+                                  <i className="bi bi-three-dots"></i>
+                                </a>
+                                <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                  <li className="dropdown-header text-start">
+                                    <h6>Filter</h6>
+                                  </li>
+                                  <li>
+                                    <a className="dropdown-item" href="#">
+                                      Today
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a className="dropdown-item" href="#">
+                                      This Month
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a className="dropdown-item" href="#">
+                                      This Year
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div className="card-body">
+                                <h5 className="card-title">
+                                  Reports <span>/Today</span>
+                                </h5>
+                                <ApexCharts
+                                  options={chartOptions}
+                                  series={chartOptions.series}
+                                  type="area"
+                                  height={350}
+                                />
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
