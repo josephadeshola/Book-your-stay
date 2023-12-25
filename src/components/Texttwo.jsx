@@ -16,13 +16,27 @@ const Texttwo = () => {
       <div className="d-flex">
         <div
           id="sidebar"
-          className={` mt-5 py-5 shadow position-relative overflow-x-scroll ${
+          className={` mt-5 py-5  ${
             setsisibility ? "sideNavWidth" : "sideWidth"
           }`}
-          // style={{ width: setsisibility ? "50vw" : "560pc" }}
         >
-          <div className="get-overNav ">
+          <div
+            className={`get-overNav ${
+              setsisibility ? "sideNavWidth" : "sideWidth"
+            }`}
+          >
             <ul className="sidebar-nav" id="sidebar-nav">
+              <li className="nav-item">
+                <Link
+                  className="nav-link collapsed"
+                  data-bs-target="#tables-nav"
+                  // data-bs-toggle="collapse"
+                  to={"/"}
+                >
+                  <i className="bi bi-house"></i>
+                  <span>Home</span>
+                </Link>
+              </li>
               <li className="nav-item">
                 <a className="nav-link " href="index.html">
                   <i className="bi bi-grid"></i>
@@ -39,18 +53,6 @@ const Texttwo = () => {
                 >
                   <i className="bi bi-journal-text"></i>
                   <span>Forms</span>
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a
-                  className="nav-link collapsed"
-                  data-bs-target="#tables-nav"
-                  data-bs-toggle="collapse"
-                  href="#"
-                >
-                  <i className="bi bi-layout-text-window-reverse"></i>
-                  <span>Tables</span>
                 </a>
               </li>
 
@@ -89,22 +91,22 @@ const Texttwo = () => {
               </li>
 
               <li className="nav-item">
-                <a className="nav-link collapsed" href="pages-register.html">
+                <Link className="nav-link collapsed" to={"/create"}>
                   <i className="bi bi-card-list"></i>
                   <span>Register</span>
-                </a>
+                </Link>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link " href="pages-login.html">
+                <Link className="nav-link " to={"/login"}>
                   <i className="bi bi-box-arrow-in-right"></i>
                   <span>Login</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
-        <div className="pagetitle p-3 ">
+        <div className="pagetitle p-3">
           <nav>
             <div className="container">
               <div className="row ">
@@ -147,7 +149,7 @@ const Texttwo = () => {
                       >
                         <div className="d-flex gap-md-3 py-md-2 py-2">
                           <div className="alert-divIcon ">
-                            <i class="bi fs-2 bi-hdd-rack"></i>
+                            <i className="bi fs-2 bi-hdd-rack"></i>
                           </div>
                           <p>
                             <div>
@@ -208,93 +210,89 @@ const Texttwo = () => {
                       </li>
                     </ul>
 
-                    <table className="table table-striped shadow">
+                    <table className="table rounded  shadow">
                       <thead>
                         <tr>
-                          <th scope="col">ID</th>
-                          <th scope="col">Guest</th>
-                          <th scope="col">Room</th>
-                          <th scope="col">Date</th>
+                          <th scope="col" className="py-3">
+                            ID
+                          </th>
+                          <th scope="col" className="py-3">
+                            Guest
+                          </th>
+                          <th scope="col" className="py-3">
+                            Room
+                          </th>
+                          <th scope="col" className="py-3">
+                            Date
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
+                          <th className="py-3" scope="row">
+                            1
+                          </th>
+                          <td className="py-3">Mark</td>
+                          <td className="py-3">Otto</td>
+                          <td className="py-3">@mdo</td>
                         </tr>
                         <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                          
+                          <th className="py-3" scope="row">
+                            2
+                          </th>
+                          <td className="py-3">Jacob</td>
+                          <td className="py-3">Thornton</td>
+                          <td className="py-3">@fat</td>
                         </tr>
                         <tr>
-                          <th scope="row">3</th>
-                          <td colspan="2">Larry the Bird</td>
-                          <td>@twitter</td>
-                          
+                          <th className="py-3" scope="row">
+                            3
+                          </th>
+                          <td className="py-3" colspan="2">
+                            Larry the Bird
+                          </td>
+                          <td className="py-3">@twitter</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
 
-                  <div className="col-md-6 col-12 border border-danger mt-3 mt-md-0">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Doloremque, incidunt facilis reiciendis sint dolor hic earum
-                    maiores nesciunt quis quam animi necessitatibus distinctio
-                    ad officiis tenetur vitae soluta vero rem consequuntur
-                    impedit et minus quas nemo! Nam dolorum sapiente quos.
-                    Ratione, consectetur tempora maxime aliquam beatae iure
-                    voluptatum dolores veritatis repellendus quia id pariatur
-                    deleniti enim, quasi unde? In culpa quis nobis ipsum
-                    exercitationem, expedita minus provident nisi vero? Aut
-                    facilis nam reprehenderit amet tenetur veritatis suscipit
-                    nostrum, mollitia ab id qui ratione ipsum eligendi magni
-                    esse inventore quas cupiditate aliquid soluta aspernatur
-                    laudantium porro? Harum, culpa. Officiis harum
-                    necessitatibus nostrum atque modi voluptatem ipsam, dolorem
-                    doloribus totam quam dicta blanditiis provident ullam!
-                    Laboriosam delectus beatae ut in nemo aliquam, atque nobis
-                    enim distinctio, dolores id minus. Aperiam blanditiis beatae
-                    qui tenetur. Velit possimus quod veritatis quos maiores
-                    numquam facilis nihil repellendus quas, suscipit repellat
-                    saepe reprehenderit nobis obcaecati illo eveniet sint
-                    accusantium quo non vel provident. Molestias soluta
-                    cupiditate dolor quis repellat, ipsa minima eius officia!
-                    Quae rerum accusantium labore quibusdam impedit magni porro
-                    nobis beatae magnam minima voluptatum deserunt laboriosam
-                    reiciendis alias cumque, dignissimos delectus earum
-                    repudiandae. Repellendus, earum amet! Sapiente dolor aperiam
-                    distinctio hic labore eveniet beatae. Quod, repellat esse
-                    dolorem aut suscipit magni, atque animi iste quisquam
-                    veritatis, natus accusantium pariatur rerum illum! Quae eos
-                    sint repellendus magnam quo? Quasi, unde blanditiis
-                    excepturi enim magnam in quidem ipsa saepe inventore itaque
-                    eaque corrupti aspernatur reprehenderit doloremque iste
-                    magni, repellat ullam impedit ab ipsum similique. Maiores
-                    dolorum ducimus ab beatae numquam tempora quidem, pariatur
-                    magnam a, suscipit nobis fuga expedita nisi cupiditate ipsa
-                    mollitia ex nam omnis aut? Perferendis a repellendus
-                    quisquam sit vero cum temporibus, nisi dolorum nam delectus
-                    culpa, at eveniet architecto. Et eveniet aut accusantium.
-                    Doloremque rerum iure debitis obcaecati sunt! Quaerat
-                    consequatur sunt rerum tenetur quos ipsum! Quisquam cum
-                    expedita nihil magni provident facere autem voluptas. Atque
-                    sint ut veniam incidunt mollitia placeat eligendi porro
-                    quis! Quaerat placeat veniam assumenda totam dolorum quae?
-                    Earum repudiandae eum voluptatem inventore nam fugit
-                    quaerat. Illum, vel tenetur doloribus totam quaerat est
-                    inventore deserunt velit explicabo distinctio sapiente
-                    numquam nesciunt laborum qui nemo tempore, voluptatum iure
-                    nam molestiae corrupti laudantium ipsam. Corporis, aut
-                    aspernatur, repellendus atque vero repellat cum voluptate
-                    labore ut perferendis, a error sapiente odit. Illo omnis
-                    officia ad atque quae labore porro sapiente ipsum,
-                    consequatur neque officiis, consectetur dicta perspiciatis
-                    exercitationem, tempore autem veritatis!
+                  <div className="col-md-6 col-12 border px-3 border-danger mt-3 mt-md-0">
+                    <div
+                      style={{
+                        borderTopLeftRadius: "10px",
+                        borderBottomLeftRadius: "10px",
+                        boxShadow: "0 0 5px  #d5c42aaa",
+                      }}
+                      className=" float-md-end d-md-flex d-flex gap-md-2 gap-2 py-2  col-10 mx-auto px-2 col-md-6 "
+                    >
+                      <img
+                        className="col-md-2 col-2 shadow"
+                        style={{ borderRadius: "50px " }}
+                        src={imageBgColor}
+                        alt=""
+                      />
+                      <div>
+                        <b>Ayomide </b>
+                        josephay125d@gmail.com
+                      </div>
+                    </div>
+                    <div className="col-md-9 rounded mx-auto shadow booked-container py-2 bg-light px-md-5 px-3">
+                      <h4 className="fs-5">Today's Activities</h4>
+                      <div className="d-flex justify-content-between">
+                        <div className="booked py-1">
+                          5<h6 className="text-dark mt-3"> Booked</h6>
+                        </div>
+                        <div className="booked py-1">
+                          22
+                          <h6 className="text-dark mt-3"> Guest</h6>
+                        </div>
+                        <div className="">
+                          <div className="fs-3 fw-bold mt-4 text-success">$967</div>
+                          <h6 className="text-dark mt-3">Revenue</h6>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -302,8 +300,8 @@ const Texttwo = () => {
           </nav>
         </div>
 
-        <main id="main" className="main p-0 border fixed-top  m-0 w-100">
-          <header className="bg-white shadow d-flex justify-content-between">
+        <main id="main" className="main p-0 fixed-top  m-0 w-100">
+          <header className="bg-white shadow border d-flex justify-content-between">
             <div className="d-flex">
               <Link class="navbar-brand get-font" to="/">
                 <img className="get-img" src={image} alt="" />
