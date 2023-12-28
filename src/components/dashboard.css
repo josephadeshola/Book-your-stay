@@ -5,7 +5,7 @@
 }
 .get-overNav{
     height: 100vh;
-    position: fixed;
+    position:sticky;
     background-color: #fff;
     transition: width 0.3;
     overflow-y: scroll !important;
