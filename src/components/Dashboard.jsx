@@ -296,7 +296,7 @@ const Dashboard = () => {
                     </table>
                   </div>
 
-                  <div className="col-md-6 col-12 px-3 mt-3 mt-md-0">
+                  <div className="col-md-6 col-12 px-md-3 p mt-3 mt-md-0">
                     <div className="d-grid  ">
                       
                   
@@ -306,7 +306,7 @@ const Dashboard = () => {
                         borderBottomLeftRadius: "10px",
                         boxShadow: "0 0 5px  #d5c42aaa",
                       }}
-                      className=" float-md-end d-md-flex d-flex gap-md-2 gap-2 py-2  mt-4  col-10 mx-auto px-2 col-md-6 "
+                      className=" float-md-end d-md-flex d-flex gap-md-2 gap-2 py-2  mt-4  col-12 mx-auto px-2 col-md-6 "
                     >
                       
                       <img
@@ -317,7 +317,7 @@ const Dashboard = () => {
                         onClick={()=>setUserProfile(!userProfile)}
                       />
                       
-                      <div>
+                      <div className="d-grid">
                         <b>Ayomide </b>
                         josephay125d@gmail.com
                       </div>
