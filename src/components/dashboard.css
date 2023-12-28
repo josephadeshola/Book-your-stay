@@ -250,13 +250,5 @@ justify-content: right;
           z-index: 2; 
           border-radius: 10px;
         }
-        .get-overNav {
-          height: 80vh; /* Adjusted height */
-          width: 50%;
-          position: relative;
-          background-color: #fff;
-          transition: width 0.3;
-          overflow-y: scroll;
-          z-index: 1;
-      }
+    
 }
