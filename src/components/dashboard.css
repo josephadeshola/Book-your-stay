@@ -8,7 +8,7 @@
     position: fixed;
     background-color: #fff;
     transition: width 0.3;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
 }
 .pagetitle {
   background-color: #fff;
