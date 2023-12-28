@@ -11,7 +11,8 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import { useEffect, useState } from "react";
 import Loadingpage from './components/Loadingpage';
-import Texttwo from "./components/Texttwo";
+import Profile from "./components/Profile";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   const [isloading, setIsLoading] = useState(true);
@@ -53,7 +54,8 @@ function App() {
             <Route path="/roomselect" element={<Roomselected />}></Route>
             <Route path="/create" element={<Signup />}></Route>
             <Route path="/login" element={<Login />}></Route>
-            <Route path="/dashboard" element={<Texttwo/>}></Route>
+            <Route path="/dashboard" element={<Dashboard/>}></Route>
+            <Route path="/profile" element={<Profile/>}></Route>
           </Routes>
         </>
       )}

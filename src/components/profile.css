@@ -58,7 +58,13 @@ justify-content: right;
 
 }
 .booked-container{
-  margin-top: 85px;
+  margin-top: 25px;
+}
+.profile-div{
+  position: absolute;
+  top:170px;
+  width: 20%;
+  border-radius: 10px;
 }
 :root {
     scroll-behavior: smooth;
@@ -74,26 +80,6 @@ justify-content: right;
     width: 67px;
   }
 
-  
-  /* @media (max-width: 1199px) {
-    #main {
-      padding: 20px;
-    } */
-    /* .sidebar {
-        width: 0;
-        transition: width 0.3s;
-        overflow-x: hidden;
-      } */
-      
-      /* .sidebar.open {
-        width: 100%;
-      } */
-      
-      /* .open-sidebar .main {
-        margin-left: 250px;
-      }
-  } */
-  /* @media (max-width:600px) { */
     .sidebar {
         width: 0;
         transition: width 0.3s;
@@ -107,29 +93,6 @@ justify-content: right;
       .open-sidebar .main {
         margin-left: 250px;
       }
-      
-    /* } */
-  /* .sidebar {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    bottom: 0;
-    width: 300px;
-    z-index: 996;
-    transition: all 0.3s;
-    padding: 20px;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #aab7cf transparent;
-    box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-    background-color: #fff;
-  } */
-  
-  /* @media (max-width: 1199px) {
-    .sidebar {
-      left: -300px;
-    }
-  } */
   
   .sidebar::-webkit-scrollbar {
     width: 5px;
@@ -140,33 +103,7 @@ justify-content: right;
   .sidebar::-webkit-scrollbar-thumb {
     background-color: #aab7cf;
   }
-  
-  /* @media (min-width: 1200px) {
-  
-    #main,
-    #footer {
-      margin-left: 300px;
-    }
-  } */
-  
-  /* @media (max-width: 1199px) {
-    .toggle-sidebar .sidebar {
-      left: 0;
-    }
-  } */
-  
-  /* @media (min-width: 1200px) {
-  
-    .toggle-sidebar #main,
-    .toggle-sidebar #footer {
-      margin-left: 0;
-    }
-  
-    .toggle-sidebar .sidebar {
-      left: -300px;
-    }
-  }
-   */
+
   .sidebar-nav {
     padding: 0;
     margin: 0;
@@ -305,5 +242,11 @@ justify-content: right;
         }
         .booked-container{
           margin-top: 20px;
+        }
+        .profile-div{
+          position: absolute;
+          top:870px;
+          width: 50%;
+          border-radius: 10px;
         }
 }

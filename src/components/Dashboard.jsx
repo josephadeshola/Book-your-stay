@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
-import "./text.css";
+import "./dashboard.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import image from "../assets/image/logo.png";
 import imageBgColor from "../assets/image/bgimg.png";
 import ApexCharts from "react-apexcharts";
 import { Link } from "react-router-dom";
 
-const Texttwo = () => {
+const Dashboard = () => {
+  
   const [setsisibility, setSetVisibility] = useState(false);
+  const [userProfile, setUserProfile] = useState(false)
 
-  const openSideBar = () => {
+
+  const openSideBar = ({type}) => {
     setSetVisibility(!setsisibility);
   };
   const chartOptions = {
@@ -48,13 +51,13 @@ const Texttwo = () => {
     xaxis: {
       type: "datetime",
       categories: [
-        "2018-09-19T00:00:00.000Z",
-        "2018-09-19T01:30:00.000Z",
-        "2018-09-19T02:30:00.000Z",
-        "2018-09-19T03:30:00.000Z",
-        "2018-09-19T04:30:00.000Z",
-        "2018-09-19T05:30:00.000Z",
-        "2018-09-19T06:30:00.000Z",
+        "2023-09-19T00:00:00.000Z", 
+        "2023-09-19T01:30:00.000Z", 
+        "2023-09-19T02:30:00.000Z", 
+        "2023-09-19T03:30:00.000Z", 
+        "2023-09-19T04:30:00.000Z", 
+        "2023-09-19T05:30:00.000Z", 
+        "2023-09-19T06:30:00.000Z", 
       ],
     },
     tooltip: {
@@ -63,6 +66,8 @@ const Texttwo = () => {
       },
     },
   };
+
+  
 
   return (
     <div>
@@ -74,7 +79,8 @@ const Texttwo = () => {
           }`}
         >
           <div
-            className={`get-overNav ${
+            className={`get-overNav
+             ${
               setsisibility ? "sideNavWidth" : "sideWidth"
             }`}
           >
@@ -91,42 +97,18 @@ const Texttwo = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link " href="index.html">
+                <Link className="nav-link " to={"/dashboard"}>
                   <i className="bi bi-grid"></i>
                   <span>Dashboard</span>
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a
-                  className="nav-link collapsed"
-                  data-bs-target="#forms-nav"
-                  data-bs-toggle="collapse"
-                  href="#"
-                >
-                  <i className="bi bi-journal-text"></i>
-                  <span>Forms</span>
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a
-                  className="nav-link collapsed"
-                  data-bs-target="#charts-nav"
-                  data-bs-toggle="collapse"
-                  href="#"
-                >
-                  <i className="bi bi-bar-chart"></i>
-                  <span>Charts</span>
-                </a>
+                </Link>
               </li>
 
               <li className="nav-heading">Pages</li>
               <li className="nav-item">
-                <a className="nav-link collapsed" href="users-profile.html">
+                <Link className="nav-link collapsed" to={"/profile"}>
                   <i className="bi bi-person"></i>
                   <span>Profile</span>
-                </a>
+                </Link>
               </li>
 
               <li className="nav-item">
@@ -273,7 +255,10 @@ const Texttwo = () => {
                             Guest
                           </th>
                           <th scope="col" className="py-3">
-                            Room
+                           Email
+                          </th>
+                          <th scope="col" className="py-3">
+                           Status
                           </th>
                           <th scope="col" className="py-3">
                             Date
@@ -306,11 +291,15 @@ const Texttwo = () => {
                           </td>
                           <td className="py-3">@twitter</td>
                         </tr>
+                        
                       </tbody>
                     </table>
                   </div>
 
                   <div className="col-md-6 col-12 px-3 mt-3 mt-md-0">
+                    <div className="d-grid  ">
+                      
+                  
                     <div
                       style={{
                         borderTopLeftRadius: "10px",
@@ -319,19 +308,60 @@ const Texttwo = () => {
                       }}
                       className=" float-md-end d-md-flex d-flex gap-md-2 gap-2 py-2  mt-4  col-10 mx-auto px-2 col-md-6 "
                     >
+                      
                       <img
-                        className="col-md-2 col-2 shadow"
-                        style={{ borderRadius: "50px " }}
+                        className="col-md-2 col-2 position-relative shadow "
+                        style={{ borderRadius: "50px ", cursor:"pointer" }}
                         src={imageBgColor}
                         alt=""
+                        onClick={()=>setUserProfile(!userProfile)}
                       />
+                      
                       <div>
                         <b>Ayomide </b>
                         josephay125d@gmail.com
                       </div>
+
                     </div>
-                    <div className="col-md-9 col-12 rounded mx-auto shadow booked-container py-2 px-md- px-3">
-                      <h4 className="fs-4  mt-3">Today's Activities</h4>
+                     {userProfile && (
+
+                       <div className="border bg-white profile-div ms-5 py-2 ">
+                      <ul style={{listStyle:"none"}} className="px-2">
+                                  <li>
+                                    <Link className="dropdown-item d-flex gap-2" to={"/profile"}>
+                                      <li className="bi bi-person-circle"></li>
+                                    my Profile
+                                    </Link>
+                                  </li>
+                                 
+                                  <hr/>
+                                  <li>
+                                    <a className="dropdown-item d-flex gap-2" href="#">
+                                      <li className="bi bi-gear"></li>
+                                     Account Settings
+                                    </a>
+                                  </li>
+                                  <hr/>
+                                  <li>
+                                    <a className="dropdown-item d-flex gap-2" href="#">
+                                      <li className="bi bi-question-circle"></li>
+                                     Need Help?
+                                    </a>
+                                  </li>
+                                  <hr/>
+                                  <li>
+                                    <a className="dropdown-item d-flex gap-2" href="#">
+                                      <li className="bi bi-box-arrow-in-right"></li>
+                                     Sign Out
+                                    </a>
+                                  </li>
+                                </ul>
+                      </div>
+                        )
+                      }
+                        </div>
+                    <div className="col-md-9 col-12 rounded mx-auto shadow booked-container px-md- px-3">
+                      <h4 className="fs-4 py-3">Today's Activities</h4>
                       <div className="d-flex justify-content-between">
                         <div className="booked py-1">
                           5<h6 className="text-dark mt-3"> Booked</h6>
@@ -415,7 +445,7 @@ const Texttwo = () => {
                 </b>
               </Link>
               <i
-                className="bi bi-list toggle-sidebar-btn  mx-3 ms-5 mt-md-2  mt-2 fs-2"
+                className="bi bi-list toggle-sidebar-btn  ms-5 mx-3 text-center mt-md-2  mt-2 fs-2"
                 onClick={openSideBar}
               ></i>
             </div>
@@ -428,4 +458,4 @@ const Texttwo = () => {
   );
 };
 
-export default Texttwo;
+export default Dashboard;
