@@ -5,10 +5,10 @@
 }
 .get-overNav{
     height: 100vh;
-    position: fixed;
+    position: fixe;
     background-color: #fff;
     transition: width 0.3;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 .pagetitle {
   background-color: #fff;
