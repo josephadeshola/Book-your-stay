@@ -7,14 +7,12 @@ import ApexCharts from "react-apexcharts";
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
-  
   const [setsisibility, setSetVisibility] = useState(false);
-  const [userProfile, setUserProfile] = useState(false)
-
-
-  const openSideBar = ({type}) => {
+  const [userProfile, setUserProfile] = useState(false);
+  const openSideBar = ({ type }) => {
     setSetVisibility(!setsisibility);
   };
+
   const chartOptions = {
     chart: {
       height: 350,
@@ -51,13 +49,13 @@ const Dashboard = () => {
     xaxis: {
       type: "datetime",
       categories: [
-        "2023-09-19T00:00:00.000Z", 
-        "2023-09-19T01:30:00.000Z", 
-        "2023-09-19T02:30:00.000Z", 
-        "2023-09-19T03:30:00.000Z", 
-        "2023-09-19T04:30:00.000Z", 
-        "2023-09-19T05:30:00.000Z", 
-        "2023-09-19T06:30:00.000Z", 
+        "2023-09-19T00:00:00.000Z",
+        "2023-09-19T01:30:00.000Z",
+        "2023-09-19T02:30:00.000Z",
+        "2023-09-19T03:30:00.000Z",
+        "2023-09-19T04:30:00.000Z",
+        "2023-09-19T05:30:00.000Z",
+        "2023-09-19T06:30:00.000Z",
       ],
     },
     tooltip: {
@@ -66,8 +64,6 @@ const Dashboard = () => {
       },
     },
   };
-
-  
 
   return (
     <div>
@@ -80,9 +76,7 @@ const Dashboard = () => {
         >
           <div
             className={`get-overNav
-             ${
-              setsisibility ? "sideNavWidth" : "sideWidth"
-            }`}
+             ${setsisibility ? "sideNavWidth" : "sideWidth"}`}
           >
             <ul className="sidebar-nav" id="sidebar-nav">
               <li className="nav-item">
@@ -141,6 +135,7 @@ const Dashboard = () => {
             </ul>
           </div>
         </div>
+
         <div className="pagetitle p-3">
           <nav>
             <div className="container">
@@ -255,10 +250,10 @@ const Dashboard = () => {
                             Guest
                           </th>
                           <th scope="col" className="py-3">
-                           Email
+                            Email
                           </th>
                           <th scope="col" className="py-3">
-                           Status
+                            Status
                           </th>
                           <th scope="col" className="py-3">
                             Date
@@ -291,75 +286,12 @@ const Dashboard = () => {
                           </td>
                           <td className="py-3">@twitter</td>
                         </tr>
-                        
                       </tbody>
                     </table>
                   </div>
 
                   <div className="col-md-6 col-12 px-md-3 p mt-3 mt-md-0">
-                    <div className="d-grid  ">
-                      
-                  
-                    <div
-                      style={{
-                        borderTopLeftRadius: "10px",
-                        borderBottomLeftRadius: "10px",
-                        boxShadow: "0 0 5px  #d5c42aaa",
-                      }}
-                      className=" float-md-end d-md-flex d-flex gap-md-2 gap-2 py-2  mt-4  col-12 mx-auto px-2 col-md-6 "
-                    >
-                      
-                      <img
-                        className="col-md-2 col-2 position-relative shadow "
-                        style={{ borderRadius: "50px ", cursor:"pointer" }}
-                        src={imageBgColor}
-                        alt=""
-                        onClick={()=>setUserProfile(!userProfile)}
-                      />
-                      
-                      <div className="d-grid">
-                        <b>Ayomide </b>
-                        josephay125d@gmail.com
-                      </div>
-
-                    </div>
-                     {userProfile && (
-
-                       <div className="border bg-white profile-div ms-5 py-2 ">
-                      <ul style={{listStyle:"none"}} className="px-2">
-                                  <li>
-                                    <Link className="dropdown-item d-flex gap-2" to={"/profile"}>
-                                      <li className="bi bi-person-circle"></li>
-                                    my Profile
-                                    </Link>
-                                  </li>
-                                 
-                                  <hr/>
-                                  <li>
-                                    <a className="dropdown-item d-flex gap-2" href="#">
-                                      <li className="bi bi-gear"></li>
-                                     Account Settings
-                                    </a>
-                                  </li>
-                                  <hr/>
-                                  <li>
-                                    <a className="dropdown-item d-flex gap-2" href="#">
-                                      <li className="bi bi-question-circle"></li>
-                                     Need Help?
-                                    </a>
-                                  </li>
-                                  <hr/>
-                                  <li>
-                                    <a className="dropdown-item d-flex gap-2" href="#">
-                                      <li className="bi bi-box-arrow-in-right"></li>
-                                     Sign Out
-                                    </a>
-                                  </li>
-                                </ul>
-                      </div>
-                        )
-                      }
-                        </div>
+                    
                     <div className="col-md-9 col-12 rounded mx-auto shadow booked-container px-md- px-3">
                       <h4 className="fs-4 py-3">Today's Activities</h4>
                       <div className="d-flex justify-content-between">
@@ -434,8 +366,8 @@ const Dashboard = () => {
           </nav>
         </div>
 
-        <main id="main" className="main p-0 fixed-top  m-0 w-100">
-          <header className="bg-white shadow border d-flex justify-content-between">
+        <main id="main" className="main p-0  fixed-top  m-0 w-100">
+          <header className="bg-white d-flex   justify-content-between shadow border">
             <div className="d-flex">
               <Link class="navbar-brand get-font" to="/">
                 <img className="get-img" src={image} alt="" />
@@ -445,12 +377,75 @@ const Dashboard = () => {
                 </b>
               </Link>
               <i
-                className="bi bi-list toggle-sidebar-btn  ms-5 mx-3 text-center mt-md-2  mt-2 fs-2"
+                className="bi bi-list toggle-sidebar-btn marginLeft mt-md-2  mt-2 fs-2"
                 onClick={openSideBar}
               ></i>
             </div>
 
-            {/* Your other header JSX */}
+            <div className=" d-md-flex d-flex gap-md-2 gap-2 py-2 px-2 px-md-3 col-5  col-md-2   ">
+              <div
+                className="col-md-3  col-3  bg-light  position-relative shadow "
+                style={{ borderRadius: "50px ", cursor: "pointer" }}
+                onClick={() => setUserProfile(!userProfile)}
+              >
+              </div>
+
+              <div className="d-grid  ">
+                      {userProfile && (
+                        <div className="border bg-white profile-div ms-5 py-2 ">
+                          <ul style={{ listStyle: "none" }} className="px-2">
+                            <li>
+                              <Link
+                                className="dropdown-item d-flex gap-2"
+                                to={"/profile"}
+                              >
+                                <li className="bi bi-person-circle"></li>
+                                my Profile
+                              </Link>
+                            </li>
+
+                            <hr />
+                            <li>
+                              <a
+                                className="dropdown-item d-flex gap-2"
+                                href="#"
+                              >
+                                <li className="bi bi-gear"></li>
+                                Account Settings
+                              </a>
+                            </li>
+                            <hr />
+                            <li>
+                              <a
+                                className="dropdown-item d-flex gap-2"
+                                href="#"
+                              >
+                                <li className="bi bi-question-circle"></li>
+                                Need Help?
+                              </a>
+                            </li>
+                            <hr />
+                            <li>
+                              <a
+                                className="dropdown-item d-flex gap-2"
+                                href="#"
+                              >
+                                <li className="bi bi-box-arrow-in-right"></li>
+                                Sign Out
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+              
+
+              <div className="mt-3">
+                <b className="">
+                  <span>Welcome, </span> Ayomide
+                </b>
+              </div>
+            </div>
           </header>
         </main>
       </div>

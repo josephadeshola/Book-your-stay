@@ -10,12 +10,14 @@ import "react-toastify/dist/ReactToastify.css";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import { useEffect, useState } from "react";
-import Loadingpage from './components/Loadingpage';
+import imageBgColor from "./assets/image/bgimg.png";
+import Loadingpage from "./components/Loadingpage";
 import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
 
 function App() {
   const [isloading, setIsLoading] = useState(true);
+
   console.log(isloading);
 
   useEffect(() => {
@@ -46,7 +48,6 @@ function App() {
         <Loadingpage />
       ) : (
         <>
-          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />}></Route>
@@ -54,8 +55,8 @@ function App() {
             <Route path="/roomselect" element={<Roomselected />}></Route>
             <Route path="/create" element={<Signup />}></Route>
             <Route path="/login" element={<Login />}></Route>
-            <Route path="/dashboard" element={<Dashboard/>}></Route>
-            <Route path="/profile" element={<Profile/>}></Route>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/profile" element={<Profile />}></Route>
           </Routes>
         </>
       )}
