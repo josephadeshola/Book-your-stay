@@ -230,7 +230,7 @@ a {
     position: relative !important;
   }
   .sideNavWidth {
-    width: 60vw;
+    width: 20vw;
   }
   .sideWidth {
     width: 50vw;
@@ -247,20 +247,12 @@ a {
   .marginLeft {
     margin-left: 1pc !important;
   }
-  /* .get-overNav {
+  .get-overNav {
     height: 100vh;
     position: fixed;
     width: 100%;
     background-color: #fff;
     transition: width 0.3;
-    overflow-y: scroll !important;
-  } */
-  .get-overNav {
-    height: 200vh;
-    position:fixed !important;
-    width: 100% ;
-    background-color: #fff;
-    transition: width 0.3s !important; /* Corrected transition duration */
     overflow-y: scroll !important;
   }
 }

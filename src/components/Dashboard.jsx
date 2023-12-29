@@ -384,7 +384,7 @@ const Dashboard = () => {
 
             <div className=" d-md-flex d-flex gap-md-2 gap-2 py-2 px-2 px-md-3 col-5  col-md-2   ">
               <div
-                className="col-md-3  col-3  bg-light  position-relative shadow "
+                className="col-md-3  col-3 px-2 py-2  bg-light  position-relative shadow "
                 style={{ borderRadius: "50px ", cursor: "pointer" }}
                 onClick={() => setUserProfile(!userProfile)}
               >
