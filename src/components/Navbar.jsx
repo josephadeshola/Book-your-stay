@@ -31,11 +31,6 @@ const Navbar = () => {
                 </Link>
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
-                <Link class="nav-link " to="/findrooms">
-                  Booking
-                </Link>
-              </li>
-              <li style={{ listStyle: "none" }} class="nav-item ">
                 <Link class="nav-link "to={""}>
                   Contact
                 </Link>

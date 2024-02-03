@@ -11,10 +11,9 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import { useEffect, useState } from "react";
 import imageBgColor from "./assets/image/bgimg.png";
-import Loadingpage from "./components/Loadingpage";
 import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
-
+import Loadingpage from "./components/loadingpage";
 function App() {
   const [isloading, setIsLoading] = useState(true);
 

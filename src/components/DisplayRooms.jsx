@@ -102,7 +102,9 @@ const DisplayRooms = () => {
   const [standardRoom, setStandardRoom] = useState(
     location.state.getDate.standardRoom
   );
-  const [number, setNumber] = useState(location.state.getDate.options.phoneNumber);
+  const [number, setNumber] = useState(
+    location.state.getDate.options.phoneNumber
+  );
   const [children, setChildren] = useState(
     location.state.getDate.options.children
   );
@@ -121,17 +123,111 @@ const DisplayRooms = () => {
     }, 6000);
   };
   const [view, setView] = useState(false);
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [imageReserve, setImageReserve] = useState("");
   const [setHandelView, setSetHandelView] = useState([]);
   const handelView = (selectedImg) => {
     setSetHandelView([selectedImg]);
     setView(true);
   };
+  const handelViews = (reserveImg, name, price) => {
+    setImageReserve(reserveImg);
+    setName(name);
+    setPrice(price);
+  };
 
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <div className="container ">
         <div className="row  ">
+          {imageReserve && (
+            <div
+              class="modal fade"
+              id="exampleModals"
+              tabindex="-1"
+              aria-labelledby="exampleModalsLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalsLabel">
+                      Modal title
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body w-100">
+                    <img
+                      height="280vh"
+                      className="col-12 rounded"
+                      src={imageReserve}
+                      alt=""
+                    />
+                    <div>
+                      <p className="fw-bold mt-2">{setName}</p>
+                      <div className="fw-bold mb-3">{setPrice}</div>
+                      <p
+                        style={{
+                          backgroundColor: "rgba(202, 228, 237, 0.518)",
+                        }}
+                        className="py-2 px-3 rounded"
+                      >
+                        <span className="fw-bold ">
+                          <i class="bi fs-3 bi-stars"></i> Highlights
+                        </span>
+                        <br />
+                        <span>
+                          Soundproofed Air conditioning Connecting rooms
+                          available Free cots/infant beds LCD TV Separate
+                          bedroom Premium bedding Rainfall showerhead
+                        </span>
+                      </p>
+                      <p>
+                        <i style={{ color: "#a99808 " }} class="bi bi-wifi"></i>
+                        Free WiFi
+                      </p>
+                      <p>
+                        <i style={{ color: "#a99808 " }} class="bi bi-tree"></i>
+                        Restaurant
+                      </p>
+                      <p>
+                        <i
+                          style={{ color: "#a99808 " }}
+                          class="bi bi-bus-front"
+                        ></i>
+                        Airport transfer
+                      </p>
+                      <p>
+                        <i
+                          style={{ color: "#a99808 " }}
+                          class="bi bi-people"
+                        ></i>
+                        Sleeps 3
+                      </p>
+
+                      <div className="border rounded px-2">
+                        <h4>Room options</h4>
+                        <p>Cancellation policy</p>
+                        <div className="d-flex gap-2 ">
+                          <p>
+                            <a href="">More details on all policy options</a>
+                          </p>
+                          <i class="bi text-danger bi-exclamation-circle"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
           {view && (
             <div
               className="modal fade"
@@ -174,12 +270,10 @@ const DisplayRooms = () => {
                               className="py-2 px-3 rounded"
                             >
                               <span className="fw-bold ">
-                                {" "}
                                 <i class="bi fs-3 bi-stars"></i> Highlights
-                              </span>{" "}
+                              </span>
                               <br />
                               <span>
-                                {" "}
                                 Soundproofed Air conditioning Connecting rooms
                                 available Free cots/infant beds LCD TV Separate
                                 bedroom Premium bedding Rainfall showerhead
@@ -189,28 +283,28 @@ const DisplayRooms = () => {
                               <i
                                 style={{ color: "#a99808 " }}
                                 class="bi bi-wifi"
-                              ></i>{" "}
+                              ></i>
                               Free WiFi
                             </p>
                             <p>
                               <i
                                 style={{ color: "#a99808 " }}
                                 class="bi bi-tree"
-                              ></i>{" "}
+                              ></i>
                               Restaurant
                             </p>
                             <p>
                               <i
                                 style={{ color: "#a99808 " }}
                                 class="bi bi-bus-front"
-                              ></i>{" "}
+                              ></i>
                               Airport transfer
                             </p>
                             <p>
                               <i
                                 style={{ color: "#a99808 " }}
                                 class="bi bi-people"
-                              ></i>{" "}
+                              ></i>
                               Sleeps 3
                             </p>
 
@@ -222,7 +316,7 @@ const DisplayRooms = () => {
                                   <a href="">
                                     More details on all policy options
                                   </a>
-                                </p>{" "}
+                                </p>
                                 <i class="bi text-danger bi-exclamation-circle"></i>
                               </div>
                             </div>
@@ -317,7 +411,7 @@ const DisplayRooms = () => {
               <div className="px-4">
                 <button
                   onClick={handelAvailability}
-                  className="btn rounded  w-100  mt-5 col-md-4 col-12 py-3  py-0"
+                  className="btn rounded  w-100 text-light  mt-5 col-md-4 col-12 py-3  py-0"
                 >
                   SEE AVAILABILITY
                 </button>
@@ -361,8 +455,12 @@ const DisplayRooms = () => {
                       you can cancel later, os lock in this great price today!
                     </p>
                     <button
-                      onClick={handelAvailability}
-                      className="btn rounded  col-md-3 col-12 py-3   py-0"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModals"
+                      onClick={() =>
+                        handelViews(getImg.image, getImg.name, getImg.price)
+                      }
+                      className="btn rounded text-light col-md-3 col-12 py-3   py-0"
                     >
                       Reserve
                     </button>

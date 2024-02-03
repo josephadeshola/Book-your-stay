@@ -1,68 +1,61 @@
 .container {
-    margin-top: 5pc;
-
+  margin-top: 5pc;
 }
 
 .get_bg {
-    background-image: url(https://img.freepik.com/premium-photo/table-lamp-sofa_42044-1921.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height:85vh;
+  background-image: url(https://img.freepik.com/premium-photo/table-lamp-sofa_42044-1921.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
 }
 
 .img-fluid {
-    width: 100% !important;
-    height: 39vh;
+  height: 35vh !important;
 }
-.room-img{
-  height:39vh;
+.room-img {
+  height: 39vh;
 }
 
 .get-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 10px !important;
-    row-gap: 10px !important;
-    cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px !important;
+  row-gap: 10px !important;
+  cursor: pointer;
 }
 
-  ::-webkit-scrollbar {
-    width: 12px;
-  
-  }
+::-webkit-scrollbar {
+  width: 12px;
+}
 ::-webkit-scrollbar-track {
-    background:#fff;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: #382803a2;
-    border-radius: 6px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background-color:#a99808;
-    color: rgba(202, 228, 237, 0.518);
-  } 
- 
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #382803a2;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a99808;
+  color: rgba(202, 228, 237, 0.518);
+}
 
-@media (max-width:688px) {
+@media (max-width: 688px) {
   .get_bg {
-  
-    height:100vh;
-}
-    .img-fluid {
-        margin-top: 10px;
-        width: 100% !important;
-        height: 20vh;
-    }
+    height: 100vh;
+  }
+  .img-fluid {
+    margin-top: 10px;
+    height: 19vh !important;
+  }
 
-    .get-grid {
-        column-gap: 4px !important;
-        row-gap: 2px !important;
-        cursor: pointer;
-    }
-   
-    .room-h{
-      height: 85vh;
-}
-   
+  .get-grid {
+    column-gap: 4px !important;
+    row-gap: 2px !important;
+    cursor: pointer;
+  }
+
+  .room-h {
+    height: 85vh;
+  }
 }
