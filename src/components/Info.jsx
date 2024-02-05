@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
+import baseUrl from "../BaseUrl";
 
 // import AOS from "aos";
 // import "aos/dist/aos.css";
@@ -57,8 +58,10 @@ const Info = () => {
 
   const formik = useFormik({
     initialValues: {
-      checkin: checkin,
-      checkout: checkout,
+      phoneNumber: "",
+      standardRoom: "",
+      checkin: "",
+      checkout: "",
       options: {
         adult: 1,
         children: 0,
@@ -84,13 +87,13 @@ const Info = () => {
       axios
         .post(baseUrl + "/info/users", values)
         .then((res) => {
-          toast.success("successfully Booked");
-          navigate(`/findrooms/${selectedRoom}`, { state: { getDate } });
-      })
+          console.log("data found", res);
+        })
         .catch((err) => {
           console.log("error found", err);
         });
-      
+      toast.success("successfully Booked");
+      navigate(`/findrooms/${selectedRoom}`, { state: { getDate } });
     },
   });
   const handleOption = (name, operation) => {
@@ -110,27 +113,27 @@ const Info = () => {
   return (
     <div>
       <div
-        class="modal fade"
+        className="modal fade"
         id="exampleModals"
         tabindex="-1"
         aria-labelledby="exampleModalsLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalsLabel">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="exampleModalsLabel">
                 Modal title
               </h1>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
             <form action="" onSubmit={formik.handleSubmit}>
-              <div class="modal-body w-100">
+              <div className="modal-body w-100">
                 <div className=" col-12 gap-2 ">
                   <div>
                     <div>

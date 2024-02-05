@@ -136,7 +136,6 @@ const DisplayRooms = () => {
     setName(name);
     setPrice(price);
   };
-
   return (
     <div>
       <Navbar />
