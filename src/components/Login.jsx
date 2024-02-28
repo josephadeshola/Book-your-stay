@@ -32,8 +32,6 @@ const Login = () => {
       .then((res)=>{
         if(res.data.status==true){
           toast.success(res.data.message);
-          
-
         }
         else{
           toast.error(res.data.message)

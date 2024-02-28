@@ -96,19 +96,41 @@ const DisplayRooms = () => {
   const location = useLocation();
   console.log(location);
   const { roomId, anotherParam } = useParams();
-  const [checkOut, setCheckOut] = useState(location.state.getDate.checkout);
-  const [checkin, setCheckIn] = useState(location.state.getDate.checkin);
-  const [adult, setAdult] = useState(location.state.getDate.options.adult);
+  const [checkOut, setCheckOut] = useState(
+    location.state && location.state.getDate
+      ? location.state.getDate.checkout
+      : ""
+  );
+  const [checkin, setCheckIn] = useState(
+    location.state && location.state.getDate
+      ? location.state.getDate.checkin
+      : ""
+  );
+  const [adult, setAdult] = useState(
+    location.state && location.state.getDate && location.state.getDate.options
+      ? location.state.getDate.options.adult
+      : ""
+  );
   const [standardRoom, setStandardRoom] = useState(
-    location.state.getDate.standardRoom
+    location.state && location.state.getDate
+      ? location.state.getDate.standardRoom
+      : ""
   );
   const [number, setNumber] = useState(
-    location.state.getDate.options.phoneNumber
+    location.state && location.state.getDate && location.state.getDate.options
+      ? location.state.getDate.options.phoneNumber
+      : ""
   );
   const [children, setChildren] = useState(
-    location.state.getDate.options.children
+    location.state && location.state.getDate && location.state.getDate.options
+      ? location.state.getDate.options.children
+      : ""
   );
-  const [room, setRoom] = useState(location.state.getDate.options.room);
+  const [room, setRoom] = useState(
+    location.state && location.state.getDate && location.state.getDate.options
+      ? location.state.getDate.options.room
+      : ""
+  );
   const [diplayavailability, setDiplayavailability] = useState(false);
   const [getImg, setImg] = useState(
     [...allServices, ...viewAll, ...allServicesTwo].find(
@@ -127,15 +149,38 @@ const DisplayRooms = () => {
   const [price, setPrice] = useState("");
   const [imageReserve, setImageReserve] = useState("");
   const [setHandelView, setSetHandelView] = useState([]);
-  const handelView = (selectedImg) => {
+  const handelView = (selectedImg, handleRadioSub, handleRadioChange) => {
     setSetHandelView([selectedImg]);
     setView(true);
+    setSelectedAmout(0);
   };
-  const handelViews = (reserveImg, name, price) => {
+  const handelViews = (
+    reserveImg,
+    name,
+    price,
+    handleRadioSub,
+    handleRadioChange
+  ) => {
     setImageReserve(reserveImg);
     setName(name);
     setPrice(price);
+    setSelectedAmout(0);
   };
+  const [selectedAmout, setSelectedAmout] = useState(0);
+
+  const handleRadioChange = () => {
+    setSelectedAmout(115);
+  };
+
+  const handleRadioSub = () => {
+    setSelectedAmout(0);
+  };
+
+  const calculateTotalPrice = () => {
+    const originalPrice = parseFloat(getImg.price.replace("$", ""));
+    return originalPrice + selectedAmout;
+  };
+
   return (
     <div>
       <Navbar />
@@ -143,26 +188,26 @@ const DisplayRooms = () => {
         <div className="row  ">
           {imageReserve && (
             <div
-              class="modal fade"
+              className="modal fade"
               id="exampleModals"
               tabindex="-1"
               aria-labelledby="exampleModalsLabel"
               aria-hidden="true"
             >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalsLabel">
-                      Modal title
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="exampleModalsLabel">
+                      Room information
                     </h1>
                     <button
                       type="button"
-                      class="btn-close"
+                      className="btn-close"
                       data-bs-dismiss="modal"
                       aria-label="Close"
                     ></button>
                   </div>
-                  <div class="modal-body w-100">
+                  <div className="modal-body modal-height overflow-x-scroll">
                     <img
                       height="280vh"
                       className="col-12 rounded"
@@ -170,8 +215,8 @@ const DisplayRooms = () => {
                       alt=""
                     />
                     <div>
-                      <p className="fw-bold mt-2">{setName}</p>
-                      <div className="fw-bold mb-3">{setPrice}</div>
+                      <p className="fw-bold mt-2">{name}</p>
+                      <div className="fw-bold mb-3">{price}</div>
                       <p
                         style={{
                           backgroundColor: "rgba(202, 228, 237, 0.518)",
@@ -179,7 +224,7 @@ const DisplayRooms = () => {
                         className="py-2 px-3 rounded"
                       >
                         <span className="fw-bold ">
-                          <i class="bi fs-3 bi-stars"></i> Highlights
+                          <i className="bi fs-3 bi-stars"></i> Highlights
                         </span>
                         <br />
                         <span>
@@ -190,25 +235,25 @@ const DisplayRooms = () => {
                       </p>
                       <p>
                         <i style={{ color: "#a99808 " }} class="bi bi-wifi"></i>
-                        Free WiFi
+                       <small>Free WiFi</small>
                       </p>
                       <p>
                         <i style={{ color: "#a99808 " }} class="bi bi-tree"></i>
-                        Restaurant
+                        <small>  Restaurant</small>
                       </p>
                       <p>
                         <i
                           style={{ color: "#a99808 " }}
-                          class="bi bi-bus-front"
+                          className="bi bi-bus-front"
                         ></i>
-                        Airport transfer
+                       <small> Airport transfer</small>
                       </p>
                       <p>
                         <i
                           style={{ color: "#a99808 " }}
-                          class="bi bi-people"
+                          className="bi bi-people"
                         ></i>
-                        Sleeps 3
+                       <small> Sleeps 3</small>
                       </p>
 
                       <div className="border rounded px-2">
@@ -220,6 +265,49 @@ const DisplayRooms = () => {
                           </p>
                           <i class="bi text-danger bi-exclamation-circle"></i>
                         </div>
+                        <div className="d-flex justify-content-between">
+                          <div class="form-check ">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="exampleRadios"
+                              id="exampleRadios1"
+                              value="option1"
+                              // checked={selectedAmout === 0}
+                              onChange={handleRadioSub}
+                            />
+                            <label
+                              class="form-check-label"
+                              for="exampleRadios1"
+                            >
+                              Non-Refundable
+                            </label>
+                          </div>
+                          <div className="fw-bold">+ $0</div>
+                        </div>
+                        <div className="d-flex mt-3 justify-content-between">
+                          <div class="form-check ">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="exampleRadios"
+                              id="exampleRadios2"
+                              value="option2"
+                              onChange={handleRadioChange}
+                            />
+                            <label
+                              class="form-check-label"
+                              for="exampleRadios2"
+                            >
+                              Fully refundable
+                            </label>
+                          </div>
+                          <div className="fw-bold">+ $115</div>
+                        </div>
+                        <button className="border mt-3 border-none rounded py-1 px-2  bg-danger text-light ">
+                          90% off
+                        </button>
+                        <h3 className="mt-3">$ {calculateTotalPrice()}</h3>
                       </div>
                     </div>
                   </div>
@@ -248,20 +336,20 @@ const DisplayRooms = () => {
                       aria-label="Close"
                     ></button>
                   </div>
-                  <div class="modal-body w-100">
+                  <div class="modal-body  w-100">
                     <div className="">
-                      {setHandelView.map((img, index) => (
+                      {setHandelView.map((eachItem, index) => (
                         <>
                           <img
                             height="280vh"
                             className="col-12 rounded"
                             key={index}
-                            src={img.image}
+                            src={eachItem.image}
                             alt=""
                           />
                           <div>
-                            <p className="fw-bold mt-2">{img.name}</p>
-                            <div className="fw-bold mb-3">{img.price}</div>
+                            <p className="fw-bold mt-2">{eachItem.name}</p>
+                            <div className="fw-bold mb-3">{eachItem.price}</div>
                             <p
                               style={{
                                 backgroundColor: "rgba(202, 228, 237, 0.518)",
@@ -316,8 +404,16 @@ const DisplayRooms = () => {
                                     More details on all policy options
                                   </a>
                                 </p>
-                                <i class="bi text-danger bi-exclamation-circle"></i>
+                                <i className="bi text-danger bi-exclamation-circle"></i>
                               </div>
+                              <button className="border border-none rounded py-1 px-2  bg-danger text-light ">
+                                90% off
+                              </button>
+                              <div className="d-flex gap-2 mt-2">
+                              <h3 className="">{eachItem.price}</h3>
+                              <p className="text-underline mt-1">$123</p>
+                              </div>
+                              <small>$1,567 total</small>
                             </div>
                           </div>
                         </>
@@ -339,13 +435,13 @@ const DisplayRooms = () => {
             </div>
           )}
           <div className="d-md-flex gap-md-3 justify-content-between">
-            <div className="shadow  get_bg pb-3 col-md-4 col-12 rounded">
-              <div className="text-light">
+            <div className="shadow get_bg  pb-3 col-md-4 col-12 rounded">
+              <div className="text-dark">
                 <h4 className="px-md-4 px-2">Search</h4>
                 <div className="px-4 mt-3">
-                  <label htmlFor="" className="fw-bold">
+                  <span htmlFor="" className="fw-bold">
                     Room Destination
-                  </label>
+                  </span>
                   <input
                     type="text"
                     disabled
@@ -354,9 +450,9 @@ const DisplayRooms = () => {
                   />
                 </div>
                 <div className="px-4 mt-3">
-                  <label htmlFor="" className="mt-2 fw-bold">
+                  <span htmlFor="" className="mt-2 fw-bold">
                     Check-in date
-                  </label>
+                  </span>
                   <input
                     type="text"
                     disabled
@@ -365,9 +461,9 @@ const DisplayRooms = () => {
                   />
                 </div>
                 <div className="px-4 mt-3">
-                  <label htmlFor="" className="mt-2 fw-bold">
+                  <span htmlFor="" className="mt-2 fw-bold">
                     Check-out date
-                  </label>
+                  </span>
                   <input
                     type="text"
                     disabled
@@ -457,7 +553,12 @@ const DisplayRooms = () => {
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModals"
                       onClick={() =>
-                        handelViews(getImg.image, getImg.name, getImg.price)
+                        handelViews(
+                          getImg.image,
+                          getImg.name,
+                          getImg.price,
+                         
+                        )
                       }
                       className="btn rounded text-light col-md-3 col-12 py-3   py-0"
                     >
@@ -467,7 +568,7 @@ const DisplayRooms = () => {
                 </div>
               </div>
               {diplayavailability && (
-                <div className="col-md-12 col-12 get-grid mt-3">
+                <div className="col-md-12 col-12  get-grid mt-3">
                   {Rooms.map((allimag, i) => (
                     <>
                       <div

@@ -3,7 +3,6 @@
 }
 
 .navbar-toggler {
-
   border: none;
 }
 
@@ -21,13 +20,11 @@
   position: absolute;
   bottom: 340px;
   font-size: 50px;
-
 }
 
 .p-position {
   position: absolute;
   bottom: 298px;
-
 }
 
 div.at-container {
@@ -45,7 +42,6 @@ div.at-container {
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-fill-mode: none;
-
 }
 
 .location {
@@ -78,7 +74,6 @@ div.at-container {
   border-left: none;
   border-right: none;
   border-top: none;
-
 }
 
 .accordion-item {
@@ -111,11 +106,9 @@ div.at-container {
 
 .get-margin {
   margin-top: 90px;
-
 }
-.bg-color{
-  background: linear-gradient(to right, #AE8625, #F7EF8A, #D2AC47, #EDC967);
-
+.bg-color {
+  background: linear-gradient(to right, #ae8625, #f7ef8a, #d2ac47, #edc967);
 }
 
 .btn {
@@ -133,37 +126,36 @@ div.at-container {
 
 .img-container img {
   transition: transform 0.3s ease-out;
-
 }
 
 .img-container:hover img {
   transform: scale(0.95);
 }
-.bi-instagram, .bi-facebook , .bi-twitter{
+.bi-instagram,
+.bi-facebook,
+.bi-twitter {
   color: white !important;
   background-color: rgb(23, 22, 22);
 }
-.bi-instagram:hover, .bi-facebook:hover, .bi-twitter:hover{
+.bi-instagram:hover,
+.bi-facebook:hover,
+.bi-twitter:hover {
   background-color: #dcaa14c2;
   color: white;
   cursor: pointer;
-} 
-.get_shadow:hover{
+}
+.get_shadow:hover {
   background-color: #dcaa14c2;
   color: white !important;
-  box-shadow: 0 0 10px rgb(197, 197, 18)!important;
-
+  box-shadow: 0 0 10px rgb(197, 197, 18) !important;
 }
 
 /* modal style */
-.my_modal{
- border: 1px solid #dcaa14c2;
-
+.my_modal {
+  border: 1px solid #dcaa14c2;
 }
 
-
 @keyframes bounce-top {
-
   0% {
     transform: translateY(0);
   }
@@ -205,7 +197,6 @@ div.at-container {
   }
 }
 
-
 /* About style */
 
 .imgHeight {
@@ -231,17 +222,15 @@ div.at-container {
   font-size: 24px;
   font-weight: 600;
   color: rgb(128, 117, 117);
-
 }
 
 .new-high {
   height: 100vh;
 }
-.about{
+.about {
   height: 50vh;
 }
 .imgPosition {
-
   position: relative;
   top: 80px !important;
   left: -200px;
@@ -249,7 +238,6 @@ div.at-container {
   right: inherit;
 }
 .imgPosition2 {
-
   position: relative;
   top: 80px !important;
   left: -200px;
@@ -260,7 +248,7 @@ div.at-container {
 .about_h1 {
   font-size: 60px;
   font-weight: 600;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: rgb(128, 117, 117);
 }
 
@@ -269,39 +257,40 @@ div.at-container {
   font-weight: 600;
   color: rgb(128, 117, 117);
 }
-.get_height{
+.get_height {
   height: 80vh;
-  
 }
-.resort{
+.resort {
   margin-top: 16pc;
 }
 /* blog style */
-.blog h1{
+.blog h1 {
   font-size: 60px;
   font-weight: 600;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: rgb(128, 117, 117);
-  
 }
-.blog h5{
+.blog h5 {
   font-size: 24px;
   font-weight: 600;
   color: rgb(128, 117, 117);
 }
-.gievMarfhf{
+.gievMarfhf {
   margin-top: 10pc;
 }
-.getOption{
+.getOption {
   height: 50vh;
 }
-.optionCounterButton{
+.optionCounterButton {
   cursor: pointer;
 }
-.optionCounterButton :disabled{
-  cursor:  not-allowed;
+.optionCounterButton :disabled {
+  cursor: not-allowed;
 }
-@media (max-width:688px) {
+.modal-height {
+  height: 45vh;
+}
+@media (max-width: 688px) {
   * {
     font-size: 15px;
   }
@@ -309,7 +298,6 @@ div.at-container {
   .home-img {
     margin-top: 20px;
     height: 50vh;
-
   }
 
   .move-img {
@@ -317,21 +305,18 @@ div.at-container {
     bottom: 210px;
     text-align: center;
     font-size: 23px;
-
   }
 
   .p-position {
     position: absolute;
     bottom: 150px;
     text-align: center;
-
   }
 
   .get-overflow {
     overflow-y: scroll;
     display: flex;
     gap: 20px;
-
   }
 
   .get-image {
@@ -343,7 +328,6 @@ div.at-container {
     position: relative;
     bottom: 60px;
     left: 0px;
-
   }
   .get-h {
     height: 50vh;
@@ -375,7 +359,6 @@ div.at-container {
     color: white !important;
     font-weight: 600;
     color: rgb(128, 117, 117);
-
   }
 
   .get-margin {
@@ -400,19 +383,19 @@ div.at-container {
     font-weight: 600;
     color: rgb(128, 117, 117);
   }
-  .get_height{
-    height: 50vh; 
+  .get_height {
+    height: 50vh;
   }
-  .resort{
+  .resort {
     margin-top: 46pc;
   }
-  .blog h1{
-      font-size: 30px;
-      font-weight: 600;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      color: rgb(128, 117, 117);
-    }
-    .blog p{
-      font-size:20px;
-    }
+  .blog h1 {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: rgb(128, 117, 117);
+  }
+  .blog p {
+    font-size: 20px;
+  }
 }

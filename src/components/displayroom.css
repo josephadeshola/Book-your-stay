@@ -3,13 +3,12 @@
 }
 
 .get_bg {
-  background-image: url(https://img.freepik.com/premium-photo/table-lamp-sofa_42044-1921.jpg?size=626&ext=jpg&ga=GA1.1.26054885.1689417218&semt=ais);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 85vh;
+  height: 83vh;
 }
-
+.text-underline{
+  text-decoration-line:line-through ;
+  font-size: 17px;
+}
 .img-fluid {
   height: 35vh !important;
 }
@@ -38,6 +37,10 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: #a99808;
   color: rgba(202, 228, 237, 0.518);
+}
+.spinner-border{
+  height: 100px;
+  width: 100px;
 }
 
 @media (max-width: 688px) {

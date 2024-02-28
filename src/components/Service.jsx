@@ -203,13 +203,6 @@ export let viewAll = [
 ];
 const Service = () => {
   const navigate = useNavigate();
-  // useEffect(() => {
-  //   AOS.init({
-  //     offset: 200,
-  //     duration: 800,
-  //   });
-  // }, []);
-
   const [showAllProduct, setShowAllProduct] = useState(false);
   const handleviewAll = () => {
     setShowAllProduct(true);
@@ -223,25 +216,15 @@ const Service = () => {
     room: 1,
   });
 
-  // const handleOption = (name, operation) => {
-  //   setOptions((prev) => {
-  //     return {
-  //       ...prev,
-  //       [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
-  //     };
-  //   });
-  // };
-
   const formik = useFormik({
     initialValues: {
       phoneNumber: "",
       standardRoom: "",
       checkin: "",
       checkout: "",
-      options:"",
       options: {
         adult: 1,
-        children: 0,
+        children: 1,
         room: 1,
       }
     },
@@ -315,7 +298,7 @@ const Service = () => {
                 <div className=" col-12 gap-2 ">
                   <div>
                     <div>
-                      <label htmlFor="" className="mt-2 pb-2">
+                      <label htmlFor="phoneNo" className="mt-2 pb-2">
                         <i class="bi bi-telephone text-warning"></i> Phone
                         Number
                       </label>
@@ -341,7 +324,7 @@ const Service = () => {
                       ) : null}
                     </div>
                     <div>
-                      <label htmlFor="" className="mt-2 pb-2">
+                      <label htmlFor="selectRoom" className="mt-2 pb-2">
                         <i class="bi bi-flower2 text-warning"></i> Select Room
                       </label>
                       <select
@@ -368,7 +351,7 @@ const Service = () => {
                       ) : null}
                     </div>
                     <div>
-                      <label htmlFor="" className="mt-2 pb-2">
+                      <label htmlFor="checkIn" className="mt-2 pb-2">
                         <i class="bi bi-patch-check text-warning"></i> Check In
                         Date
                       </label>
@@ -394,7 +377,7 @@ const Service = () => {
                   </div>
                   <div>
                     <div>
-                      <label htmlFor="" className="mt-2 pb-2">
+                      <label htmlFor="checkOut" className="mt-2 pb-2">
                         <i class="bi bi-x-octagon text-warning"></i> Check Out
                         Date
                       </label>
@@ -418,7 +401,7 @@ const Service = () => {
                       ) : null}
                     </div>
                     <div className="col-12 mx-auto">
-                      <label htmlFor="" className="mt-2 ">
+                      <label htmlFor="adult" className="mt-2 ">
                         <i class="bi bi-people text-warning"></i> Adults
                       </label>
                       <div className="headerSearchItem">

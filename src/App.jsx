@@ -14,6 +14,7 @@ import imageBgColor from "./assets/image/bgimg.png";
 import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
 import Loadingpage from "./components/loadingpage";
+import FoodOrd from "./components/FoodOrd";
 function App() {
   const [isloading, setIsLoading] = useState(true);
 
@@ -54,6 +55,7 @@ function App() {
             <Route path="/roomselect" element={<Roomselected />}></Route>
             <Route path="/create" element={<Signup />}></Route>
             <Route path="/login" element={<Login />}></Route>
+            <Route path="/food/order" element={<FoodOrd />}></Route>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />}></Route>
           </Routes>

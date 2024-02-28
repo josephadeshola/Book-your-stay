@@ -36,6 +36,11 @@ const Navbar = () => {
                 </Link>
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
+                <Link class="nav-link " to={"/food/order"}>
+                 Food Ordring
+                </Link>
+              </li>
+              <li style={{ listStyle: "none" }} class="nav-item ">
                 <Link class="nav-link " to={"/dashboard"}>
                  Dashboard
                 </Link>
@@ -44,7 +49,7 @@ const Navbar = () => {
           </div>
           <div className="d-flex gap-2">
             <button
-              className="btn d-md-block d-none rounded text-light px-4 py-2"
+              className="btn d-md-block d-none rounded text-light  px-4 py-2"
               style={{ backgroundColor: "#dcaa14c2" }}
             >
               <Link className="text-decoration-none text-light" to={"/create"}>
@@ -140,6 +145,15 @@ const Navbar = () => {
                   <hr className="border border-primary " />
                 </li>
 
+                <li class="nav-item">
+                  <div className="d-flex gap-3 ">
+                    <i class="bi bi-tags mt-2 fs-1 text-light"></i>
+                    <Link class="nav-link fw-bold text-light fs-1 " to={"/food/order"}>
+                 Food Ordering
+                </Link>
+                  </div>
+                  <hr className="border border-primary " />
+                </li>
                 <li class="nav-item">
                   <div className="d-flex gap-3 ">
                     <i class="bi bi-tags mt-2 fs-1 text-light"></i>
