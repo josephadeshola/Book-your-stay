@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import AOS from "aos";
-// import "aos/dist/aos.css";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -489,7 +487,7 @@ const Service = () => {
           </div>
         </div>
       </div>
-      <div data-aos="zoom-out-right" className="px-md-5 px-3">
+      <div  className="px-md-5 px-3">
         <h6 className="mt-5" style={{ color: "#dcaa14c2" }}>
           HOT OFFER
         </h6>
@@ -511,7 +509,6 @@ const Service = () => {
       <div className="d-md-flex d-flex get-overflow col-12 mt-5 justify-content-between">
         {allServices.map((eachItem) => (
           <div
-            data-aos={eachItem.effect}
             className="mx-auto px-md-3 px-2 img-container shadow  rounded py-md-4 py-2 col-md-3 col-12"
             key={eachItem.id}
           >
@@ -564,7 +561,6 @@ const Service = () => {
         {viewAll.map((eachItem, index) => (
           <div
             key={index}
-            data-aos={eachItem.effect}
             className={`mx-auto px-md-3 px-2 shadow img-container  rounded py-md-4 py-2 col-md-9 col-12 ${
               showAllProduct ? "" : "d-none"
             }`}
