@@ -11,13 +11,10 @@ import Login from "./components/Login";
 import { useEffect, useState } from "react";
 import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
-import Loadingpage from './components/Loadingpage'
+// import Loadingpage from './components/Loadingpage'
 import FoodOrd from "./components/FoodOrd";
 function App() {
   const [isloading, setIsLoading] = useState(true);
-
-  console.log(isloading);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -42,9 +39,9 @@ function App() {
         theme="light"
       />
 
-      {isloading ? (
+      {/* {isloading ? (
         <Loadingpage />
-      ) : (
+      ) : ( */}
         <>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -58,7 +55,7 @@ function App() {
             <Route path="/profile" element={<Profile />}></Route>
           </Routes>
         </>
-      )}
+      {/* )} */}
     </div>
   );
 }
