@@ -113,9 +113,9 @@ const FoodOrd = () => {
                     ))}
                 </div>
                 <div className="d-flex getOverflow py-2  gap-3">
-                    {product.map((eachProduct) => (
+                    {product.map((eachProduct,index) => (
                         <>
-                  <div className="col-md-4 col-12 px-md-3 px-4 shadow rounded">
+                  <div key={index} className="col-md-4 col-12 px-md-3 px-4 shadow rounded">
                         <div className="img-div  py-2 col-div">
                           <img
                             className="col-12"
