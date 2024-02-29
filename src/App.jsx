@@ -1,6 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Home from "./components/Home";
 import DisplayRooms from "./components/DisplayRooms";
@@ -10,10 +9,9 @@ import "react-toastify/dist/ReactToastify.css";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import { useEffect, useState } from "react";
-import imageBgColor from "./assets/image/bgimg.png";
 import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
-import Loadingpage from "./components/loadingpage";
+import Loadingpage from './components/Loadingpage'
 import FoodOrd from "./components/FoodOrd";
 function App() {
   const [isloading, setIsLoading] = useState(true);
