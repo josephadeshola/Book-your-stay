@@ -1,6 +1,4 @@
 import React from "react";
-import image from "../assets/image/download.png";
-import { Link } from "react-router-dom";
 const FoodNav = () => {
   return (
     <div>

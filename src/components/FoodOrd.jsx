@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import FoodNav from "./FoodNav";
-import styles from "../components/styles/FoodOrd.css";
+import FoodOrd from "../components/styles/FoodOrd.css";
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
