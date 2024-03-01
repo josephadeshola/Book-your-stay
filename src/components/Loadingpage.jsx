@@ -1,5 +1,5 @@
 import React from 'react'
-import './loadingpage.css'
+import './loadingpagestyle.css'
 const Loadingpage = () => {
   return (
     <div>
