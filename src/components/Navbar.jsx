@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 import image from "../assets/image/logo.png";
 
@@ -67,7 +68,7 @@ const Navbar = () => {
           </div>
 
           <button
-            class="navbar-toggler  d-md-none d-block"
+            className="navbar-toggler  d-md-none d-block"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
@@ -82,9 +83,9 @@ const Navbar = () => {
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
           >
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                <a class="navbar-brand get-font" href="#">
+            <div className="offcanvas-header">
+              <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
+                <a className="navbar-brand get-font" href="#">
                   <img className="get-img" src={image} alt="" />
                   <b>
                     <span style={{ color: "#dcaa14c2" }}>D</span>O{" "}
@@ -94,29 +95,29 @@ const Navbar = () => {
               </h5>
               <button
                 type="button"
-                class="btn-close bg-dark text-light"
+                className="btn-close bg-dark text-light"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
               ></button>
             </div>
             <div
               style={{ backgroundColor: "#dcaa14c2" }}
-              class="offcanvas-body"
+              className="offcanvas-body"
             >
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
+              <ul className="navbar-nav justify-content-end flex-grow-1">
+                <li className="nav-item">
                   <div className="d-flex gap-3">
-                    <i class="bi bi-house mt-2 fs-1 text-light "></i>
+                    <i className="bi bi-house mt-2 fs-1 text-light "></i>
 
-                    <Link class="nav-link  fw-bold text-light fs-1" to={"/"}>
+                    <Link className="nav-link  fw-bold text-light fs-1" to={"/"}>
                       Home
                     </Link>
                   </div>
                   <hr className="border border-primary" />
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                   <div className="d-flex gap-3">
-                    <i class="bi bi-file-person mt-2 text-light fs-1"></i>
+                    <i className="bi bi-file-person mt-2 text-light fs-1"></i>
                     <Link
                       class="nav-link fw-bold text-light fs-1"
                       to={"/about"}
@@ -126,10 +127,10 @@ const Navbar = () => {
                   </div>
                   <hr className="border border-primary " />
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                   <div className="d-flex gap-3">
-                    <i class="bi bi-hospital mt-2 fs-1 text-light"></i>
-                    <a class="nav-link fw-bold text-light fs-1" href="#">
+                    <i className="bi bi-hospital mt-2 fs-1 text-light"></i>
+                    <a className="nav-link fw-bold text-light fs-1" href="#">
                       Booking
                     </a>
                   </div>
@@ -137,18 +138,18 @@ const Navbar = () => {
                 </li>
                 <li class="nav-item">
                   <div className="d-flex gap-3">
-                    <i class="bi bi-pc-display-horizontal text-light mt-2 fs-1"></i>
-                    <a class="nav-link fw-bold text-light fs-1" href="#">
+                    <i className="bi bi-pc-display-horizontal text-light mt-2 fs-1"></i>
+                    <a className="nav-link fw-bold text-light fs-1" href="#">
                       Contact
                     </a>
                   </div>
                   <hr className="border border-primary " />
                 </li>
 
-                <li class="nav-item">
+                <li className="nav-item">
                   <div className="d-flex gap-3 ">
-                    <i class="bi bi-tags mt-2 fs-1 text-light"></i>
-                    <Link class="nav-link fw-bold text-light fs-1 " to={"/food/order"}>
+                    <i className="bi bi-tags mt-2 fs-1 text-light"></i>
+                    <Link className="nav-link fw-bold text-light fs-1 " to={"/food/order"}>
                  Food Ordering
                 </Link>
                   </div>
@@ -156,8 +157,8 @@ const Navbar = () => {
                 </li>
                 <li class="nav-item">
                   <div className="d-flex gap-3 ">
-                    <i class="bi bi-tags mt-2 fs-1 text-light"></i>
-                    <Link class="nav-link fw-bold text-light fs-1 " to={"/dashboard"}>
+                    <i className="bi bi-tags mt-2 fs-1 text-light"></i>
+                    <Link className="nav-link fw-bold text-light fs-1 " to={"/dashboard"}>
                  Dashboard
                 </Link>
                   </div>

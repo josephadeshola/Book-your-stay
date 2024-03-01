@@ -1,5 +1,6 @@
 
 import Navbar from "./Navbar";
+import { Link, BrowserRouter as Router } from "react-router-dom";
 import Carousel from "./Carousel";
 import Service from "./Service";
 import Info from "./Info";
@@ -10,6 +11,7 @@ const Home = () => {
   
 
   return (
+    
     <div>
       <Navbar />
       <Carousel/>

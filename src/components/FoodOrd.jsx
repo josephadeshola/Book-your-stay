@@ -26,8 +26,8 @@ const FoodOrd = () => {
       <FoodNav />
       <main id="main">
         <section>
-          <div className="container">
-            <div className="d-md-flex getMarginTop  justify-content-between gap-md-3">
+          <div className="container get">
+            <div className="d-md-flex  getMarginTop  justify-content-between gap-md-3">
               <div className="d-none px-4 d-md-block shadow fixed-div">
                
               <ul class="py-4 ">
