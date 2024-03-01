@@ -7,15 +7,15 @@ const About = () => {
       <Navbar/>
       <div
         id="carouselExampleIndicators"
-        class="carousel col-12 get-margin slide"
+        className="carousel col-12 get-margin slide"
       >
-        <div class="carousel-indicators gap-md-4">
+        <div className="carousel-indicators gap-md-4">
           <button
             type="button"
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide-to="0"
             style={{ width: "10px ", height: "10px", borderRadius: "100px" }}
-            class="active"
+            className="active"
             aria-current="true"
             aria-label="Slide 1"
           ></button>
@@ -35,25 +35,25 @@ const About = () => {
           ></button>
         </div>
 
-        <div class="new-high carousel-inner">
-          <div class=" get-height carousel-item active">
+        <div className="new-high carousel-inner">
+          <div className=" get-height carousel-item active">
             <img
               src="https://img.freepik.com/free-photo/room-with-blue-wall-white-ceiling-with-light-it_1340-37650.jpg?t=st=1700408879~exp=1700412479~hmac=524592f73205d21cb48784e183d2bdeb24c125126271495bc4fd6a9817860e72&w=740"
-              class="imgHeight  d-block w-100"
+              className="imgHeight  d-block w-100"
               alt="..."
             />
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <img
               src="https://img.freepik.com/premium-photo/cafe-interior-with-tables-chairs-sunsetgenerative-ai_841229-2495.jpg?w=740"
-              class="imgHeight d-block w-100"
+              className="imgHeight d-block w-100"
               alt="..."
             />
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <img
               src="https://img.freepik.com/premium-photo/empty-hotel-lobby_693838-1192.jpg?w=740"
-              class="imgHeight d-block w-100"
+              className="imgHeight d-block w-100"
               alt="..."
             />
           </div>
@@ -68,30 +68,30 @@ const About = () => {
         </div>
 
         <button
-          class="carousel-control-prev"
+          className="carousel-control-prev"
           type="button"
           data-bs-target="#carouselExampleIndicators"
           data-bs-slide="prev"
         >
           <span
             style={{ borderRadius: "50px" }}
-            class="carousel-control-prev-icon  bg-dark py-3  py-md-4 px-3  px-md-4"
+            className="carousel-control-prev-icon  bg-dark py-3  py-md-4 px-3  px-md-4"
             aria-hidden="true"
           ></span>
-          <span class="visually-hidden">Previous</span>
+          <span className="visually-hidden">Previous</span>
         </button>
         <button
-          class="carousel-control-next"
+          className="carousel-control-next"
           type="button"
           data-bs-target="#carouselExampleIndicators"
           data-bs-slide="next"
         >
           <span
             style={{ borderRadius: "50px" }}
-            class="carousel-control-next-icon  bg-dark  py-3  py-md-4 px-3  px-md-4"
+            className="carousel-control-next-icon  bg-dark  py-3  py-md-4 px-3  px-md-4"
             aria-hidden="true"
           ></span>
-          <span class="visually-hidden ">Next</span>
+          <span className="visually-hidden ">Next</span>
         </button>
       </div>
 
@@ -132,18 +132,18 @@ const About = () => {
                 style={{ color: "#673624f7", fontWeight: "500" }}
               >
                 <div className="d-flex gap-2">
-                  <i class="bi bi-check2"></i>
+                  <i className="bi bi-check2"></i>
                   <p>24 Month / 24,000km Nationwide Warranty monotone</p>
                 </div>
                 <div className="d-flex gap-2">
-                  <i class="bi bi-check2"></i>
+                  <i className="bi bi-check2"></i>
                   <p>
                     Curabitur dapibus nisl a urna congue, in pharetra urna
                     accumsan.
                   </p>
                 </div>
                 <div className="d-flex gap-2">
-                  <i class="bi bi-check2"></i>
+                  <i className="bi bi-check2"></i>
                   <p>Customer Rewards Program and excellent technology</p>
                 </div>
               </div>

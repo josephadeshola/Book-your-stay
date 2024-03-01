@@ -286,18 +286,18 @@ const Service = () => {
               </h1>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
             <form onSubmit={formik.handleSubmit}>
-              <div class="modal-body w-100">
+              <div className="modal-body w-100">
                 <div className=" col-12 gap-2 ">
                   <div>
                     <div>
                       <label htmlFor="phoneNo" className="mt-2 pb-2">
-                        <i class="bi bi-telephone text-warning"></i> Phone
+                        <i className="bi bi-telephone text-warning"></i> Phone
                         Number
                       </label>
                       <input
@@ -323,7 +323,7 @@ const Service = () => {
                     </div>
                     <div>
                       <label htmlFor="selectRoom" className="mt-2 pb-2">
-                        <i class="bi bi-flower2 text-warning"></i> Select Room
+                        <i className="bi bi-flower2 text-warning"></i> Select Room
                       </label>
                       <select
                         onChange={formik.handleChange}
@@ -350,7 +350,7 @@ const Service = () => {
                     </div>
                     <div>
                       <label htmlFor="checkIn" className="mt-2 pb-2">
-                        <i class="bi bi-patch-check text-warning"></i> Check In
+                        <i className="bi bi-patch-check text-warning"></i> Check In
                         Date
                       </label>
                       <input
@@ -376,7 +376,7 @@ const Service = () => {
                   <div>
                     <div>
                       <label htmlFor="checkOut" className="mt-2 pb-2">
-                        <i class="bi bi-x-octagon text-warning"></i> Check Out
+                        <i className="bi bi-x-octagon text-warning"></i> Check Out
                         Date
                       </label>
                       <input
@@ -400,7 +400,7 @@ const Service = () => {
                     </div>
                     <div className="col-12 mx-auto">
                       <label htmlFor="adult" className="mt-2 ">
-                        <i class="bi bi-people text-warning"></i> Adults
+                        <i className="bi bi-people text-warning"></i> Adults
                       </label>
                       <div className="headerSearchItem">
                         <div
@@ -473,12 +473,12 @@ const Service = () => {
                   </div>
                 </div>
               </div>
-              <div class="modal-footer">
+              <div className="modal-footer">
                 <button
                   type="submit"
                   data-bs-dismiss="modal"
                   // aria-label="Close"
-                  class="py-3 btn btn-primary"
+                  className="py-3 btn btn-primary"
                 >
                   Proceed on your booking
                 </button>
@@ -534,7 +534,7 @@ const Service = () => {
               <star className="float-end star mt-2">
                 <i
                   style={{ color: "#dcaa14c2" }}
-                  class="bi fs-6 bi-star-fill"
+                  className="bi fs-6 bi-star-fill"
                 ></i>
                 {eachItem.star}
               </star>
@@ -542,14 +542,14 @@ const Service = () => {
               <location className="location">
                 <i
                   style={{ color: "#dcaa14c2" }}
-                  class="bi fs-6 bi-geo-alt-fill"
+                  className="bi fs-6 bi-geo-alt-fill"
                 ></i>
                 {eachItem.location}
               </location>
               <br />
               <price className="fs-4 fw-bold ">{eachItem.price}</price>
               <day className="float-end mt-2 day">
-                <i class="bi bi-calendar2-day-fill fs-6"></i>
+                <i className="bi bi-calendar2-day-fill fs-6"></i>
                 {eachItem.day}
               </day>
             </div>
@@ -586,7 +586,7 @@ const Service = () => {
               <star className="float-end star mt-2">
                 <i
                   style={{ color: "#dcaa14c2" }}
-                  class="bi fs-6 bi-star-fill"
+                  className="bi fs-6 bi-star-fill"
                 ></i>
                 {eachItem.star}
               </star>
@@ -594,14 +594,14 @@ const Service = () => {
               <location className="location">
                 <i
                   style={{ color: "#dcaa14c2" }}
-                  class="bi fs-6 bi-geo-alt-fill"
+                  className="bi fs-6 bi-geo-alt-fill"
                 ></i>
                 {eachItem.location}
               </location>
               <br />
               <price className="fs-4 fw-bold ">{eachItem.price}</price>
               <day className="float-end mt-2 day">
-                <i class="bi bi-calendar2-day-fill fs-6"></i>
+                <i className="bi bi-calendar2-day-fill fs-6"></i>
                 {eachItem.day}
               </day>
             </div>

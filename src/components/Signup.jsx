@@ -64,14 +64,14 @@ const Signup = () => {
         <div className="row">
           <div className="top-div  py-md-4 py-0 ">
             <Link className="icon-size" to={"/"}>
-              <button class="button">
-                <div class="button-box">
-                  <span class="button-elem">
+              <button className="button">
+                <div className="button-box">
+                  <span className="button-elem">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 40">
                       <path d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"></path>
                     </svg>
                   </span>
-                  <span class="button-elem">
+                  <span className="button-elem">
                     <svg viewBox="0 0 46 40">
                       <path d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"></path>
                     </svg>
@@ -102,21 +102,21 @@ const Signup = () => {
               </h3>
 
               <div className="col-md-6 mx-auto">
-                <div class="input-group  flex-nowrap mt-md-3 mt-4">
+                <div className="input-group  flex-nowrap mt-md-3 mt-4">
                   <span
-                    class="input-group-text border border-none"
+                    className="input-group-text border border-none"
                     id="addon-wrapping"
                   >
                     <i
                       style={{ color: "#a99808 " }}
-                      class="bi fs-3 bi-people"
+                      className="bi fs-3 bi-people"
                     ></i>
                   </span>
                   <input
                     name="fullName"
                     value={formik.values.fullName}
                     type="text"
-                    class="form-control py-3  bg-light border border-none"
+                    className="form-control py-3  bg-light border border-none"
                     placeholder="Full Name"
                     onChange={formik.handleChange}
                   />
@@ -126,21 +126,21 @@ const Signup = () => {
                     {formik.errors.fullName}
                   </small>
                 )}
-                <div class="input-group flex-nowrap mt-md-3 mt-4">
+                <div className="input-group flex-nowrap mt-md-3 mt-4">
                   <span
-                    class="input-group-text border  border-none"
+                    className="input-group-text border  border-none"
                     id="addon-wrapping"
                   >
                     <i
                       style={{ color: "#a99808 " }}
-                      class="bi fs-3 bi-envelope"
+                      className="bi fs-3 bi-envelope"
                     ></i>
                   </span>
                   <input
                     name="email"
                     value={formik.values.email}
                     type="email"
-                    class="form-control py-3  bg-light border border-none"
+                    className="form-control py-3  bg-light border border-none"
                     placeholder="Email"
                     onChange={formik.handleChange}
                   />
@@ -150,37 +150,37 @@ const Signup = () => {
                     {formik.errors.email}
                   </small>
                 )}
-                <div class="input-group flex-nowrap mt-md-3 mt-4">
+                <div className="input-group flex-nowrap mt-md-3 mt-4">
                   <span
-                    class="input-group-text border   border-none"
+                    className="input-group-text border   border-none"
                     id="addon-wrapping"
                   >
                     <i
                       style={{ color: "#a99808 " }}
-                      class="bi bi-lock fs-3"
+                      className="bi bi-lock fs-3"
                     ></i>
                   </span>
                   <input
                     name="password"
                     value={formik.values.password}
                     type={showPassword ? "text" : "password"}
-                    class="form-control py-3  bg-light border border-none"
+                    className="form-control py-3  bg-light border border-none"
                     placeholder="Password"
                     onChange={formik.handleChange}
                   />
                   <span
                     onClick={togglePasswordVisibility}
-                    class="input-group-text border border-none"
+                    className="input-group-text border border-none"
                   >
                     {showPassword ? (
                       <i
                         style={{ color: "#a99808 " }}
-                        class="bi fs-3 bi-eye"
+                        className="bi fs-3 bi-eye"
                       ></i>
                     ) : (
                       <i
                         style={{ color: "#a99808 " }}
-                        class="bi fs-3 bi-eye-slash"
+                        className="bi fs-3 bi-eye-slash"
                       ></i>
                     )}
                   </span>

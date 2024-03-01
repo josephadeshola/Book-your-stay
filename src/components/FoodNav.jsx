@@ -1,38 +1,91 @@
-import React from "react";
-const FoodNav = () => {
+import Aos from "aos";
+import React, { useEffect, useState } from "react";
+import "aos/dist/aos.css";
+const FoodNav = ({ setBlur }) => {
+  const [open, setOpen] = useState(false);
+  Aos.init();
+  useEffect(() => {
+    setBlur(open);
+  }, [open, setBlur]);
+
   return (
     <div>
-      <nav class="navbar navbar-expand-lg fixed-top mb-5 nav-style getHeight">
-        <div class="container-fluid">
-          <a class="navbar-brand fw-bold d-flex" href="#">
-            <img className="img-H" src="https://img.freepik.com/premium-vector/logo-rastaraunt_985938-117.jpg?w=740" alt="" />
-        <div>
-          <span className="span1">D</span>
-          <span className="span2">R</span>
-          <span className="span3">C</span>
-        </div>
+      <nav className="navbar navbar-expand-lg fixed-top mb-5 nav-style getHeight">
+        <div className="container-fluid">
+          <a className="navbar-brand fw-bold d-flex" href="#">
+            <img
+              className="img-H"
+              src="https://img.freepik.com/premium-vector/logo-rastaraunt_985938-117.jpg?w=740"
+              alt=""
+            />
+            <div>
+              <span className="span1">D</span>
+              <span className="span2">R</span>
+              <span className="span3">C</span>
+            </div>
           </a>
           <div className="d-none  d-md-block col-10 mx-auto">
             <div className="d-flex justify-content-between">
-
-            <form class="d-flex justify-content-between mt-1 col-6 py-2 mx-auto" role="search">
-              <input
-                className="form-control  py-3 me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
+              <form
+                className="d-flex justify-content-between mt-1 col-7 gap-3 py-2 mx-auto"
+                role="search"
+              >
+                <input
+                  style={{ borderRadius: "40px" }}
+                  className="form-control  py-3 me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
                 />
-              <button class="btn px-5 btn-outline-light" type="submit">
-                Search
-              </button>
-            </form>
-
-            <button class="btn px-5  btn-h mt-3 btn-outline-light">GET STARTED</button>
+                <div
+                  onClick={() => setOpen(!open)}
+                  style={{ cursor: "pointer" }}
+                  className="d-flex col-4 bold ms-3 mt-4"
+                >
+                  <i class="fa-solid fa-location-dot fs-4 text-dark"></i>
+                  <h6 className="ms-1">Add your location</h6>
+                  <i class="fa-solid text-dark mt-1  fa-chevron-down"></i>
                 </div>
-          <hr className="hr-style" />
+              </form>
+            </div>
+            <hr className="hr-style" />
+            {open && (
+              <div
+                data-aos="fade-down"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-anchor-placement="top-center"
+                className="fade col-9 dispMap  py-4 px-5 shadow"
+              >
+                <i onClick={() => setOpen(!open)} class="fa-regular text-denger getColor fs-2 float-end fa-circle-xmark"></i>
+                <div className="d-flex gap-4">
+                <div className="col-5">
+                  <h2 className="py-2">Add a delivery address</h2>
+                  <input
+                    type="text"
+                    placeholder="Search for streets, cities, districts..."
+                    className="form-control py-3 border border-none"
+                  />
+                </div>
+                <div className="col-2 mt-5">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126388.69652878305!2d4.164293140639353!3d8.137396009681213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10370d45f7179427%3A0x3f70123a2b1a4e05!2sOgbomosho%2C%20Oyo!5e0!3m2!1sen!2sng!4v1709298732243!5m2!1sen!2sng"
+                    width="470"
+                    height="400"
+                    style={{ border: "0", borderRadius: "10px" }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    title="Google Map"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+              </div>
+              </div>
+            )}
           </div>
           <button
-            class="navbar-toggler border border-none"
+            className="navbar-toggler border border-none"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarTogglerDemo02"
@@ -40,36 +93,37 @@ const FoodNav = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <i class="fa-solid fa-bars py-1  fs-3 px-1 text-light"></i>
-            {/* <span class="navbar-toggler-icon"></span> */}
+            <i className="fa-solid fa-bars py-1  fs-3 px-1 text-light"></i>
           </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <div className="d-md-none d-block">
-
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Link
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
-            </ul>
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <a className="nav-link active" aria-current="page" href="#">
+                    Home
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    Link
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link disabled">Disabled</a>
+                </li>
+              </ul>
             </div>
-            <form class="d-flex d-md-none d-block" role="search">
+            <form className="d-flex d-md-none d-block" role="search">
               <input
-                class="form-control me-2"
+                className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button class="btn px-4 text-light btn-outline-ligh" type="submit">
+              <button
+                className="btn px-4 text-light btn-outline-ligh"
+                type="submit"
+              >
                 Search
               </button>
             </form>

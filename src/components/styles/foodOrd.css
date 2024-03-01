@@ -31,15 +31,14 @@
 .nav-style{
     background-color: #daab40;
 }
-.get{
-    margin-top: 8pc;
-}
+
 .fixed-div {
- 
     position: fixed;
     width: 20%;
-    height: 100vh;
+    height: 76vh;
+    border-radius: 10px !important;
 }
+
 
 .scroll-div {
     margin-left: 25%; 
@@ -70,6 +69,24 @@
 }
 .nav-link{
     font-weight: 600;
+}
+
+.blur-background {
+    backdrop-filter: blur(5px);
+    position: fixed;
+    width: 100%;
+    background-color:  #dddadaa6!important;
+  }
+
+.dispMap{
+    height: 80vh;
+    border-radius: 20px;
+    position: absolute;
+    background-color: #fffdfd;
+}
+.getColor{
+    color: rgb(218, 5, 5) !important;
+    cursor: pointer;
 }
 @media (max-width: 960px) {
   
