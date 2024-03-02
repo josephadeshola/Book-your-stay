@@ -1,5 +1,5 @@
 import React from 'react'
-import './loadingpagestyle.css'
+import './styles/loadingpagestyle.css'
 const Loadingpage = () => {
   return (
     <div>
@@ -8,4 +8,4 @@ const Loadingpage = () => {
   )
 }
 
-export default Loadingpage
+export default Loadingpage    

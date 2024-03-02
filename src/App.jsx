@@ -13,6 +13,7 @@ import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
 import Loadingpage from "./components/Loadingpage";
 import FoodOrd from "./components/FoodOrd";
+import ForgotPassword from "./components/ForgotPassword";
 function App() {
   const [isloading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -50,6 +51,7 @@ function App() {
             <Route path="/roomselect" element={<Roomselected />}></Route>
             <Route path="/create" element={<Signup />}></Route>
             <Route path="/login" element={<Login />}></Route>
+            <Route path="/forgot/password" element={<ForgotPassword />}></Route>
             <Route path="/food/order" element={<FoodOrd />}></Route>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />}></Route>

@@ -3,7 +3,7 @@ import { useFormik, validateYupSchema } from "formik";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import * as Yup from "yup";
-import "./login.css";
+import "./styles/login.css";
 import { toast } from "react-toastify";
 import baseUrl from "../BaseUrl";
 
@@ -76,12 +76,12 @@ const Login = () => {
               </Link>
             </div>
           </div>
-          <form onSubmit={formik.handleSubmit}>
+          <form className="form-body col-md-6 col-11 mx-auto" onSubmit={formik.handleSubmit}>
             <div>
               <h3 className="text-center mt-md-2  py-4 py-md-0">
                 Login Account
               </h3>
-              <div className="col-md-6 mx-auto">
+              <div className=" mx-auto">
                 <div class="input-group flex-nowrap mt-md-3 mt-4">
                   <span
                     class="input-group-text border  border-none"
@@ -150,19 +150,25 @@ const Login = () => {
                 <div>
                   <button
                     style={{ borderRadius: "30px" }}
-                    className="btn py-3 w-100 mb-2  mt-3"
+                    className="btn py-3 w-100 mb-3  mt-3"
                     type="submit"
                   >
                     Sign Up
                   </button>
+                  <div className="d-md-flex text-center justify-content-between">
+                    <div>
+                  Don't have an account
+                   <Link to={'/forgot/password'} className="text-decoration-none ms-2 fw-bold">Forget Password</Link>
+                    </div>
+                    <div className="py-3">
+                  Don't have an account <Link to={'/create'} className="text-decoration-none ms-2 fw-bold">Create</Link>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
           </form>
-          <div
-            style={{ backgroundColor: "#a99808 " }}
-            className="bottom-div py-3"
-          ></div>
         </div>
       </div>
     </div>

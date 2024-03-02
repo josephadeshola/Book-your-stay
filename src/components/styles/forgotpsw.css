@@ -1,0 +1,27 @@
+.top-forget {
+    position: relative;
+    height: 50vh !important;
+    border-radius:none !important;
+    background: linear-gradient(to top, #AE8625, #F7EF8A, #D2AC47, #EDC967);
+}
+#form-forget{
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  right: 0;
+  top: 50px !important;
+  border-radius: 10px; 
+}
+.getWidth{
+    font-size: 60px;
+}
+@media (max-width:688px) {
+    .form-forget{
+        position: absolute;
+        background-color: #fff;
+        left: 0;
+        right: 0;
+        top: 170px;
+        border-radius: 10px; 
+      }
+}

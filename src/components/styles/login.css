@@ -1,29 +1,42 @@
+
 .top-div {
-    margin-top: 4pc;
-    height: 20vh;
-    border-radius:0px 0px 20px 20px ;
+  position: relative;
+  height: 50vh !important;
+  border-radius:none !important;
+  background: linear-gradient(to top, #AE8625, #F7EF8A, #D2AC47, #EDC967);
 }
-.btn{
+.form-body{
+position: absolute !important;
+background-color: #fff;
+left: 0;
+right: 0;
+top: 170px;
+border-radius: 10px;
+
+}
+
+.btn{   
+  color: #fff !important;        
     background: linear-gradient(to right, #AE8625, #F7EF8A, #D2AC47, #EDC967);
 
 }
 
 @media (max-width:688px) {
     .top-div {
-      margin-top: 4pc;
       height: 11vh;
       border-radius:0px 0px 20px 20px ;
       background: linear-gradient(to top, #AE8625, #F7EF8A, #D2AC47, #EDC967);
   
   }
-      .bottom-div { 
-          position: relative;
-          position: fixed;
-          bottom: 0px;
-          height: 7vh;
-          border-radius:20px 20px 1px 1px ;
-      }  
-      .button-elem {
+  .form-body{
+    position: absolute !important;
+    background-color: #fff;
+    left: 0;
+    right: 0;
+    top: 200px;
+    border-radius: 10px;
+    
+    }    .button-elem {
         display: block;
         width: 18px;
         height: 18px;

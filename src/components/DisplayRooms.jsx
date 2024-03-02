@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import "./displayroom.css";
+import "./styles/displayroom.css";
 import { allServices, viewAll } from "./Service";
 import { allServicesTwo } from "./Info";
 import { toast } from "react-toastify";

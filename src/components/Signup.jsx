@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import axios from "axios";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
-import "./signup.css";
+import "./styles//signup.css";
 import baseUrl from "../BaseUrl";
 
 const Signup = () => {
@@ -62,7 +62,7 @@ const Signup = () => {
     <div>
       <div className="container-fluid">
         <div className="row">
-          <div className="top-div  py-md-4 py-0 ">
+          <div className="top-div  py-md-2 py-0 ">
             <Link className="icon-size" to={"/"}>
               <button className="button">
                 <div className="button-box">
@@ -83,25 +83,25 @@ const Signup = () => {
               <Link
                 to={"/create"}
                 className="text-light get-hover text-decoration-none"
-              >
+                >
                 Sign Up
               </Link>
               <Link
                 to={"/login"}
                 className="text-light get-hover text-decoration-none"
-              >
+                >
                 Sign In
               </Link>
             </div>
+          
           </div>
-
-          <form onSubmit={formik.handleSubmit}>
+          <form className="form-body col-md-6 col-11 mx-auto" onSubmit={formik.handleSubmit}>
             <div>
               <h3 className="text-center mt-md-2 py-3 py-md-0">
                 Create An Account
               </h3>
 
-              <div className="col-md-6 mx-auto">
+              <div className="">
                 <div className="input-group  flex-nowrap mt-md-3 mt-4">
                   <span
                     className="input-group-text border border-none"
@@ -197,18 +197,29 @@ const Signup = () => {
                       borderRadius: "30px",
                     }}
                     type="submit"
-                    className="btn py-3 w-100 mb-2 mt-3"
+                    className="btn py-3 border border-2 text-light w-100 mb-2 mt-3"
                   >
                     Sign Up
                   </button>
+                  <div class="google-login-button mb-2 mt-2">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" x="0px" y="0px" class="google-icon" viewBox="0 0 48 48" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12
+	c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24
+	c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path>
+            <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657
+	C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path>
+            <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36
+	c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path>
+            <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571
+	c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+          </svg>
+          <span className="btn-span">Log in with Google</span>
+        </div>
+                  Already have an account <Link to={'/login'} className="text-decoration-none fw-bold">Login</Link>
                 </div>
               </div>
             </div>
-          </form>
-          <div
-            style={{ backgroundColor: "#a99808 " }}
-            className="bottom-div py-3"
-          ></div>
+          </form>        
         </div>
       </div>
     </div>

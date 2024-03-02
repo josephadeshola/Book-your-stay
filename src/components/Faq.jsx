@@ -144,7 +144,6 @@ const Faq = () => {
                 </div>
               </div>
             </div>
-
             <div>
               <div className="mt-4">
                 <img
