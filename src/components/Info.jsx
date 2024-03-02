@@ -6,8 +6,6 @@ import { toast } from "react-toastify";
 import * as Yup from "yup";
 import baseUrl from "../BaseUrl";
 
-// import AOS from "aos";
-// import "aos/dist/aos.css";
 export let allServicesTwo = [
   {
     image:

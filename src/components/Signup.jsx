@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import axios from "axios";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
-import "./styles//signup.css";
+import "./styles/signup.css";
 import baseUrl from "../BaseUrl";
 
 const Signup = () => {

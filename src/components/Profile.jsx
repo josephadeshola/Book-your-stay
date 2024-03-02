@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./dashboard.css";
+import "./styles/dashboard.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import image from "../assets/image/logo.png";
 import imageBgColor from "../assets/image/bgimg.png";
