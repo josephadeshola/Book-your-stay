@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./styles/forgotpsw.css";
+import axios from "axios";
+import baseUrl from "../BaseUrl";
+import { toast } from "react-toastify";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -10,7 +13,21 @@ const ForgotPassword = () => {
   const [verificationSent, setVerificationSent] = useState(false);
 
   const handleSendCode = () => {
-    setVerificationSent(true);
+    console.log(email);
+    axios
+      .post(baseUrl + "/forgot", { email })
+      .then((res) => {
+        console.log("send code", res.data);
+        if (res.data.status == true) {
+          setVerificationSent(true);
+          toast.success("Verification Code Sent Successfully!");
+        } else {
+          toast.error("Verification failed");
+        }
+      })
+      .catch((err) => {
+        console.log("error ocur", err);
+      });
   };
 
   const handleResetPassword = () => {

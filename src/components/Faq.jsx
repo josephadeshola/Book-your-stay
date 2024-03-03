@@ -12,7 +12,7 @@ const Faq = () => {
               <p className="col-12 col-md-6 mx-auto">
                 Everything you need to know right here fingertips. Ask
                 questions, browse around for answer or submit your feature
-                requests.{" "}
+                requests.
               </p>
             </div>
 
