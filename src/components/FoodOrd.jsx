@@ -26,8 +26,8 @@ const FoodOrd = () => {
     <div className={blur ? "blur-background" : "topN"}>
       <FoodNav setBlur={setBlur} />
       <main id="main">
-        <section>
-          <div style={{marginTop:"8pc"}} className="container">
+        <section style={{marginTop:"10pc"}}>
+          <div  className="container ">
             <div className="d-md-flex  getMarginTop  justify-content-between gap-md-3">
               <div className="d-none px-4 d-md-block shadow fixed-div">
                
