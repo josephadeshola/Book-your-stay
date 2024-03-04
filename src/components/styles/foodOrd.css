@@ -88,6 +88,11 @@
     color: rgb(218, 5, 5) !important;
     cursor: pointer;
 }
+.ml-30{
+    margin-left: 25pc;
+    margin-top: 4pc;
+   
+}
 @media (max-width: 960px) {
   
 .scroll-div {
@@ -95,6 +100,11 @@
     height: 100vh; 
     overflow-y: scroll; 
 } 
+.ml-30{
+    margin-left: 0pc;
+    margin-top: 5pc;
+   
+}
 }
 
 
