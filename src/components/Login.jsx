@@ -160,8 +160,8 @@ const Login = () => {
                   Don't have an account
                    <Link to={'/forgot/password'} className="text-decoration-none ms-2 fw-bold">Forget Password</Link>
                     </div>
-                    <div className="py-3">
-                  Don't have an account <Link to={'/create'} className="text-decoration-none ms-2 fw-bold">Create</Link>
+                    <div className="py-3 py-md-0 ">
+                      Don't have an account <Link to={'/create'} className="text-decoration-none ms-2 fw-bold">Create</Link>
                     </div>
                   </div>
 

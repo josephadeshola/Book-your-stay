@@ -1,6 +1,8 @@
 import Aos from "aos";
 import React, { useEffect, useState } from "react";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
+
 const FoodNav = ({ setBlur }) => {
   const [open, setOpen] = useState(false);
   Aos.init();
@@ -12,7 +14,7 @@ const FoodNav = ({ setBlur }) => {
     <div>
       <nav className="navbar navbar-expand-lg fixed-top mb-5 nav-style getHeight">
         <div className="container-fluid">
-          <a className="navbar-brand fw-bold d-flex" href="#">
+          <Link className="navbar-brand fw-bold d-flex" to={"/"}>
             <img
               className="img-H"
               src="https://img.freepik.com/premium-vector/logo-rastaraunt_985938-117.jpg?w=740"
@@ -23,7 +25,7 @@ const FoodNav = ({ setBlur }) => {
               <span className="span2">R</span>
               <span className="span3">C</span>
             </div>
-          </a>
+          </Link>
           <div className="d-none  d-md-block col-10 mx-auto">
             <div className="d-flex justify-content-between">
               <form

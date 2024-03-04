@@ -4,7 +4,8 @@ import "./styles/forgotpsw.css";
 import axios from "axios";
 import baseUrl from "../BaseUrl";
 import { toast } from "react-toastify";
-
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -13,7 +14,21 @@ const ForgotPassword = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [verificationSent, setVerificationSent] = useState(false);
 
-  const handleSendCode = () => {
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+    },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .required("Please enter your registered Email")
+        .email("Invalid Email format"),
+    }),
+    onSubmit: (values) => {
+      handleSendCode(values.email);
+    },
+  });
+
+  const handleSendCode = (email) => {
     console.log(email);
     axios
       .post(baseUrl + "/forgot", { email })
@@ -30,7 +45,6 @@ const ForgotPassword = () => {
         console.log("error ocur", err);
       });
   };
-
   const handleResetPassword = () => {
     console.log("Password reset successful");
   };
@@ -89,21 +103,25 @@ const ForgotPassword = () => {
                 </Button>
               </Form>
             ) : (
-              <Form>
+              <Form onSubmit={formik.handleSubmit}>
                 <Form.Group controlId="email">
                   <Form.Label>Email Address</Form.Label>
                   <Form.Control
                     className="py-3"
                     type="email"
                     placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={formik.values.email}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
                   />
+                  {formik.touched.email && formik.errors.email ? (
+                    <div className="error text-danger text-center">{formik.errors.email}</div>
+                  ) : null}
                 </Form.Group>
 
                 <Button
                   className="border bg-success border-none w-100 mb-3 py-3 mt-3 float-end"
-                  onClick={handleSendCode}
+                  type="submit"
                 >
                   Send Verification Code
                 </Button>
