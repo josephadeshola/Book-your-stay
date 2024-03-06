@@ -14,6 +14,7 @@ import Dashboard from "./components/Dashboard";
 import Loadingpage from "./components/Loadingpage";
 import FoodOrd from "./components/FoodOrd";
 import ForgotPassword from "./components/ForgotPassword";
+import Resetpassword from "./components/Resetpassword";
 function App() {
   const [isloading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -52,6 +53,7 @@ function App() {
             <Route path="/create" element={<Signup />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/forgot/password" element={<ForgotPassword />}></Route>
+            <Route path="/reset/password" element={<Resetpassword />}></Route>
             <Route path="/food/order" element={<FoodOrd />}></Route>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />}></Route>

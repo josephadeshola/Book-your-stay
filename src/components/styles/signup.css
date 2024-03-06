@@ -136,7 +136,49 @@
   }
   
   
+  /* {verificationSent ? (
+    <Form>
+      <Form.Group controlId="code">
+        <Form.Label>Verification Code</Form.Label>
+        <Form.Control
+          className="py-3"
+          type="text"
+          placeholder="Enter code"
+          value={code}
+          onChange={(e) => setCode(e.target.value)}
+        />
+      </Form.Group>
 
+      <Form.Group controlId="newPassword">
+        <Form.Label>New Password</Form.Label>
+        <Form.Control
+          className="py-3"
+          type="password"
+          placeholder="Enter new password"
+          value={newPassword}
+          onChange={(e) => setNewPassword(e.target.value)}
+        />
+      </Form.Group>
+
+      <Form.Group controlId="confirmPassword">
+        <Form.Label>Confirm Password</Form.Label>
+        <Form.Control
+          className="py-3"
+          type="password"
+          placeholder="Confirm new password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+        />
+      </Form.Group>
+
+      <Button
+        className="border bg-success border-none w-100 mb-3 py-3 mt-3 float-end"
+        onClick={handleResetPassword}
+      >
+        Reset Password
+      </Button>
+    </Form>
+  ) : ( */
   
 
 @media (max-width:688px) {
