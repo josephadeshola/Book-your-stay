@@ -31,18 +31,18 @@ const Navbar = () => {
                 </Link>
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
-                <Link class="nav-link "to={""}>
+                <Link class="nav-link " to={""}>
                   Contact
                 </Link>
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
                 <Link class="nav-link " to={"/food/order"}>
-                 Food Ordring
+                  Food Ordring
                 </Link>
               </li>
               <li style={{ listStyle: "none" }} class="nav-item ">
                 <Link class="nav-link " to={"/dashboard"}>
-                 Dashboard
+                  Dashboard
                 </Link>
               </li>
             </ul>
@@ -108,7 +108,10 @@ const Navbar = () => {
                   <div className="d-flex gap-3">
                     <i className="bi bi-house mt-2 fs-1 text-light "></i>
 
-                    <Link className="nav-link  fw-bold text-light fs-1" to={"/"}>
+                    <Link
+                      className="nav-link  fw-bold text-light fs-1"
+                      to={"/"}
+                    >
                       Home
                     </Link>
                   </div>
@@ -148,18 +151,24 @@ const Navbar = () => {
                 <li className="nav-item">
                   <div className="d-flex gap-3 ">
                     <i className="bi bi-tags mt-2 fs-1 text-light"></i>
-                    <Link className="nav-link fw-bold text-light fs-1 " to={"/food/order"}>
-                 Food Ordering
-                </Link>
+                    <Link
+                      className="nav-link fw-bold text-light fs-1 "
+                      to={"/food/order"}
+                    >
+                      Food Ordering
+                    </Link>
                   </div>
                   <hr className="border border-primary " />
                 </li>
                 <li class="nav-item">
                   <div className="d-flex gap-3 ">
                     <i className="bi bi-tags mt-2 fs-1 text-light"></i>
-                    <Link className="nav-link fw-bold text-light fs-1 " to={"/dashboard"}>
-                 Dashboard
-                </Link>
+                    <Link
+                      className="nav-link fw-bold text-light fs-1 "
+                      to={"/dashboard"}
+                    >
+                      Dashboard
+                    </Link>
                   </div>
                   <hr className="border border-primary " />
                 </li>
