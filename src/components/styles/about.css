@@ -1,0 +1,64 @@
+.imgHeight {
+    height: 100vh;
+    border-radius: 0px 0px 20px 20px;
+  }
+  
+  .about-position {
+    position: relative;
+    bottom: 250px;
+    border-radius: 30px !important;
+    left: 50px;
+    right: 50px;
+  }
+  
+  .about-h1 {
+    font-size: 60px;
+    font-weight: 600;
+    color: rgb(128, 117, 117);
+  }
+  
+  .p-about {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(128, 117, 117);
+  }
+  
+  .new-high {
+    height: 100vh;
+  }
+  .about {
+    height: 50vh;
+  }
+  .imgPosition {
+    position: relative;
+    top: 80px !important;
+    left: -200px;
+    height: 60vh;
+    right: inherit;
+  }
+  .imgPosition2 {
+    position: relative;
+    top: 80px !important;
+    left: -200px;
+    height: 60vh;
+    right: inherit;
+  }
+  
+  .about_h1 {
+    font-size: 60px;
+    font-weight: 600;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: rgb(128, 117, 117);
+  }
+  
+  .about_h5 {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(128, 117, 117);
+  }
+  .get_height {
+    height: 80vh;
+  }
+  .resort {
+    margin-top: 16pc;
+  }
