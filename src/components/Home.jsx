@@ -15,9 +15,9 @@ const Home = () => {
       <Navbar />
       <Carousel/>
       <Service/>
-      {/* <Info/> */}
-      {/* <Faq/>   */}
-      {/* <Footer/> */}
+      <Info/>
+      <Faq/>  
+      <Footer/>
     </div>
   );
 };
