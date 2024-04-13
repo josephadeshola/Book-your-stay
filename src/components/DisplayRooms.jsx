@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import "./styles/displayroom.css";
 import { allServices, viewAll } from "./Service";
 import { allServicesTwo } from "./Info";
 import { toast } from "react-toastify";
 import Navbar from "./Navbar";
 const DisplayRooms = () => {
+  const navigate=useNavigate();
+  const toCreateAccount=()=>{
+    navigate("/create")
+  }
   const Rooms = [
     {
       image:
@@ -308,6 +312,7 @@ const DisplayRooms = () => {
                           90% off
                         </button>
                         <h3 className="mt-3">$ {calculateTotalPrice()}</h3>
+                        <button data-bs-dismiss="modal" className="btn mt-3  mb-4 btn-success" onClick={toCreateAccount}>Pay off your order</button>
                       </div>
                     </div>
                   </div>
@@ -422,12 +427,13 @@ const DisplayRooms = () => {
                   </div>
                   <div class="modal-footer">
                     <button
+                    onClick={toCreateAccount}
                       type="button"
                       data-bs-dismiss="modal"
                       aria-label="Close"
                       class="py-2 px-4 rounded btn btn-primary"
                     >
-                      Reserve
+                      Pay off your order
                     </button>
                   </div>
                 </div>

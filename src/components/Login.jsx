@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useFormik, validateYupSchema } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import * as Yup from "yup";
 import "./styles/login.css";
@@ -9,6 +9,7 @@ import baseUrl from "../BaseUrl";
 
 
 const Login = () => {
+  const navigate=useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -32,6 +33,7 @@ const Login = () => {
       .then((res)=>{
         if(res.data.status==true){
           toast.success(res.data.message);
+          navigate("/dashboard")
         }
         else{
           toast.error(res.data.message)
