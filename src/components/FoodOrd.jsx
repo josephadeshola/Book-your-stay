@@ -117,7 +117,7 @@ const FoodOrd = () => {
                   
                 ) : (
                   <>
-                    <h1>Restaurants delivery in Ogbomoso</h1>
+                    <p className="fs-3 fw-bold">Restaurants delivery in Ogbomoso</p>
                     <h3>
                       <i className="fs-3 fa-brands fa-accessible-icon"></i>{" "}
                       Promotions

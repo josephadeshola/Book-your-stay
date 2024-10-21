@@ -1,5 +1,6 @@
 * {
   font-size: 13px;
+  /* overflow: auto; */
 }
 
 .navbar-toggler {
@@ -251,8 +252,8 @@ div.at-container {
   }
 
   .get-overflow {
-    overflow-y: scroll;
-    display: flex;
+    /* overflow-y: scroll;
+    display: flex; */
     gap: 20px;
   }
 

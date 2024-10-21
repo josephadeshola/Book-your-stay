@@ -83,7 +83,6 @@ const Dashboard = () => {
                 <Link
                   className="nav-link collapsed"
                   data-bs-target="#tables-nav"
-                  // data-bs-toggle="collapse"
                   to={"/"}
                 >
                   <i className="bi bi-house"></i>
