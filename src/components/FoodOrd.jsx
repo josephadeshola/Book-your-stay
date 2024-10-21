@@ -5,13 +5,14 @@ import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SpinnerCircular} from "spinners-react";
-SpinnerCircular
+import baseUrl from "../BaseUrl";
+
+
 const FoodOrd = () => {
   const [product, setProduct] = useState([]);
   const [blur, setBlur] = useState(false);
   const [isLoading, setisLoading] = useState(true);
-  let endPoint = "http://localhost:5600/api/products";
-  //   let endPoint = "https://forkify-api.herokuapp.com/api/v2/recipes"
+  let endPoint = `${baseUrl}/api/products`;
   useEffect(() => {
     axios
       .get(endPoint)
@@ -99,9 +100,9 @@ const FoodOrd = () => {
                   </li>
                 </ul>
               </div>
-              <div className="scroll-div">
+              <div className="scroll-div col-md-9">
                 {isLoading ? (
-               <div className=" mx-auto text-center text-center ">
+               <div className=" mx-auto text-center ">
                     <SpinnerCircular
                       speed={137}
                       thickness={175}

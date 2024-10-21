@@ -29,7 +29,7 @@ const Login = () => {
     }),
     onSubmit: (values) => {
       console.log("login Details", values);
-      axios.post( baseUrl + "/login" ,values)
+      axios.post( baseUrl + "/user/login" ,values)
       .then((res)=>{
         if(res.data.status==true){
           toast.success(res.data.message);

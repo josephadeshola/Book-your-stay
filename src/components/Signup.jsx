@@ -35,7 +35,7 @@ const Signup = () => {
     onSubmit: (values) => {
       console.log("users", values);
       axios
-        .post(baseUrl + '/register', values)
+        .post(baseUrl + '/user/register', values)
         .then((res) => {
           if (res.data.status == true) {
             console.log("myresponse", res);

@@ -34,7 +34,7 @@ const ForgotPassword = () => {
 
   const handleSendCode = (email) => {
     axios
-      .post(baseUrl + "/forgot", { email })
+      .post(baseUrl + "/user/forgot", { email })
       .then((res) => {
         if (res.data.status === true) {
           setVerificationSent(true);

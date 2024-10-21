@@ -60,29 +60,32 @@ const FoodNav = ({ setBlur }) => {
                 data-aos-anchor-placement="top-center"
                 className="fade col-9 dispMap  py-4 px-5 shadow"
               >
-                <i onClick={() => setOpen(!open)} class="fa-regular text-denger getColor fs-2 float-end fa-circle-xmark"></i>
+                <i
+                  onClick={() => setOpen(!open)}
+                  class="fa-regular text-denger getColor fs-2 float-end fa-circle-xmark"
+                ></i>
                 <div className="d-flex gap-4">
-                <div className="col-5">
-                  <h2 className="py-2">Add a delivery address</h2>
-                  <input
-                    type="text"
-                    placeholder="Search for streets, cities, districts..."
-                    className="form-control py-3 border border-none"
-                  />
+                  <div className="col-5">
+                    <h2 className="py-2">Add a delivery address</h2>
+                    <input
+                      type="text"
+                      placeholder="Search for streets, cities, districts..."
+                      className="form-control py-3 border border-none"
+                    />
+                  </div>
+                  <div className="col-2 mt-5">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126388.69652878305!2d4.164293140639353!3d8.137396009681213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10370d45f7179427%3A0x3f70123a2b1a4e05!2sOgbomosho%2C%20Oyo!5e0!3m2!1sen!2sng!4v1709298732243!5m2!1sen!2sng"
+                      width="470"
+                      height="400"
+                      style={{ border: "0", borderRadius: "10px" }}
+                      allowFullScreen=""
+                      loading="lazy"
+                      title="Google Map"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </div>
                 </div>
-                <div className="col-2 mt-5">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126388.69652878305!2d4.164293140639353!3d8.137396009681213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10370d45f7179427%3A0x3f70123a2b1a4e05!2sOgbomosho%2C%20Oyo!5e0!3m2!1sen!2sng!4v1709298732243!5m2!1sen!2sng"
-                    width="470"
-                    height="400"
-                    style={{ border: "0", borderRadius: "10px" }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    title="Google Map"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-              </div>
               </div>
             )}
           </div>
@@ -99,36 +102,70 @@ const FoodNav = ({ setBlur }) => {
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <div className="d-md-none d-block">
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
-                    Home
-                  </a>
+              <ul className="py-4 ">
+                <h5 className="py-3 fs-3 text-light">Sort by</h5>
+                <li
+                  style={{ listStyle: "none" }}
+                  className="nav-item py-1 d-flex gap-3"
+                >
+                  <i className="fa-brands text-light fa-nfc-symbol fs-3"></i>
+                  <Link className="nav-link" to={"/"}>
+                    Near me
+                  </Link>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Link
-                  </a>
+                <hr />
+                <li
+                  style={{ listStyle: "none" }}
+                  className="nav-item py-1 d-flex gap-3"
+                >
+                  <i className="fa-regular text-light fa-thumbs-up fs-3"></i>
+                  <Link className="nav-link " to={"/about"}>
+                    Best rated
+                  </Link>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link disabled">Disabled</a>
+                <hr />
+                <li
+                  style={{ listStyle: "none" }}
+                  className="nav-item py-1 d-flex gap-3"
+                >
+                  <i className="fa-solid text-light fa-car-burst fs-3"></i>
+                  <Link className="nav-link " to={""}>
+                    Delivery free
+                  </Link>
+                </li>
+                <hr />
+                <h5 className="py-3">Popular filters</h5>
+                <li
+                  style={{ listStyle: "none" }}
+                  className="nav-item py-1 d-flex gap-3 "
+                >
+                  <i className="fa-solid text-light fa-drumstick-bite fs-3"></i>
+                  <Link className="nav-link" to={"/"}>
+                    Chicken
+                  </Link>
+                </li>
+                <hr className="mx-auto" />
+                <li
+                  style={{ listStyle: "none" }}
+                  className="nav-item py-1 d-flex gap-3"
+                >
+                  <i className="fa-solid text-light fa-bowl-rice fs-3"></i>
+                  <Link className="nav-link " to={"/about"}>
+                    Jollof
+                  </Link>
+                </li>
+                <hr />
+                <li
+                  style={{ listStyle: "none" }}
+                  className="nav-item py-1 d-flex gap-3 "
+                >
+                  <i className="fa-solid text-light fa-bowl-rice fs-3"></i>
+                  <Link className="nav-link " to={""}>
+                    Nigerian
+                  </Link>
                 </li>
               </ul>
             </div>
-            <form className="d-flex d-md-none d-block" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button
-                className="btn px-4 text-light btn-outline-ligh"
-                type="submit"
-              >
-                Search
-              </button>
-            </form>
           </div>
         </div>
       </nav>

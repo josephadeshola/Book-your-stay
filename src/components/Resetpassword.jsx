@@ -47,7 +47,7 @@ const Resetpassword = () => {
     }),
     onSubmit: (values) => {
       axios
-        .post(baseUrl + `/reset`, values)
+        .post(baseUrl + `/user/reset`, values)
         .then((res) => {
           console.log(res.data);
           if (res.status === 200) {

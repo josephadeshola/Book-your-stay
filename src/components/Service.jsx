@@ -244,7 +244,7 @@ const Service = () => {
         
       };
   
-      axios.post(baseUrl + '/info/users', values)
+      axios.post(baseUrl + '/user/info/users', values)
       .then((res)=>{
         console.log("data found", res);
       })
